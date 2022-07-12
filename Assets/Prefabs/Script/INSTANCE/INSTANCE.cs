@@ -68,4 +68,22 @@ public class INSTANCE : MonoBehaviour
     public static int gold_medium = 1000;
     public static int gold_low = 500;
 
+
+    //questID
+    public static string dailyID = "D";
+    public static string weeklyID = "W";
+    public static string monthlyID = "M";
+
+    //quest Stat
+    public static int claimed = 2;
+    public static int claimAble = 0;
+    public static int unclaimAble = 1;
+
+    //time data
+    public static string dailyTime = "Quest_Start_Time_Daily";
+    public static string weeklyTime = "Quest_Start_Time_Weekly";
+    public static string monthlyTime = "Quest_Start_Time_Monthly";
+
+
+
 }

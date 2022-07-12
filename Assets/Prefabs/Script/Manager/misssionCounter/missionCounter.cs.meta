@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9215ae1114df5ad49ace1e55838d28be
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - questoke: {instanceID: 0}
+  - rewardsDBDaily: {fileID: 11400000, guid: 4d7af2f7bae9a6141a52b5a1631823a4, type: 2}
+  - rewardsDBWeekly: {fileID: 11400000, guid: 1878f083b18eda047bda5194523a3182, type: 2}
+  - rewardsDBMonthly: {fileID: 11400000, guid: ab73de343619eba47af8fb7a3291e493, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

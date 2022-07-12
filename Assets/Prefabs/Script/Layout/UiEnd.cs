@@ -13,6 +13,7 @@ public class UiEnd : MonoBehaviour
     public Canvas canvas;
     LevelComplete myScript;
     UIGameplay uiGameplay;
+    missionCounter missionCounter;
     public bool isComplete;
     LevelProgressBar progressBar;
     public Sprite[] imgBtn;
@@ -31,6 +32,7 @@ public class UiEnd : MonoBehaviour
         myScript = FindObjectOfType<LevelComplete>();
         uiGameplay = FindObjectOfType<UIGameplay>();
         progressBar = FindObjectOfType<LevelProgressBar>();
+        missionCounter = FindObjectOfType<missionCounter>();
     }
 
     /*public void DieWhenWinning()
@@ -57,19 +59,20 @@ public class UiEnd : MonoBehaviour
         }
         if (win)
         {
+            StopAllCoroutines();
             winMenu.SetActive(true);
             btnNext.image.sprite = imgBtn[0];
             pannel.SetActive(true);
-
         }
         else
         {
+            StopAllCoroutines();
+            myScript.isComplete = true;
+            myScript.check = true;
+            btnNext.image.sprite = imgBtn[1];
+            btnResetCurLevel.gameObject.SetActive(true);
             loseMenu.SetActive(true);
             btn.SetActive(true);
-            btnResetCurLevel.gameObject.SetActive(true);
-            btnNext.image.sprite = imgBtn[1];
-            myScript.check= true;
-            myScript.isComplete= true;
             pannel.SetActive(true);
         }
         yield break;
@@ -85,6 +88,11 @@ public class UiEnd : MonoBehaviour
             uiGameplay = FindObjectOfType<UIGameplay>();*/
         if(progressBar == null)
             progressBar = FindObjectOfType<LevelProgressBar>();
+        if(missionCounter == null)
+        {
+            missionCounter = FindObjectOfType<missionCounter>();
+        }
+
     }
 
     private void OnEnable()
@@ -119,6 +127,7 @@ public class UiEnd : MonoBehaviour
                     }
 
                     isComplete = true;
+                    missionCounter.levelFinishedIncreasing();
                     loseMenu.SetActive(false);
                     winMenu.SetActive(false);
                     btnResetCurLevel.gameObject.SetActive(false);
