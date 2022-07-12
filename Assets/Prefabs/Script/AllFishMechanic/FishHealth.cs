@@ -51,6 +51,7 @@ public class FishHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "Poison")
         {
+            myScript.isDed = true;
             animator.Play(StaticClass.Fish_clipDie);
             myScript.setGameEnd(false);
 
@@ -73,6 +74,7 @@ public class FishHealth : MonoBehaviour
 
         if (collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Boulder" || collision.gameObject.tag == "Spike" || collision.gameObject.tag == "IceBlock")
         {
+            myScript.isDed = true;
             animator.SetLayerWeight(1, 0);
             animator.Play(StaticClass.Fish_clipDie);
             myScript.setGameEnd(false);
@@ -83,6 +85,7 @@ public class FishHealth : MonoBehaviour
 
         if (collision.gameObject.tag == "Bomb")
         {
+            myScript.isDed = true;
             animator.SetLayerWeight(1, 0);
             animator.Play(StaticClass.Fish_clipBurn);
             myScript.setGameEnd(false);

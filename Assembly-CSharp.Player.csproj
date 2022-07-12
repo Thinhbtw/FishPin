@@ -53,19 +53,24 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeShopUI.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UIBackground.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\DestroyOnTouch1.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\UIManager.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\Teleporter.cs" />
+    <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\Theme.cs" />
     <Compile Include="Assets\Prefabs\Script\StaticClass.cs" />
     <Compile Include="Assets\Prefabs\Script\PinMechanic\PullPin.cs" />
+    <Compile Include="Assets\Prefabs\Script\Data\missionCounterData.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UISettingIngame.cs" />
     <Compile Include="Assets\Prefabs\Script\GameManager.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\TabButtons.cs" />
+    <Compile Include="Assets\Prefabs\Script\Layout\UI Quest\QuestScript.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\FishShopDatabase.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\PoisonScript.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UiEnd.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\achivement\achivementManager.cs" />
+    <Compile Include="Assets\Prefabs\Script\tool\timeAPI\WorldTimeAPI.cs" />
     <Compile Include="Assets\BinarySerializer\BinarySerializer.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\GameData.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UIGameplay.cs" />
@@ -76,6 +81,10 @@
     <Compile Include="Assets\Prefabs\Script\AllFishMechanic\FishHealth.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\Dialog.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UIShop.cs" />
+    <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeItemUI.cs" />
+    <Compile Include="Assets\Prefabs\Script\Manager\misssionCounter\missionCounter.cs" />
+    <Compile Include="Assets\Prefabs\Script\Data\RewardDatabases.cs" />
+    <Compile Include="Assets\Prefabs\Script\Layout\UI Quest\DailyQuest.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\LevelProgressBar.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\TabGroup.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\IceBlock.cs" />
@@ -89,7 +98,7 @@
     <Compile Include="Assets\Prefabs\Script\LevelComplete.cs" />
     <Compile Include="Assets\Prefabs\Script\INSTANCE\INSTANCE.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\GameSharedUI.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\DailyReward.cs" />
+    <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeShopDatabase.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\Bomb.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\WInCondition.cs" />
     <Compile Include="Assets\Prefabs\Script\AllFishMechanic\EnemyMoveAround.cs" />
@@ -97,16 +106,11 @@
     <Compile Include="Assets\Prefabs\Script\GameMechanic\Blade.cs" />
     <Compile Include="Assets\Prefabs\Script\ChangingSkin\Fish.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\Spike.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\RewardDatabase.cs" />
     <Compile Include="Assets\Prefabs\Script\PinMechanic\ReUsePin.cs" />
     <Compile Include="Assets\Prefabs\Script\AllFishMechanic\Boss.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\IcePlatHealth.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\CanvasRenderMode.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\DestroyOnTouch.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeShopDatabase.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\Theme.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeItemUI.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeShopUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\AchivementData\archiveList.txt" />

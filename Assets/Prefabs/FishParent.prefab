@@ -458,7 +458,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &7835098220982774715
 CircleCollider2D:
@@ -491,8 +491,8 @@ MonoBehaviour:
   animator: {fileID: 7835098221131517701}
   curHealth: 0
   wInCondition: {fileID: 7835098219560115477}
-  Confetti: {fileID: 0}
-  count: 0
+  Winning: 0
+  runProgress: 0
 --- !u!114 &7835098220982774718
 MonoBehaviour:
   m_ObjectHideFlags: 0

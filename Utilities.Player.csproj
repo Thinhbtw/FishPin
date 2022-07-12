@@ -53,8 +53,8 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Simple Scroll-Snap\Scripts\Plugins\Utilities\StringUtility.cs" />
     <Compile Include="Assets\Simple Scroll-Snap\Scripts\Plugins\Utilities\UnityEventUtility.cs" />
+    <Compile Include="Assets\Simple Scroll-Snap\Scripts\Plugins\Utilities\StringUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Simple Scroll-Snap\Scripts\Plugins\Utilities\Utilities.asmdef" />

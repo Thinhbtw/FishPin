@@ -162,7 +162,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: e5de68dd5bf81ac488e8f3d7c6df6271, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &545424086
 MonoBehaviour:
@@ -179,6 +179,9 @@ MonoBehaviour:
   fish: {fileID: 0}
   boss: {fileID: 965890878}
   inRange: 0
+  Boss_maxRange: 0
+  Boss_minRange: 0
+  fishHealth: {fileID: 0}
 --- !u!70 &965890875
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
