@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Bomb
+  - Fish
+  - Boss
+  - Water
+  - Lava
+  - IcePlat
+  - Poison
+  - Boulder
+  - Ground
+  - IceBlock
+  - Portal
+  - Spike
+  - GroundCheck
+  - Blade
+  - Link
+  - Pin_Body
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Fluids
+  - Bomb
+  - Spike
+  - Boss
+  - Fish
+  - Lava
+  - Boulder
+  - Poison
+  - Portal
+  - Test
+  - Slide
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Confetti
+    uniqueID: 3118439533
+    locked: 0

@@ -1,0 +1,7 @@
+Pull 1 pin $ 1 $ h
+Complete 1 Mini - Level 2 $ 2 $ m
+Fail on Mini - Level 1 times 3 $ 3 
+Skip Level 1 times 4 $ 1 $ m	
+Oh shiet this is the 5 $ 2 $ l
+Oh shiet this is the 6 $ 1 $ l
+Oh shiet this is the 7 $ 3 

@@ -1,0 +1,411 @@
+fileFormatVersion: 2
+guid: 6cbb6b2d2eee0074b88dbbb2bb5917b5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1431492778264607926
+    second: favpng_portal-sprite-animation-two-dimensional-space_0
+  - first:
+      213: -7261074826416375752
+    second: favpng_portal-sprite-animation-two-dimensional-space_1
+  - first:
+      213: -1476899720810466909
+    second: favpng_portal-sprite-animation-two-dimensional-space_2
+  - first:
+      213: 4379781022471527614
+    second: favpng_portal-sprite-animation-two-dimensional-space_3
+  - first:
+      213: 271203374743299984
+    second: favpng_portal-sprite-animation-two-dimensional-space_4
+  - first:
+      213: -4507696373971171555
+    second: favpng_portal-sprite-animation-two-dimensional-space_5
+  - first:
+      213: -1248865206082062277
+    second: favpng_portal-sprite-animation-two-dimensional-space_6
+  - first:
+      213: 5561587936189896709
+    second: favpng_portal-sprite-animation-two-dimensional-space_7
+  - first:
+      213: 1011678911025356641
+    second: favpng_portal-sprite-animation-two-dimensional-space_8
+  - first:
+      213: -1884571218623428044
+    second: favpng_portal-sprite-animation-two-dimensional-space_9
+  - first:
+      213: -357259124638283811
+    second: favpng_portal-sprite-animation-two-dimensional-space_10
+  - first:
+      213: 6806747260193749361
+    second: favpng_portal-sprite-animation-two-dimensional-space_11
+  - first:
+      213: 7602750958473996334
+    second: favpng_portal-sprite-animation-two-dimensional-space_12
+  - first:
+      213: -2824278161664411337
+    second: favpng_portal-sprite-animation-two-dimensional-space_13
+  - first:
+      213: 4829582339907356272
+    second: favpng_portal-sprite-animation-two-dimensional-space_14
+  - first:
+      213: 6024315014912645792
+    second: favpng_portal-sprite-animation-two-dimensional-space_15
+  - first:
+      213: -6467001850768609694
+    second: favpng_portal-sprite-animation-two-dimensional-space_16
+  - first:
+      213: -724210533515389158
+    second: favpng_portal-sprite-animation-two-dimensional-space_17
+  - first:
+      213: 5633925944698542045
+    second: favpng_portal-sprite-animation-two-dimensional-space_18
+  - first:
+      213: -4617751051331270095
+    second: favpng_portal-sprite-animation-two-dimensional-space_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: favpng_portal-sprite-animation-two-dimensional-space_2
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 640
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a1f734678ff08be0800000000000000
+      internalID: -1476899720810466909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: favpng_portal-sprite-animation-two-dimensional-space_3
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 648
+        width: 164
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc996682ab18cc30800000000000000
+      internalID: 4379781022471527614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: favpng_portal-sprite-animation-two-dimensional-space_6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 444
+        width: 160
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38322b36b32baee0800000000000000
+      internalID: -1248865206082062277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: favpng_portal-sprite-animation-two-dimensional-space_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 156
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50852bbe2cabe2d40800000000000000
+      internalID: 5561587936189896709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: favpng_portal-sprite-animation-two-dimensional-space_9
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 444
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a86082678a8d5e0800000000000000
+      internalID: -1884571218623428044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: favpng_portal-sprite-animation-two-dimensional-space_10
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 440
+        width: 164
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd70b2f08b2ca0bf0800000000000000
+      internalID: -357259124638283811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: favpng_portal-sprite-animation-two-dimensional-space_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 232
+        width: 168
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e286a9337b5628960800000000000000
+      internalID: 7602750958473996334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: favpng_portal-sprite-animation-two-dimensional-space_13
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 232
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7397913c9f52ec8d0800000000000000
+      internalID: -2824278161664411337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: favpng_portal-sprite-animation-two-dimensional-space_14
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 228
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0768da7cc8f160340800000000000000
+      internalID: 4829582339907356272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: favpng_portal-sprite-animation-two-dimensional-space_15
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 220
+        width: 176
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa9bee769aaa9350800000000000000
+      internalID: 6024315014912645792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: favpng_portal-sprite-animation-two-dimensional-space_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 176
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ea42394189046a0800000000000000
+      internalID: -6467001850768609694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

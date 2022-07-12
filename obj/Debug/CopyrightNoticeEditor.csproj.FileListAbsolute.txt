@@ -1,0 +1,2 @@
+C:\Users\HP\Documents\HocTap\Project Unity\FishPin-New\FishPin\obj\Debug\CopyrightNoticeEditor.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\HocTap\Project Unity\FishPin-New\FishPin\obj\Debug\CopyrightNoticeEditor.csproj.CoreCompileInputs.cache
