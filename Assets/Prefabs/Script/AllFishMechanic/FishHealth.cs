@@ -24,7 +24,7 @@ public class FishHealth : MonoBehaviour
 
         curHealth = StaticClass.startHealth;
         rb = GetComponent<Rigidbody2D>();
-        Winning = false;
+        Winning = false;        
     }
 
     private void OnEnable()
@@ -36,6 +36,7 @@ public class FishHealth : MonoBehaviour
 
     void Start()
     {
+        Physics2D.IgnoreLayerCollision(10, 6);
         Physics2D.IgnoreLayerCollision(10, 7, false);
         Physics2D.IgnoreLayerCollision(10, 8, false);
         Physics2D.IgnoreLayerCollision(10, 9, false);
@@ -51,6 +52,7 @@ public class FishHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "Poison")
         {
+            Physics2D.IgnoreLayerCollision(10, 6);
             myScript.isDed = true;
             animator.Play(StaticClass.Fish_clipDie);
             myScript.setGameEnd(false);
@@ -74,10 +76,12 @@ public class FishHealth : MonoBehaviour
 
         if (collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Boulder" || collision.gameObject.tag == "Spike" || collision.gameObject.tag == "IceBlock")
         {
+            Physics2D.IgnoreLayerCollision(10, 6);
             myScript.isDed = true;
             animator.SetLayerWeight(1, 0);
             animator.Play(StaticClass.Fish_clipDie);
             myScript.setGameEnd(false);
+            Debug.Log("THua");
             if (Winning)
                 uiGameplay.levelAt = uiGameplay.levelAt - 1;
 
@@ -85,6 +89,7 @@ public class FishHealth : MonoBehaviour
 
         if (collision.gameObject.tag == "Bomb")
         {
+            Physics2D.IgnoreLayerCollision(10, 6);
             myScript.isDed = true;
             animator.SetLayerWeight(1, 0);
             animator.Play(StaticClass.Fish_clipBurn);
@@ -119,6 +124,7 @@ public class FishHealth : MonoBehaviour
             animator.Play(StaticClass.Fish_clipWin);
             animator.SetLayerWeight(1, 1);
             myScript.setGameEnd(true);
+            Debug.Log("Thang");
             if (runProgress)
             {         
                 StartCoroutine(ProgressBar());
