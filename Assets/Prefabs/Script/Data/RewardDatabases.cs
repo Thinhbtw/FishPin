@@ -18,4 +18,22 @@ public class RewardDatabases : ScriptableObject
     {
         return quests[index];
     }    
+    
+    public void increaseProcess(typeID id)
+    {
+        for(int i = 0; i < quests.Length; i++)
+        {
+            if (quests[i].typeID == id)
+            {
+                quests[i].process++;
+            }
+        }
+    }
+    public void resetProcess()
+    {
+        for (int i = 0; i < quests.Length; i++)
+        {
+            quests[i].process = 0;
+        }
+    }
 }

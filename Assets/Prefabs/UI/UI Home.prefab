@@ -1761,15 +1761,15 @@ PrefabInstance:
       objectReference: {fileID: 4502808252157587020}
     - target: {fileID: 7129921935181180846, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
       propertyPath: nextQuestDelay_Daily
-      value: 300
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7129921935181180846, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
       propertyPath: nextQuestDelay_Weekly
-      value: 600
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7129921935181180846, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
       propertyPath: nextQuestDelay_Monthly
-      value: 900
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7619814033140064727, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
       propertyPath: m_AnchorMax.y

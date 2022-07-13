@@ -42,23 +42,14 @@ public class QuestScript : MonoBehaviour
     {        
         if(PlayerPrefs.GetInt(quest.typeID.ToString())<= quest.required)
         {
-            numberProgress.text = PlayerPrefs.GetInt(quest.typeID.ToString()) + "/" + quest.required.ToString();
+            numberProgress.text = quest.process + "/" + quest.required.ToString();
         }
         else
         {
             numberProgress.text = quest.required.ToString() + "/" + quest.required.ToString();
         }
         
-        progressBar.GetComponent<Slider>().value = PlayerPrefs.GetInt(quest.typeID.ToString());
-        Debug.Log(quest.typeID.ToString());
-        /*if (PlayerPrefs.HasKey(quest.typeID.ToString()) )
-        {
-            Debug.Log(quest.typeID.ToString());
-        }
-        else
-        {
-            Debug.Log("deo on roi");
-        }*/        
+        progressBar.GetComponent<Slider>().value = quest.process;        
         if (PlayerPrefs.GetInt(title.text) == INSTANCE.unclaimAble || PlayerPrefs.GetInt(title.text) == INSTANCE.claimed)
         {            
             Deactivate();

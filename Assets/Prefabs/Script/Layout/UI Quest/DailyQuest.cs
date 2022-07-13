@@ -27,7 +27,7 @@ namespace DailyQuestSystem
         public string title;
         public int required;        
         public typeID typeID;
-
+        public int process;
     }    
 
     public class DailyQuest : MonoBehaviour
@@ -72,7 +72,7 @@ namespace DailyQuestSystem
         [SerializeField] double nextQuestDelay_Weekly ;
         [SerializeField] double nextQuestDelay_Monthly;
         //check for reward every 5 secs
-        [SerializeField] float checkForQuestDelay = 5f;
+        [SerializeField] float checkForQuestDelay = 1f;
 
         
 
@@ -300,17 +300,15 @@ namespace DailyQuestSystem
 
         void resetQuestData(RewardDatabases data)
         {
-           /* a = nextQuestDelay_Daily;
-            b = nextQuestDelay_Weekly;
-            c = nextQuestDelay_Monthly;*/
-            missionCounterData.LevelFinished = 0;
-            missionCounterData.EnemiesKilled = 0;
-            missionCounterData.CoinCollected = 0;
+            /* a = nextQuestDelay_Daily;
+             b = nextQuestDelay_Weekly;
+             c = nextQuestDelay_Monthly;*/
+            data.resetProcess();
             for (int i = 0; i < data.rewardsCount; i++)
             {
-                PlayerPrefs.SetInt(data.GetQuest(i).title.ToString(), INSTANCE.unclaimAble);
-                /*Debug.Log(PlayerPrefs.GetInt(data.GetQuest(i).title));*/
+                PlayerPrefs.SetInt(data.GetQuest(i).title.ToString(), INSTANCE.unclaimAble);                
             }
+            Debug.Log("reset data at: " + data.name);
         }
 
         void resetTimeData()
