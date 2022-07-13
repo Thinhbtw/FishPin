@@ -12,6 +12,7 @@ public class UIBackground : MonoBehaviour
     public List<GameObject> listLevel;
     public GameObject background;
     public Text levelText;
+    LevelComplete levelComplete;
 
 
     private void Awake()
@@ -19,7 +20,6 @@ public class UIBackground : MonoBehaviour
         Instance = (UIBackground)this;
         canvas = GetComponent<Canvas>();
         this.gameObject.SetActive(false);
-
         if (skip != null)
             skip.onClick.AddListener(() =>
             {
@@ -60,11 +60,30 @@ public class UIBackground : MonoBehaviour
 
     }
 
+    void ButtonInteracable(bool check)
+    {
+        reset.interactable = check;
+        home.interactable = check;
+        pause.interactable = check;
+        skip.interactable = check;
+        level.interactable = check;
+    }
+
     private void Update()
     {
         if (!UIGameplay.Instance.hasNextLevel)
         {
             UIGameplay.Instance.hasNextLevel = true;
+        }
+        if(levelComplete == null)
+            levelComplete = FindObjectOfType<LevelComplete>();
+        if (levelComplete.check)
+        {
+            ButtonInteracable(false);
+        }
+        else
+        {
+            ButtonInteracable(true);
         }
 
        
@@ -139,5 +158,6 @@ public class UIBackground : MonoBehaviour
             
         }
     }
+
 
 }
