@@ -1739,6 +1739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DailyUi=========
       objectReference: {fileID: 0}
+    - target: {fileID: 4225619105546789558, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6430735497496518386, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0

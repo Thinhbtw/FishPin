@@ -11,7 +11,7 @@ public class Clone : MonoBehaviour
     {
         for (int i = 0; i < Quantity; i++)
         {
-            var newFliud = Instantiate(prefabs, this.transform.position + new Vector3(Random.Range(0.2f, 0.5f), Random.Range(-0f, 0.5f), this.transform.position.z), Quaternion.identity);
+            var newFliud = Instantiate(prefabs, this.transform.position + new Vector3(Random.Range(0f, 0.1f), Random.Range(0f, 0.05f), this.transform.position.z), Quaternion.identity);
             newFliud.transform.parent = this.gameObject.transform;
         }
     }

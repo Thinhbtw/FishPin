@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 6124931925599107731}
   - component: {fileID: 6124931925599107741}
   - component: {fileID: 5898499618930610687}
+  - component: {fileID: 7973709904408330422}
+  - component: {fileID: 4467920499006869821}
+  - component: {fileID: 2829448913148776222}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Ground
@@ -169,6 +172,72 @@ PolygonCollider2D:
       - {x: 3.4399998, y: -4.4249997}
       - {x: -3.4299998, y: -4.4249997}
       - {x: -3.4299998, y: -4.4049997}
+--- !u!68 &7973709904408330422
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124931925599107728}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0.4
+  m_Points:
+  - {x: -2.448359, y: 0.2879647}
+  - {x: -2.447048, y: 5.579323}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!68 &4467920499006869821
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124931925599107728}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0.4
+  m_Points:
+  - {x: 2.3390603, y: 0.14398229}
+  - {x: 2.3403714, y: 5.651314}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!68 &2829448913148776222
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124931925599107728}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.51, y: 0}
+  m_EdgeRadius: 0.4
+  m_Points:
+  - {x: 6.28, y: 6.69}
+  - {x: 0.87, y: 6.67}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &6124931926694215839
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: 234}
+  m_AnchoredPosition: {x: -2, y: 230}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6124931926694215833
@@ -217,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f2f097d8ed5a54e9218dc5ab092883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Quantity: 50
+  Quantity: 30
   prefabs: {fileID: 5024421772091208294, guid: 9f31622502b1c2c4e880a7e3a8f6a0a5, type: 3}
 --- !u!1 &6547393910472491176
 GameObject:
@@ -290,7 +359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6910887273655308804}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 42.5, z: 0}
+  m_LocalPosition: {x: 0, y: 38, z: 0}
   m_LocalScale: {x: 50, y: 50, z: 93.28}
   m_Children: []
   m_Father: {fileID: 1017589757943622532}

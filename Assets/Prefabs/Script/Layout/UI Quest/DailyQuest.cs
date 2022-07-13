@@ -303,7 +303,6 @@ namespace DailyQuestSystem
            /* a = nextQuestDelay_Daily;
             b = nextQuestDelay_Weekly;
             c = nextQuestDelay_Monthly;*/
-            Debug.Log("reset data at: " +data.name);
             missionCounterData.LevelFinished = 0;
             missionCounterData.EnemiesKilled = 0;
             missionCounterData.CoinCollected = 0;

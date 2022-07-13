@@ -20,6 +20,8 @@ public class LevelComplete : MonoBehaviour
 
     public void setGameEnd(bool isWin)
     {
+        check = true;
+        isComplete = isWin;
         if(isWin == true)
         {
             
@@ -27,8 +29,6 @@ public class LevelComplete : MonoBehaviour
         }
         
         StartCoroutine(UiEnd.Instance.WaitPanel(isWin));
-        check = true;
-        isComplete = isWin;
     }
 
     private void OnEnable()

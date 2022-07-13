@@ -108,16 +108,16 @@ public class FishHealth : MonoBehaviour
         if (wInCondition.count >= StaticClass.WinningCondition && !myScript.isDed)
         {
             curHealth = 100;
+            runProgress = true;
+            Winning = true;
             Physics2D.IgnoreLayerCollision(10, 7);
             Physics2D.IgnoreLayerCollision(10, 8);
             Physics2D.IgnoreLayerCollision(10, 9);
             Physics2D.IgnoreLayerCollision(10, 11);
             Physics2D.IgnoreLayerCollision(10, 12);
             Physics2D.IgnoreLayerCollision(10, 13);
-            runProgress = true;
             animator.Play(StaticClass.Fish_clipWin);
             animator.SetLayerWeight(1, 1);
-            Winning = true;
             myScript.setGameEnd(true);
             if (runProgress)
             {         
