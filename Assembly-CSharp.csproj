@@ -61,13 +61,16 @@
     <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\Theme.cs" />
     <Compile Include="Assets\Prefabs\Script\StaticClass.cs" />
     <Compile Include="Assets\Prefabs\Script\PinMechanic\PullPin.cs" />
+    <Compile Include="Assets\Prefabs\Script\Data\missionCounterData.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UISettingIngame.cs" />
     <Compile Include="Assets\Prefabs\Script\GameManager.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\TabButtons.cs" />
+    <Compile Include="Assets\Prefabs\Script\Layout\UI Quest\QuestScript.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\FishShopDatabase.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\PoisonScript.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UiEnd.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\achivement\achivementManager.cs" />
+    <Compile Include="Assets\Prefabs\Script\tool\timeAPI\WorldTimeAPI.cs" />
     <Compile Include="Assets\BinarySerializer\BinarySerializer.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\GameData.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UIGameplay.cs" />
@@ -79,6 +82,9 @@
     <Compile Include="Assets\Prefabs\Script\Layout\Dialog.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UIShop.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeItemUI.cs" />
+    <Compile Include="Assets\Prefabs\Script\Manager\misssionCounter\missionCounter.cs" />
+    <Compile Include="Assets\Prefabs\Script\Data\RewardDatabases.cs" />
+    <Compile Include="Assets\Prefabs\Script\Layout\UI Quest\DailyQuest.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\LevelProgressBar.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\TabGroup.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\IceBlock.cs" />
@@ -105,12 +111,6 @@
     <Compile Include="Assets\Prefabs\Script\GameMechanic\IcePlatHealth.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\CanvasRenderMode.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\DestroyOnTouch.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\UI Quest\QuestScript.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\UI Quest\DailyQuest.cs" />
-    <Compile Include="Assets\Prefabs\Script\tool\timeAPI\WorldTimeAPI.cs" />
-    <Compile Include="Assets\Prefabs\Script\Data\RewardDatabases.cs" />
-    <Compile Include="Assets\Prefabs\Script\Data\missionCounterData.cs" />
-    <Compile Include="Assets\Prefabs\Script\Manager\misssionCounter\missionCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\AchivementData\archiveList.txt" />
