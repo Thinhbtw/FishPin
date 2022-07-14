@@ -15,7 +15,9 @@ using System.Collections.Generic;
     public int coin = 0;
     public int gems = 0;
     public int selectedThemeIndex = 0;
+    public List<int> indexList = new List<int>();
 }
+
 
 public static class GameData
 {
@@ -67,6 +69,17 @@ public static class GameData
         SavePlayerData();
     }
 
+    public static void addIndexList(int index)
+    {
+        playerData.indexList.Add(index);
+        SavePlayerData();
+    }
+
+    public static List<int> getIndexList()
+    {
+        return playerData.indexList;
+    }
+
     public static bool CanSpendGems(int amount)
     {
         return (playerData.gems >= amount);
@@ -91,7 +104,7 @@ public static class GameData
         UnityEngine.Debug.Log("<color=magenta>[PlayerData] Saved </color>");
 
     }
-
+      
 
     //Theme Data Method
 
