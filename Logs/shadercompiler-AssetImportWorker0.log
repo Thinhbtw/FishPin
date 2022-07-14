@@ -2,7 +2,10 @@ Base path: 'E:/Work/Unity/editors/2020.3.25f1/Editor/Data', plugins path 'E:/Wor
 Cmd: initializeCompiler
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 Unhandled exception: Protocol error - failed to read magic number (error -2147483644, transferred 0/4)
 
 Quitting shader compiler process
