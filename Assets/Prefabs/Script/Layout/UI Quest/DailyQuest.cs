@@ -332,8 +332,8 @@ namespace DailyQuestSystem
             
         }*/
         void loadQuest(RewardDatabases data,List<GameObject> listQuest, Transform questField, string questId)
-        {            
-
+        {
+            List<string> questTitle = new List<string>();
             if (questField.childCount > 0)
             {
                 for (int i = 0; i < questField.childCount; i++)
@@ -343,25 +343,67 @@ namespace DailyQuestSystem
             }
 
             listQuest.Clear();
-            for (int i = 0; i < data.rewardsCount; i++)
-            {                
-                GameObject quest = Instantiate(questPrefab, questField);
-                if (PlayerPrefs.GetInt(data.GetQuest(i).title) == INSTANCE.claimed)
+            if (GameData.getIndexList() == null)
+            {
+                int goldQuestCount = 0, gemQuestCount = 0;
+                while (listQuest.Count < 3)
                 {
-                    quest.SetActive(false);
+                    int index = UnityEngine.Random.Range(0, data.rewardsCount);
+                    if (goldQuestCount > 2)
+                    {
+                        continue;
+                    }
+                    if(gemQuestCount > 1)
+                    {
+                        continue;
+                    }
+                    GameData.addIndexList(index);
+                    GameObject quest = Instantiate(questPrefab, questField);
+                    if (PlayerPrefs.GetInt(data.GetQuest(index).title) == INSTANCE.claimed)
+                    {
+                        quest.SetActive(false);
+                    }
+                    quest.GetComponent<QuestScript>().QuestIndex = index;
+                    listQuest.Add(quest);
                 }
-                quest.GetComponent<QuestScript>().QuestIndex = i;
-                listQuest.Add(quest);
-                switch (data.GetQuest(i).Type)
+                for (int i = 0; i < listQuest.Count; i++)
                 {
-                    case RewardType.Coins:
-                        listQuest[i].GetComponent<QuestScript>().setupQuest(iconCoinsSprite, data.GetQuest(i).Amount, data.GetQuest(i).title, data.GetQuest(i), this.gameObject);
-                        break;
-                    case RewardType.Gems:
-                        listQuest[i].GetComponent<QuestScript>().setupQuest(iconGemsSprite, data.GetQuest(i).Amount, data.GetQuest(i).title, data.GetQuest(i), this.gameObject);
-                        break;
+                    int questIndex = listQuest[i].GetComponent<QuestScript>().QuestIndex;
+                    switch (data.GetQuest(questIndex).Type)
+                    {
+                        case RewardType.Coins:
+                            listQuest[i].GetComponent<QuestScript>().setupQuest(iconCoinsSprite, data.GetQuest(questIndex).Amount, data.GetQuest(questIndex).title, data.GetQuest(questIndex), this.gameObject);
+                            break;
+                        case RewardType.Gems:
+                            listQuest[i].GetComponent<QuestScript>().setupQuest(iconGemsSprite, data.GetQuest(questIndex).Amount, data.GetQuest(questIndex).title, data.GetQuest(questIndex), this.gameObject);
+                            break;
+                    }
                 }
-            }            
+            }
+            else
+            {
+                List<int> indexList = GameData.getIndexList();
+                for(int i = 0; i < indexList.Count; i++)
+                {
+                    GameObject quest = Instantiate(questPrefab, questField);
+                    if (PlayerPrefs.GetInt(data.GetQuest(indexList[i]).title) == INSTANCE.claimed)
+                    {
+                        quest.SetActive(false);
+                    }
+                    quest.GetComponent<QuestScript>().QuestIndex = indexList[i];
+                    listQuest.Add(quest);
+                    switch (data.GetQuest(indexList[i]).Type)
+                    {
+                        case RewardType.Coins:
+                            listQuest[i].GetComponent<QuestScript>().setupQuest(iconCoinsSprite, data.GetQuest(indexList[i]).Amount, data.GetQuest(indexList[i]).title, data.GetQuest(indexList[i]), this.gameObject);
+                            break;
+                        case RewardType.Gems:
+                            listQuest[i].GetComponent<QuestScript>().setupQuest(iconGemsSprite, data.GetQuest(indexList[i]).Amount, data.GetQuest(indexList[i]).title, data.GetQuest(indexList[i]), this.gameObject);
+                            break;
+                    }
+                }
+            }
+                  
         }
 
         //check notification------------------
