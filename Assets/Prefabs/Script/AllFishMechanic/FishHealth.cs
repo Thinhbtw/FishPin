@@ -50,31 +50,20 @@ public class FishHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Poison")
-        {
-            Physics2D.IgnoreLayerCollision(10, 6);
-            myScript.isDed = true;
-            animator.Play(StaticClass.Fish_clipDie);
-            myScript.setGameEnd(false);
-
-            if (Winning)
-                 uiGameplay.levelAt = uiGameplay.levelAt - 1;
-
-        }
 
         if (curHealth > 0)
         {
             if (collision.gameObject.tag == "Lava")
             {
-                animator.Play(StaticClass.Fish_clipHurt, -1, 0f);
+                animator.SetLayerWeight(2, 1);
                 curHealth = Mathf.Clamp(curHealth - 1, 0, StaticClass.startHealth);
                 Destroy(collision.gameObject);
-
+                StartCoroutine(ResetIdle());
 
             }
         }
 
-        if (collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Boulder" || collision.gameObject.tag == "Spike" || collision.gameObject.tag == "IceBlock")
+        if (collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Spike" || collision.gameObject.tag == "Poison")
         {
             Physics2D.IgnoreLayerCollision(10, 6);
             myScript.isDed = true;
@@ -85,6 +74,17 @@ public class FishHealth : MonoBehaviour
             if (Winning)
                 uiGameplay.levelAt = uiGameplay.levelAt - 1;
 
+        }
+
+        if (collision.gameObject.tag == "Boulder" || collision.gameObject.tag == "IceBlock")
+        {
+            Physics2D.IgnoreLayerCollision(10, 6);
+            myScript.isDed = true;
+            animator.SetLayerWeight(1, 0);
+            animator.Play(StaticClass.Fish_clipStun);
+            myScript.setGameEnd(false);
+            if (Winning)
+                uiGameplay.levelAt = uiGameplay.levelAt - 1;
         }
 
         if (collision.gameObject.tag == "Bomb")
@@ -105,6 +105,12 @@ public class FishHealth : MonoBehaviour
         uiGameplay.levelAt++;
     }
 
+    IEnumerator ResetIdle()
+    {
+        yield return new WaitForSeconds(1f);
+        animator.SetLayerWeight(2, 0);
+        yield break;
+    }
 
     // Update is called once per frame
     void Update()
@@ -124,7 +130,6 @@ public class FishHealth : MonoBehaviour
             animator.Play(StaticClass.Fish_clipWin);
             animator.SetLayerWeight(1, 1);
             myScript.setGameEnd(true);
-            Debug.Log("Thang");
             if (runProgress)
             {         
                 StartCoroutine(ProgressBar());
@@ -135,6 +140,8 @@ public class FishHealth : MonoBehaviour
 
         if (curHealth == 0)
         {
+
+            Physics2D.IgnoreLayerCollision(10, 11);
             myScript.isDed = true;
             animator.Play(StaticClass.Fish_clipBurn);
             if (!myScript.check)

@@ -65,7 +65,7 @@ public class missionCounter : MonoBehaviour
     }    
     
 
-    public void levelFinishedIncreasing()
+   /* public void levelFinishedIncreasing()
     {
         List<Quest> q = questScanner(typeID.levelFinished);       
         missionCounterData.LevelFinished += 1;
@@ -78,7 +78,21 @@ public class missionCounter : MonoBehaviour
                 PlayerPrefs.SetInt(q[i].title.ToString(), INSTANCE.claimAble);
             }
         }
-        /*questoke.GetComponent<test>().quests = q;*/
+        *//*questoke.GetComponent<test>().quests = q;*//*
+    }*/
+    public void Increasing(typeID id)
+    {
+        rewardsDBDaily.increaseProcess(id);
+        rewardsDBWeekly.increaseProcess(id);
+        rewardsDBMonthly.increaseProcess(id);
+        List<Quest> q = questScanner(id);
+        for (int i = 0; i < q.Count; i++)
+        {
+            if (q[i].required <= q[i].process && PlayerPrefs.GetInt(q[i].title.ToString()) == INSTANCE.unclaimAble)
+            {
+                PlayerPrefs.SetInt(q[i].title.ToString(), INSTANCE.claimAble);
+            }
+        }
     }
     /*public bool enemiesKilled(Quest quest)
     {

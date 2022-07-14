@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4673737751148083082}
   - component: {fileID: 6367146286065643969}
   - component: {fileID: 6603237205750177643}
+  - component: {fileID: 3077281293658415471}
+  - component: {fileID: 3410059185507193693}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Ground
@@ -267,7 +269,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0.4
   m_Points:
   - {x: -3.2776928, y: 7.2068157}
-  - {x: -0.014760494, y: 7.2433987}
+  - {x: 0.4856267, y: 7.176681}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -290,6 +292,50 @@ EdgeCollider2D:
   m_Points:
   - {x: -5.18, y: 0}
   - {x: 5.18, y: 0}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!68 &3077281293658415471
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273227110226257430}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0.4
+  m_Points:
+  - {x: -3.8907123, y: 3.4534483}
+  - {x: -3.798964, y: 7.229218}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!68 &3410059185507193693
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273227110226257430}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0.4
+  m_Points:
+  - {x: 0.42, y: 7.05}
+  - {x: 0.48, y: 4.03}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -1449,11 +1495,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009662260334761912, guid: 425fffa3674728847a24b2c7bd8d1eb7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -120
+      value: -112.6
       objectReference: {fileID: 0}
     - target: {fileID: 2009662260334761912, guid: 425fffa3674728847a24b2c7bd8d1eb7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 307
+      value: 298
       objectReference: {fileID: 0}
     - target: {fileID: 2009662260334761912, guid: 425fffa3674728847a24b2c7bd8d1eb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1469,7 +1515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009662260334761913, guid: 425fffa3674728847a24b2c7bd8d1eb7, type: 3}
       propertyPath: Quantity
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2009662260334761919, guid: 425fffa3674728847a24b2c7bd8d1eb7, type: 3}
       propertyPath: m_Name
@@ -1673,11 +1719,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2695176400317731085, guid: d2feb35333828be4cb3dfaa4e97b3972, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -115
+      value: -98.7
       objectReference: {fileID: 0}
     - target: {fileID: 2695176400317731085, guid: d2feb35333828be4cb3dfaa4e97b3972, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 212
+      value: 218.6
       objectReference: {fileID: 0}
     - target: {fileID: 2695176400317731085, guid: d2feb35333828be4cb3dfaa4e97b3972, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1690,6 +1736,10 @@ PrefabInstance:
     - target: {fileID: 2695176400317731085, guid: d2feb35333828be4cb3dfaa4e97b3972, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695176400317731086, guid: d2feb35333828be4cb3dfaa4e97b3972, type: 3}
+      propertyPath: Quantity
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2feb35333828be4cb3dfaa4e97b3972, type: 3}

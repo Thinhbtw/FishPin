@@ -78,13 +78,13 @@ public class Boss : MonoBehaviour
                     Destroy(collision.gameObject);
                     anima.SetLayerWeight(2, 1);
                     curHealth = Mathf.Clamp(curHealth - 1, 0, StaticClass.startHealth);
+                    StartCoroutine(ResetIdle());
                 }
-                else
-                    anima.SetLayerWeight(2, 0);
 
             }
             if (curHealth == 0)
             {
+
                 isDed = true;
                 anima.Play(clipDie);
                 StartCoroutine(Destroy());
@@ -112,6 +112,13 @@ public class Boss : MonoBehaviour
         this.gameObject.GetComponent<Boss>().enabled = false;
         myScript.bossIsDed = true;
         Destroy(this.gameObject);
+        yield break;
+    }
+
+    IEnumerator ResetIdle()
+    {
+        yield return new WaitForSeconds(0.3f);
+        anima.SetLayerWeight(2, 0);
         yield break;
     }
 

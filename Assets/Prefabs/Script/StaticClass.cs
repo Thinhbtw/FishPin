@@ -12,6 +12,7 @@ public static class StaticClass
     public static string Fish_clipBurn = "FIsh_Burn";
     public static string Fish_clipTele = "Fish_Tele";
     public static string Fish_clipIdle = "Fish_Idle";
+    public static string Fish_clipStun = "Fish_Stun";
 
     //BOSS
     public static float Boss_speed = 1;

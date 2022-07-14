@@ -1,3 +1,4 @@
+using DailyQuestSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -127,7 +128,7 @@ public class UiEnd : MonoBehaviour
                     }
 
                     isComplete = true;
-                    missionCounter.levelFinishedIncreasing();
+                    missionCounter.Increasing(typeID.levelFinished);
                     loseMenu.SetActive(false);
                     winMenu.SetActive(false);
                     btnResetCurLevel.gameObject.SetActive(false);

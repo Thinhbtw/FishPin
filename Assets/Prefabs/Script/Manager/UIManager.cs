@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(PlayerPrefs.GetString("LevelComplete") + " + " + PlayerPrefs.GetString("LevelSkip"));
+        /*Debug.Log(PlayerPrefs.GetString("LevelComplete") + " + " + PlayerPrefs.GetString("LevelSkip"));*/
 
     }
 }

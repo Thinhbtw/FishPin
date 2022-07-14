@@ -221,9 +221,6 @@
     <Reference Include="UnityEngine.SubstanceModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.SubstanceModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.SubsystemsModule">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.TLSModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.TLSModule.dll</HintPath>
     </Reference>
@@ -238,9 +235,6 @@
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TilemapModule">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.TilemapModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.UIModule.dll</HintPath>
@@ -287,20 +281,11 @@
     <Reference Include="UnityEngine.VFXModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.VFXModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.VRModule">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.VRModule.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.VehiclesModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.VehiclesModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VideoModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.VideoModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.WindModule">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.WindModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.XRModule">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\mono\Managed\UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
