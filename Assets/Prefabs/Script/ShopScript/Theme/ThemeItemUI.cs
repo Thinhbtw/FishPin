@@ -8,10 +8,9 @@ public class ThemeItemUI : MonoBehaviour
 
     [Space(20f)]
     [SerializeField] Image themeImage;
-    [SerializeField] Text themePrice;
+    [SerializeField] Text themePrice, minus;
     [SerializeField] Button purchaseBtn;
     [SerializeField] Button itemButton;
-    [SerializeField] Text curCondition;
     [SerializeField] Image currencyImage;
     public void SetThemeImage(Sprite sprite)
     {
@@ -34,7 +33,10 @@ public class ThemeItemUI : MonoBehaviour
     public void SetThemeAsPurchased()
     {
         purchaseBtn.gameObject.SetActive(false);
-        itemButton.interactable = true;
+        itemButton.gameObject.SetActive(true);
+        currencyImage.enabled = false;
+        minus.text = "";
+        themePrice.text = "Owned";
     }
 
     public void OnItemPurchased(int itemIndex, UnityAction<int> action)

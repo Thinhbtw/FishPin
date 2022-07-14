@@ -45,7 +45,7 @@ public class GameSharedUI : MonoBehaviour
 
     public void UpdateGemsUIText()
     {
-        for (int i = 0; i < coinUIText.Length; i++)
+        for (int i = 0; i < gemsUIText.Length; i++)
         {
             SetCoinsText(gemsUIText[i], GameData.GetGems());
         }

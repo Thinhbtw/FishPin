@@ -490,9 +490,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   themeImage: {fileID: 9004475170086780954}
   themePrice: {fileID: 5273172364169499286}
+  curCondition: {fileID: 5273172364169499286}
+  minus: {fileID: 8266890075307315487}
   purchaseBtn: {fileID: 2538646289492183828}
   itemButton: {fileID: 1308417001720115882}
-  curCondition: {fileID: 5273172364169499286}
   currencyImage: {fileID: 1397144276141411147}
 --- !u!1 &5272684254283349276
 GameObject:
@@ -506,7 +507,7 @@ GameObject:
   - component: {fileID: 5706578639460704686}
   - component: {fileID: 8266890075307315487}
   m_Layer: 0
-  m_Name: Price (1)
+  m_Name: minus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
