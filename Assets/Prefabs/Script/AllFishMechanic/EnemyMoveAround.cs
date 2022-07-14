@@ -39,7 +39,7 @@ public class EnemyMoveAround : MonoBehaviour
     void FixedUpdate()
     {
 
-        if(boss.onGround && !fish.Winning)
+        if(boss.onGround && !fish.Winning && !boss.isDed)
             rb.velocity = new Vector2(dirX * StaticClass.Boss_speed, rb.velocity.y);
         if (dirX > 0f && boss.onGround && !bossMove.inRange)
             rectTransform.rotation = Quaternion.Euler(0, 180f, 0);

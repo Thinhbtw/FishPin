@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 766864ef67c499347b0e1c3620859da4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 703c4bb4ecdc89d43b5d07f7682dcdd2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,9 +113,9 @@ GameObject:
   - component: {fileID: 5214921816002065237}
   - component: {fileID: 5214921816002065238}
   - component: {fileID: 545424086}
-  - component: {fileID: 965890875}
   - component: {fileID: 965890878}
   - component: {fileID: 965890879}
+  - component: {fileID: 5706527337874968604}
   m_Layer: 9
   m_Name: BossParent
   m_TagString: Boss
@@ -132,7 +132,7 @@ RectTransform:
   m_GameObject: {fileID: 5214921816002065236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_LocalScale: {x: 60, y: 60, z: 1}
   m_Children:
   - {fileID: 5214921815984733333}
   m_Father: {fileID: 0}
@@ -182,22 +182,6 @@ MonoBehaviour:
   Boss_maxRange: 0
   Boss_minRange: 0
   fishHealth: {fileID: 0}
---- !u!70 &965890875
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5214921816002065236}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.010426238, y: -0.16682127}
-  m_Size: {x: 3.7738643, y: 5.1288223}
-  m_Direction: 0
 --- !u!114 &965890878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,3 +210,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   check: 0
+--- !u!58 &5706527337874968604
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5214921816002065236}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.079471596, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.738415

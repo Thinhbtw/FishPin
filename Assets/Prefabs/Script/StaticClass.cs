@@ -18,10 +18,11 @@ public static class StaticClass
     public static float Boss_speed = 1;
     public static float Boss_minRange = 0.5f;
     public static float Boss_maxRange = 1.5f;
-    public static string Boss_clipDie = "Boss_Die";
+    public static string Boss_clipDie = "Boss_Stun";
     public static string Boss_clipExplo = "Boss_Explo";
     public static string Boss_clipHurt = "Boss_Hurt";
     public static string Boss_clipIdle = "Boss_Idle";
+    public static string Boss_clipPoison = "Boss_Poison";
 
     //SNAKE
     public static string Snake_clipDie = "Snake_Die";

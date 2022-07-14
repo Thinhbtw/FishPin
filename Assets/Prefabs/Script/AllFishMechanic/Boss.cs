@@ -39,8 +39,8 @@ public class Boss : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayClip("BossParent", StaticClass.Boss_clipDie, StaticClass.Boss_clipExplo, collision);
-        PlayClip("SnakeParent", StaticClass.Snake_clipDie, StaticClass.Snake_clipExplo, collision);
+        PlayClip("BossParent", StaticClass.Boss_clipDie, StaticClass.Boss_clipExplo, StaticClass.Boss_clipPoison, collision);
+        PlayClip("SnakeParent", StaticClass.Snake_clipDie, StaticClass.Snake_clipExplo, "", collision);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -50,23 +50,30 @@ public class Boss : MonoBehaviour
 
     }
 
-    void PlayClip(string bossName, string clipDie, string clipExplo, Collision2D collision)
+    void PlayClip(string bossName, string clipDie, string clipExplo, string clipPoison, Collision2D collision)
     {
         if (this.gameObject.name.Contains(bossName))
         {
-            if (collision.gameObject.tag == "Spike" || collision.gameObject.tag == "Poison" || collision.gameObject.tag == "Boulder" || collision.gameObject.tag == "Untagged" || collision.gameObject.tag == "IceBlock")
+            if (collision.gameObject.tag == "Spike" || collision.gameObject.tag == "Poison")
             {
-                anima.Play(clipDie);
-                isDed = true;
                 IgnoreColision(true);
+                isDed = true;
+                anima.Play(clipPoison);
+                StartCoroutine(Destroy());
+            }
+            if(collision.gameObject.tag == "Boulder" || collision.gameObject.tag == "Untagged" || collision.gameObject.tag == "IceBlock")
+            {
+                IgnoreColision(true);
+                isDed = true;
+                anima.Play(clipDie);
                 StartCoroutine(Destroy());
             }
 
-            if (collision.gameObject.tag == "Bomb")
+            if (collision.gameObject.tag == "Bomb" || curHealth == 0)
             {
-                anima.Play(clipExplo);
-                isDed = true;
                 IgnoreColision(true);
+                isDed = true;
+                anima.Play(clipExplo);
                 StartCoroutine(Destroy());
 
             }
@@ -82,13 +89,7 @@ public class Boss : MonoBehaviour
                 }
 
             }
-            if (curHealth == 0)
-            {
-
-                isDed = true;
-                anima.Play(clipDie);
-                StartCoroutine(Destroy());
-            }
+            
 
             if (collision.gameObject.tag == "Fish")
             {
@@ -102,11 +103,12 @@ public class Boss : MonoBehaviour
         Physics2D.IgnoreLayerCollision(9, 9, check);
         Physics2D.IgnoreLayerCollision(9, 8, check);
         Physics2D.IgnoreLayerCollision(9, 13, check);
+        Physics2D.IgnoreLayerCollision(9, 10, check);
     }
 
     IEnumerator Destroy()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         this.transform.GetChild(0).gameObject.SetActive(false);
         this.gameObject.GetComponent<BossMove>().enabled = false;
         this.gameObject.GetComponent<Boss>().enabled = false;
