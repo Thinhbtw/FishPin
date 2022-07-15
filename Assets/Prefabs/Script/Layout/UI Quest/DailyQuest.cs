@@ -13,7 +13,7 @@ namespace DailyQuestSystem
         Gems
     }
     
-    [Serializable] public enum typeID
+    public enum typeID
     {
         levelFinished,
         enemiesKilled,
@@ -87,10 +87,16 @@ namespace DailyQuestSystem
         [SerializeField] Button weeklyBtn;
         [SerializeField] Button monthlyBtn;
 
-        
+
+        /*[Space]
+        [Header("debuging")]*/
+        /*[SerializeField] Text dailyTimer;        
+        [SerializeField] Text weeklyTimer;        
+        [SerializeField] Text monthlyTimer;*/
 
         [SerializeField] Text clocker;
-        
+
+        /*double a, b, c;*/
 
 
         DateTime currentDatetime;
@@ -112,14 +118,24 @@ namespace DailyQuestSystem
             Initialize();
             StopAllCoroutines();
             StartCoroutine(checkForQuestReload());
-            rewardNotification.SetActive(false);
         }
 
         // Start is called before the first frame update
         void Start()
         {
             questCanvas.SetActive(false);
-                        
+            
+            /*btnStatus = questBtnType.daily;*/
+            
+            
+            /*resetQuestData(rewardsDBDaily);
+            resetQuestData(rewardsDBWeekly);
+            resetQuestData(rewardsDBMonthly);
+            resetTimeData();*/
+
+           /* a = nextQuestDelay_Daily;
+            b = nextQuestDelay_Weekly;
+            c = nextQuestDelay_Monthly;*/
         }
 
         void getRealTime()
@@ -161,7 +177,10 @@ namespace DailyQuestSystem
             openButton.onClick.AddListener(OnOpenButtonClick);
 
             closeButtonDaily.onClick.RemoveAllListeners();
-            closeButtonDaily.onClick.AddListener(OnCloseButtonClick);           
+            closeButtonDaily.onClick.AddListener(OnCloseButtonClick);
+
+            /*closeButtonWeekly.onClick.RemoveAllListeners();
+            closeButtonWeekly.onClick.AddListener(OnCloseButtonClick);*/
 
 
             dailyBtn.onClick.RemoveAllListeners();
@@ -222,14 +241,23 @@ namespace DailyQuestSystem
         IEnumerator checkForQuestReload()
         {            
             while (true)
-            {
-                notificationCheck();
+            {               
                 //check reset daily
                 resetTime(INSTANCE.dailyTime, nextQuestDelay_Daily, rewardsDBDaily);
                 //check reset weekly
                 resetTime(INSTANCE.weeklyTime, nextQuestDelay_Weekly, rewardsDBWeekly);
                 //check reset monthly
-                resetTime(INSTANCE.monthlyTime, nextQuestDelay_Monthly, rewardsDBMonthly);                
+                resetTime(INSTANCE.monthlyTime, nextQuestDelay_Monthly, rewardsDBMonthly);
+
+                /*a--;
+                b--;
+                c--;
+                if (a == 0)
+                    a = nextQuestDelay_Daily;                                
+                if (b == 0)
+                    b = nextQuestDelay_Weekly;
+                if (c == 0)
+                    c = nextQuestDelay_Monthly;*/
 
                 yield return new WaitForSeconds(checkForQuestDelay);
 
@@ -237,7 +265,16 @@ namespace DailyQuestSystem
         }
 
         void resetTime(string timeName,double nextQuestDelay, RewardDatabases database)
-        {                      
+        {
+            /*Debug.Log(btnStatus.ToString());
+            if (WorldTimeAPI.Instance.IsTimeLodaed)
+            {
+                currentDatetime = WorldTimeAPI.Instance.GetCurrentDateTime();
+            }
+            else
+            {
+                currentDatetime = DateTime.Now;
+            } */           
             //reset time
             DateTime questDatetime = DateTime.Parse(PlayerPrefs.GetString(timeName, currentDatetime.ToString()));
             //get total sec between this 2 dates (can use total hour)
@@ -249,15 +286,12 @@ namespace DailyQuestSystem
                 switch (btnStatus)
                 {
                     case questBtnType.daily:
-                        GameData.resetListIndexByid(INSTANCE.dailyID);
                         loadQuest(rewardsDBDaily, listDaily, questTransform, INSTANCE.dailyID);
                         break;
                     case questBtnType.weekly:
-                        GameData.resetListIndexByid(INSTANCE.weeklyID);
                         loadQuest(rewardsDBWeekly, listWeekly, questTransform, INSTANCE.weeklyID);
                         break;
                     case questBtnType.monthly:
-                        GameData.resetListIndexByid(INSTANCE.monthlyID);
                         loadQuest(rewardsDBMonthly, listMonthly, questTransform, INSTANCE.monthlyID);
                         break;
                 }
@@ -265,7 +299,10 @@ namespace DailyQuestSystem
         }
 
         void resetQuestData(RewardDatabases data)
-        {            
+        {
+            /* a = nextQuestDelay_Daily;
+             b = nextQuestDelay_Weekly;
+             c = nextQuestDelay_Monthly;*/
             data.resetProcess();
             for (int i = 0; i < data.rewardsCount; i++)
             {
@@ -282,12 +319,18 @@ namespace DailyQuestSystem
         }
 
 
-        /*public void notificationOnOff(bool status)
+        public void notificationOnOff(bool status)
         {
             rewardNotification.SetActive(status);
-        }*/                
+        }                
        
-                       
+                
+       /* void CheckQuest()
+        {
+
+            *//*Debug.Log("notification update");*//*
+            
+        }*/
         void loadQuest(RewardDatabases data,List<GameObject> listQuest, Transform questField, string questId)
         {
             List<string> questTitle = new List<string>();
@@ -300,87 +343,68 @@ namespace DailyQuestSystem
             }
 
             listQuest.Clear();
-            if (GameData.getListIndex(questId).Count == 0)
-            {                
-                int goldQuestCount = 0, gemQuestCount = 0, questList = 0 ;
-                while (questList<3)
+            if (GameData.getIndexList() == null)
+            {
+                int goldQuestCount = 0, gemQuestCount = 0;
+                while (listQuest.Count < 3)
                 {
                     int index = UnityEngine.Random.Range(0, data.rewardsCount);
-                    if (GameData.getListIndex(questId) != null && GameData.getListIndex(questId).Contains(index))
+                    if (goldQuestCount > 2)
                     {
                         continue;
                     }
-                    switch (data.GetQuest(index).Type)
+                    if(gemQuestCount > 1)
+                    {
+                        continue;
+                    }
+                    GameData.addIndexList(index);
+                    GameObject quest = Instantiate(questPrefab, questField);
+                    if (PlayerPrefs.GetInt(data.GetQuest(index).title) == INSTANCE.claimed)
+                    {
+                        quest.SetActive(false);
+                    }
+                    quest.GetComponent<QuestScript>().QuestIndex = index;
+                    listQuest.Add(quest);
+                }
+                for (int i = 0; i < listQuest.Count; i++)
+                {
+                    int questIndex = listQuest[i].GetComponent<QuestScript>().QuestIndex;
+                    switch (data.GetQuest(questIndex).Type)
                     {
                         case RewardType.Coins:
-                            if(goldQuestCount >= 2)
-                            {
-                                continue;
-                            }
-                            goldQuestCount++;
-                            GameData.addlist(GameData.getListIndex(questId),index);                            
-                            questList++;
+                            listQuest[i].GetComponent<QuestScript>().setupQuest(iconCoinsSprite, data.GetQuest(questIndex).Amount, data.GetQuest(questIndex).title, data.GetQuest(questIndex), this.gameObject);
                             break;
                         case RewardType.Gems:
-                            if (gemQuestCount >= 1)
-                            {
-                                continue;
-                            }
-                            gemQuestCount++;
-                            GameData.addlist(GameData.getListIndex(questId), index);
-                            questList++;
+                            listQuest[i].GetComponent<QuestScript>().setupQuest(iconGemsSprite, data.GetQuest(questIndex).Amount, data.GetQuest(questIndex).title, data.GetQuest(questIndex), this.gameObject);
                             break;
-                    }                    
-                }                
-            }            
-            List<int> indexList = GameData.getListIndex(questId);                        
-            for (int i = 0; i < indexList.Count; i++)
-            {                
-                GameObject quest = Instantiate(questPrefab, questField);
-                if (PlayerPrefs.GetInt(data.GetQuest(indexList[i]).title) == INSTANCE.claimed)
-                {
-                    quest.SetActive(false);
-                }
-                quest.GetComponent<QuestScript>().QuestIndex = indexList[i];
-                listQuest.Add(quest);
-                switch (data.GetQuest(indexList[i]).Type)
-                {
-                    case RewardType.Coins:
-                        listQuest[i].GetComponent<QuestScript>().setupQuest(iconCoinsSprite, data.GetQuest(indexList[i]).Amount, data.GetQuest(indexList[i]).title, data.GetQuest(indexList[i]), this.gameObject);
-                        break;
-                    case RewardType.Gems:
-                        listQuest[i].GetComponent<QuestScript>().setupQuest(iconGemsSprite, data.GetQuest(indexList[i]).Amount, data.GetQuest(indexList[i]).title, data.GetQuest(indexList[i]), this.gameObject);
-                        break;
+                    }
                 }
             }
-
-        }
-
-        //check button glowing
-        public void glowingCheck()
-        {
-            switch (btnStatus)
+            else
             {
-                case questBtnType.daily:
-                    dailyBtn.GetComponent<Outline>().enabled = true;
-                    weeklyBtn.GetComponent<Outline>().enabled = false;
-                    monthlyBtn.GetComponent<Outline>().enabled = false; 
-                    break;
-                case questBtnType.weekly:
-                    weeklyBtn.GetComponent<Outline>().enabled = true;
-                    dailyBtn.GetComponent<Outline>().enabled = false;
-                    monthlyBtn.GetComponent<Outline>().enabled = false;
-                    break;
-                case questBtnType.monthly:
-                    monthlyBtn.GetComponent<Outline>().enabled = true;
-                    weeklyBtn.GetComponent<Outline>().enabled = false;
-                    dailyBtn.GetComponent<Outline>().enabled = false;
-                    break;
+                List<int> indexList = GameData.getIndexList();
+                for(int i = 0; i < indexList.Count; i++)
+                {
+                    GameObject quest = Instantiate(questPrefab, questField);
+                    if (PlayerPrefs.GetInt(data.GetQuest(indexList[i]).title) == INSTANCE.claimed)
+                    {
+                        quest.SetActive(false);
+                    }
+                    quest.GetComponent<QuestScript>().QuestIndex = indexList[i];
+                    listQuest.Add(quest);
+                    switch (data.GetQuest(indexList[i]).Type)
+                    {
+                        case RewardType.Coins:
+                            listQuest[i].GetComponent<QuestScript>().setupQuest(iconCoinsSprite, data.GetQuest(indexList[i]).Amount, data.GetQuest(indexList[i]).title, data.GetQuest(indexList[i]), this.gameObject);
+                            break;
+                        case RewardType.Gems:
+                            listQuest[i].GetComponent<QuestScript>().setupQuest(iconGemsSprite, data.GetQuest(indexList[i]).Amount, data.GetQuest(indexList[i]).title, data.GetQuest(indexList[i]), this.gameObject);
+                            break;
+                    }
+                }
             }
+                  
         }
-
-
-
 
         //check notification------------------
         public void notificationCheck()
@@ -398,8 +422,13 @@ namespace DailyQuestSystem
         }
 
         private void Update()
-        {            
-            glowingCheck();            
+        {
+            notificationCheck();
+
+            //Debug.Log(btnStatus);
+            /*dailyTimer.text = a.ToString();
+            weeklyTimer.text = b.ToString();
+            monthlyTimer.text = c.ToString();*/
 
             if (WorldTimeAPI.Instance.IsTimeLodaed)
             {

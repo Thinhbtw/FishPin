@@ -12,8 +12,8 @@ public class UIShop : MonoBehaviour
 
     void Awake()
     {
-        /*GameData.AddGems(1005);
-        GameData.AddCoin(2050);*/
+        GameData.AddGems(1005);
+        GameData.AddCoin(2050);
         canvas = GetComponent<Canvas>();
         Instance = (UIShop)this;
     }

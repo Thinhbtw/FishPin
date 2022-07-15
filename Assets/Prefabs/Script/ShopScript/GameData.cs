@@ -14,14 +14,8 @@ using System.Collections.Generic;
 {
     public int coin = 0;
     public int gems = 0;
-    public int selectedThemeIndex = 0;    
-}
-
-[System.Serializable]public class QuestListData
-{
-    public List<int> dailyList = new List<int>();
-    public List<int> weeklyList = new List<int>();
-    public List<int> monthlyList = new List<int>();
+    public int selectedThemeIndex = 0;
+    public List<int> indexList = new List<int>();
 }
 
 
@@ -29,7 +23,6 @@ public static class GameData
 {
     static PlayerData playerData = new PlayerData();
     static ThemeShopData themeShopData = new ThemeShopData();
-    static QuestListData QuestListData = new QuestListData();
 
     static Theme selectedTheme;
 
@@ -37,7 +30,6 @@ public static class GameData
     {
         LoadPlayerData();
         LoadThemeShopData();
-        LoadQuestListIndexData();
     }
 
         
@@ -75,49 +67,19 @@ public static class GameData
     {
         playerData.gems += amount;
         SavePlayerData();
-    }   
-
-    public static void addlist(List<int> listIndex,int index)
-    {
-        listIndex.Add(index);
-        SaveQuestListIndexData();
     }
 
-    public static List<int> getListIndex(string id)
+    public static void addIndexList(int index)
     {
-        List<int> list = new List<int>();
-        switch (id)
-        {
-            case "D":
-                list = QuestListData.dailyList;
-                break;            
-            case "W":
-                list = QuestListData.weeklyList;
-                break;
-            case "M":
-                list = QuestListData.monthlyList;
-                break;
-
-        }
-        return list;
+        playerData.indexList.Add(index);
+        SavePlayerData();
     }
 
-    public static void resetListIndexByid(string id)
+    public static List<int> getIndexList()
     {
-        switch (id)
-        {
-            case "D":
-                QuestListData.dailyList.Clear();
-                break;
-            case "W":
-                QuestListData.weeklyList.Clear();
-                break;
-            case "M":
-                QuestListData.monthlyList.Clear();
-                break;
-        }
-        SaveQuestListIndexData();
+        return playerData.indexList;
     }
+
     public static bool CanSpendGems(int amount)
     {
         return (playerData.gems >= amount);
@@ -143,18 +105,6 @@ public static class GameData
 
     }
       
-    static void SaveQuestListIndexData()
-    {
-        BinarySerializer.Save(QuestListData, "Quest_List_Index_Data.txt");
-        UnityEngine.Debug.Log("<color=magenta>[QuestListData] Saved </color>");
-
-    }
-
-    static void LoadQuestListIndexData()
-    {
-        QuestListData = BinarySerializer.Load<QuestListData>("Quest_List_Index_Data.txt");
-        UnityEngine.Debug.Log("<color=green>[QuestListData] Loaded </color>");
-    }
 
     //Theme Data Method
 
