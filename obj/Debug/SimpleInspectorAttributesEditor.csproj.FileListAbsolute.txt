@@ -1,2 +1,0 @@
-C:\Users\HP\Documents\HocTap\Project Unity\FishPin-New\FishPin\obj\Debug\SimpleInspectorAttributesEditor.csproj.AssemblyReference.cache
-C:\Users\HP\Documents\HocTap\Project Unity\FishPin-New\FishPin\obj\Debug\SimpleInspectorAttributesEditor.csproj.CoreCompileInputs.cache

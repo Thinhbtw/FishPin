@@ -1,2 +1,0 @@
-C:\Users\HP\Documents\HocTap\Project Unity\FishPin-New\FishPin\obj\Debug\SimpleScrollSnap.csproj.AssemblyReference.cache
-C:\Users\HP\Documents\HocTap\Project Unity\FishPin-New\FishPin\obj\Debug\SimpleScrollSnap.csproj.CoreCompileInputs.cache
