@@ -90,7 +90,7 @@ public class TwoWayPin : MonoBehaviour
                                 }
                                 if (touchPos.x - previousTouchPos.x < 0)
                                 {
-                                    rb.velocity = new Vector2((pos2.transform.position.x - pos1.transform.position.x), (pos2.transform.position.y - pos1.transform.position.y));
+                                    rb.velocity = new Vector2((pos2.transform.position.x - pos1.transform.position.x) * speed, (pos2.transform.position.y - pos1.transform.position.y) * speed);
                                     return;
                                 }
                             }
