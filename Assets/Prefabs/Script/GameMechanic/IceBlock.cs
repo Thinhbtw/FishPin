@@ -23,14 +23,14 @@ public class IceBlock : MonoBehaviour
 
         if(count>= amountToMelt)
         {
-            hasAdded = true;
-            count = 0;
-            this.transform.GetChild(0).gameObject.SetActive(false);
             for (int i = 0; i < Quanitty; i++)
             {
                 var newFliud = Instantiate(water, this.transform.position + new Vector3(Random.Range(0f, 0.1f), Random.Range(0f, 0.1f), this.transform.position.z), Quaternion.identity);
                 newFliud.transform.parent = this.gameObject.transform;
             }
+            this.transform.GetChild(0).gameObject.SetActive(false);
+            hasAdded = true;
+            count = 0;
             
         }
 
