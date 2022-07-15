@@ -805,12 +805,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.3149999, y: 0.155}
-      - {x: -1.3149999, y: -0.044999998}
-      - {x: -1.275, y: -0.074999996}
-      - {x: 1.235, y: -0.074999996}
-      - {x: 1.275, y: -0.065}
-      - {x: 1.275, y: 0.155}
+    - - {x: -1.1382154, y: 0.07688567}
+      - {x: -1.1505493, y: 0.0043353364}
+      - {x: -1.0776587, y: -0.013330989}
+      - {x: 0.7375362, y: -0.0133310035}
+      - {x: 0.7446457, y: -0.032109976}
+      - {x: 0.7282008, y: 0.08921966}
 --- !u!1 &8262158644244522516
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +936,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -42.047523, y: 3.4834518}
+  m_Offset: {x: -42.047523, y: 3.2113342}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -947,7 +947,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 182.72615, y: 111.25603}
+  m_Size: {x: 182.72615, y: 67.17453}
   m_EdgeRadius: 0
 --- !u!114 &6757756469208064974
 MonoBehaviour:
@@ -1039,7 +1039,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -43.161148, y: 2.369812}
+  m_Offset: {x: -43.161148, y: 1.7893448}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1050,7 +1050,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 180.4989, y: 124.61978}
+  m_Size: {x: 180.4989, y: 65.41225}
   m_EdgeRadius: 0
 --- !u!114 &6336790282272110704
 MonoBehaviour:
@@ -1352,12 +1352,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.3149999, y: 0.155}
-      - {x: -1.3149999, y: -0.044999998}
-      - {x: -1.275, y: -0.074999996}
-      - {x: 1.235, y: -0.074999996}
-      - {x: 1.275, y: -0.065}
-      - {x: 1.275, y: 0.155}
+    - - {x: -1.1485763, y: 0.091759026}
+      - {x: -1.1485761, y: -0.005058285}
+      - {x: -1.1359497, y: -0.014165334}
+      - {x: 0.8098705, y: -0.00841368}
+      - {x: 0.81401634, y: -0.00865753}
+      - {x: 0.81401634, y: 0.088413656}
 --- !u!1 &9069593781877725147
 GameObject:
   m_ObjectHideFlags: 0
