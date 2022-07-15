@@ -5,6 +5,7 @@ using UnityEngine;
 public class DestroyOnTouch1 : MonoBehaviour
 {
     public Rigidbody2D rb;
+    [SerializeField] float power;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
