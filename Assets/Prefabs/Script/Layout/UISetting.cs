@@ -95,7 +95,7 @@ public class UISetting : MonoBehaviour
                     UIGameplay.Instance.gameObject.SetActive(false);
                     UIHome.Instance.gameObject.SetActive(true);
                 }              
-                else if (UIManager.Instance.list.Count >= 4)
+                else if (UIManager.Instance.list.Count > 4)
                 {
                     UIManager.Instance.RemoveFromListDialog(this.gameObject);
                     UISettingIngame.Instance.Pause();
