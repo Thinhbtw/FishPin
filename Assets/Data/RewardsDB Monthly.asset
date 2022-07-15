@@ -18,3 +18,28 @@ MonoBehaviour:
     title: Just die twice
     required: 2
     typeID: 1
+    process: 0
+  - Type: 1
+    Amount: 1
+    title: die 3
+    required: 3
+    typeID: 1
+    process: 0
+  - Type: 0
+    Amount: 2
+    title: dont do anyhing
+    required: 2
+    typeID: 0
+    process: 0
+  - Type: 0
+    Amount: 1
+    title: 'dunno '
+    required: 2
+    typeID: 0
+    process: 0
+  - Type: 0
+    Amount: 1
+    title: shiet
+    required: 2
+    typeID: 2
+    process: 0
