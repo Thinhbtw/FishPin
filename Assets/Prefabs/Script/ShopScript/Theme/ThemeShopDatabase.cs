@@ -20,4 +20,9 @@ public class ThemeShopDatabase : ScriptableObject
     {
         themes[index].isPurchased = true;
     }
+
+    public void NotPurchaseTheme(int index)
+    {
+        themes[index].isPurchased = false;
+    }
 }

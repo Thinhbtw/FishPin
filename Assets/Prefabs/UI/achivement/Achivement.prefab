@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 905732997478089478}
   - component: {fileID: 2095989710023353532}
   m_Layer: 5
-  m_Name: achivement
+  m_Name: Achivement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ad871e564ee0524da7a71921f5f7c8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2b089348cbffed45a69e68a62cc0de3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -764,7 +764,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5607088d71104d643b6dadaaf9e67808, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5eefd1c0513a0754881d59e80ce686ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

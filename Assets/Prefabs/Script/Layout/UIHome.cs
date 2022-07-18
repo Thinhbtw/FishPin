@@ -13,6 +13,7 @@ public class UIHome : MonoBehaviour
     [SerializeField] Text levelText;
     private void Awake()
     {
+        GameData.AddGems(5000);
         Instance = (UIHome)this;
         if (PlayerPrefs.HasKey("SelectedLevel"))
         {
