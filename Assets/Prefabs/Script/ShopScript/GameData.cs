@@ -23,6 +23,16 @@ using System.Collections.Generic;
     public List<int> weeklyList = new List<int>();
     public List<int> monthlyList = new List<int>();
 }
+
+public enum AdStates
+{
+    Idle,
+    Playing,
+    Finish,
+    Fail
+}
+
+
 public static class GameData
 {
     static PlayerData playerData = new PlayerData();
@@ -31,12 +41,15 @@ public static class GameData
 
     static Theme selectedTheme;
 
+    static AdStates adStates = AdStates.Idle;
+    static bool isAdsOn = false, IsAddMoney;
     static GameData()
     {
         
         LoadPlayerData();
         LoadThemeShopData();
         LoadQuestListIndexData();
+        IsAddMoney = false;
     }
 
         
@@ -131,32 +144,28 @@ public static class GameData
     static void LoadPlayerData()
     {
         playerData = BinarySerializer.Load<PlayerData>("player-data.txt");
-        UnityEngine.Debug.Log("<color=green>[PlayerData] Loaded </color>");
             
     }
 
     static void SavePlayerData()
     {
         BinarySerializer.Save(playerData,"player-data.txt");
-        UnityEngine.Debug.Log("<color=magenta>[PlayerData] Saved </color>");
 
     }
       
     static void SaveQuestListIndexData()
     {
         BinarySerializer.Save(QuestListData, "Quest_List_Index_Data.txt");
-        UnityEngine.Debug.Log("<color=magenta>[QuestListData] Saved </color>");
 
     }
 
     static void LoadQuestListIndexData()
     {
         QuestListData = BinarySerializer.Load<QuestListData>("Quest_List_Index_Data.txt");
-        UnityEngine.Debug.Log("<color=green>[QuestListData] Loaded </color>");
     }
 
     //Theme Data Method
-
+    #region Theme
     public static void AddPurchasedThemes(int themeIndex)
     {
         themeShopData.purchaseThemeIndex.Add(themeIndex);
@@ -192,14 +201,36 @@ public static class GameData
     static void LoadThemeShopData()
     {
         themeShopData = BinarySerializer.Load<ThemeShopData>("theme-shop-data.txt");
-        UnityEngine.Debug.Log("<color=green>[ThemeShop] Loaded </color>");
 
     }
 
     static void SaveThemeShopData()
     {
         BinarySerializer.Save(themeShopData, "theme-shop-data.txt");
-        UnityEngine.Debug.Log("<color=magenta>[ThemeShop] Saved </color>");
 
     }
+
+    #endregion
+
+    #region Ads
+    public static void ChangedAdStates(AdStates ads, bool isAddMoney)
+    {
+        adStates = ads;
+        IsAddMoney = isAddMoney;
+    }
+    public static AdStates GetAdStatus()
+    {
+        return adStates;
+    }
+    public static void showVideosAds()
+    {
+        ToponAdsController.instance.OpenInterstitialAds();
+    }
+    public static void showRewardAds(bool isAddCoin)
+    {
+        isAdsOn = true;
+        ToponAdsController.instance.OpenVideoAds();
+    }
+
+    #endregion
 }
