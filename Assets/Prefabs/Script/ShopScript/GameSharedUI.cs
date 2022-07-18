@@ -20,6 +20,7 @@ public class GameSharedUI : MonoBehaviour
     [SerializeField] Text[] coinUIText;
     [SerializeField] Text[] gemsUIText;
 
+
     public void UpdateCoinsUIText()
     {
         for(int i = 0; i < coinUIText.Length; i++)
