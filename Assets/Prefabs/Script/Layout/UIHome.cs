@@ -95,10 +95,10 @@ public class UIHome : MonoBehaviour
         if (btnShop != null)
             btnShop.onClick.AddListener(() =>
             {
-                if(UIShop.Instance == null)
+                if(UIShop.Instance != null)
                 {
                     gameObject.SetActive(false);
-                    UIManager.Instance.AddToListDialog(UIManager.Instance.UIShop);
+                    UIShop.Instance.gameObject.SetActive(true);
                 }
             });
 
