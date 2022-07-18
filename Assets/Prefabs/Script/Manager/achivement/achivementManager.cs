@@ -2,19 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DailyQuestSystem;
 
 public class achivementManager : MonoBehaviour
 {
     public static achivementManager instance;
 
-    public List<string> title = new List<string>();
-    public List<int> presentCode = new List<int>();
+    [Space]
+    [Header("Reward Database")]
+    [SerializeField] RewardDatabases AchievementListData;
+
+    [Space]
+    [Header("Reward Image")]
+    [SerializeField] Sprite iconCoinsSprite;
+    [SerializeField] Sprite iconGemsSprite;
+
     [SerializeField] GameObject achivePref;
     [SerializeField] GameObject general;
     public List<GameObject> achivements = new List<GameObject>();
-    readTXTFile reader = new readTXTFile();
-
-    Dictionary<string, string> achiveAmount = new Dictionary<string, string>();
+    
 
     [SerializeField] Button btnBack;
 
@@ -25,46 +31,31 @@ public class achivementManager : MonoBehaviour
 
     void Start()
     {
-        reader.Get("archiveList");
-        title = reader.getString();
-        presentCode = reader.getInt();
-        achiveAmount = reader.getAmount();
-        for(int i = 0; i < title.Count; i++)
+                
+        for(int i = 0; i < AchievementListData.rewardsCount; i++)
         {
-            GameObject achive =  Instantiate(achivePref, general.transform);
-            setAchive(achive, i);            
-            achivements.Add(achive);            
+            GameObject achieve = Instantiate(achivePref, general.transform);            
+            achivements.Add(achieve);
         }
-
-        
+        setAchive(AchievementListData);
     }
     
-    public void setAchive(GameObject achive, int i)
+    public void setAchive(RewardDatabases data)
     {
-
-        /*achivComp = new archivement(title[i], presentCode[i], getAmount(i));*/
-        achive.GetComponent<archivement>().archivementTitle = title[i];
-        achive.GetComponent<archivement>().titleSet(title[i]);
-        achive.GetComponent<archivement>().achiveCode = presentCode[i];
-        achive.GetComponent<archivement>().achiveAmount = getAmountbyId(i);
-        achive.GetComponent<archivement>().achiveIndex = achivements.Count;        
-    }
-     
-    string getAmountbyId(int i)
-    {
-        string temp;
-        if (achiveAmount.TryGetValue("achive" + i, out temp))
+        for(int i = 0; i < achivements.Count; i++)
         {
-            temp = achiveAmount["achive" + i];
-            Debug.Log("temp "+i+": "+ temp);
+            switch (data.GetQuest(i).Type)
+            {
+                case RewardType.Coins:
+                    achivements[i].GetComponent<QuestScript>().setupQuest(iconCoinsSprite, data.GetQuest(i).Amount, data.GetQuest(i).title, data.GetQuest(i), true);
+                    break;
+                case RewardType.Gems:
+                    achivements[i].GetComponent<QuestScript>().setupQuest(iconGemsSprite, data.GetQuest(i).Amount, data.GetQuest(i).title, data.GetQuest(i), true);
+                    break;
+            }
         }
-        else
-        {
-            Debug.Log("deo co temp");
-            temp = null;
-        }
-        return temp;
     }
+         
 
     private void OnEnable()
     {

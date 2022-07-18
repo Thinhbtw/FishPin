@@ -12,35 +12,39 @@ public class QuestScript : MonoBehaviour
     [SerializeField] Text title;
     [SerializeField] int questIndex;
     [SerializeField] Text numberProgress;
-    [SerializeField] GameObject progressBar;              
+    [SerializeField] GameObject progressBar;
+    [SerializeField] GameObject claimPanel;
 
     //private bool claimAble;
+    bool isAchievement;
 
-    [SerializeField] Quest quest;
-    public GameObject parentControl;
+    [SerializeField] Quest quest;    
 
     
 
     public int QuestIndex { get => questIndex; set => questIndex = value; }
     
 
-    public void setupQuest(Sprite questIcon,int questAmount, string questTitle, Quest questByIndex, GameObject parent)
+    public void setupQuest(Sprite questIcon,int questAmount, string questTitle, Quest questByIndex, bool IsAchievement)
     {
         icon.sprite = questIcon;
         number.text = "+" + questAmount.ToString();
         title.text = questTitle;
-        quest = questByIndex;
-        parentControl = parent;           
+        quest = questByIndex;             
 
         GetComponent<Button>().onClick.RemoveAllListeners();
         GetComponent<Button>().onClick.AddListener(claimButton);
-        progressBar.GetComponent<Slider>().maxValue = quest.required;
+        isAchievement = IsAchievement;
+        if (!IsAchievement)
+        {
+            progressBar.GetComponent<Slider>().maxValue = quest.required;
+        }               
     }
         
 
     private void Update()
     {        
-        if(PlayerPrefs.GetInt(quest.typeID.ToString())<= quest.required)
+        if(quest.process<= quest.required)
         {
             numberProgress.text = quest.process + "/" + quest.required.ToString();
         }
@@ -48,8 +52,12 @@ public class QuestScript : MonoBehaviour
         {
             numberProgress.text = quest.required.ToString() + "/" + quest.required.ToString();
         }
-        
-        progressBar.GetComponent<Slider>().value = quest.process;        
+
+        if (!isAchievement)
+        {
+            /*progressBar.GetComponent<Slider>().value = quest.process;*/
+        }
+                
         if (PlayerPrefs.GetInt(title.text) == INSTANCE.unclaimAble || PlayerPrefs.GetInt(title.text) == INSTANCE.claimed)
         {            
             Deactivate();
@@ -66,24 +74,23 @@ public class QuestScript : MonoBehaviour
         //check reward Type
         if (quest.Type == RewardType.Coins)
         {
-            Debug.Log("<color=white>" + quest.Type.ToString() + " Claimed : </color>+" + quest.Amount);
-            /*CurrencyData.Coins += quest.Amount;*/
-            GameData.AddCoin(quest.Amount);
-
-            //TODO FX:
-            parentControl.GetComponent<DailyQuest>().UpdateCoinsTextUi();
+            /*Debug.Log("<color=white>" + quest.Type.ToString() + " Claimed : </color>+" + quest.Amount);*/            
+            GameData.AddCoin(quest.Amount);            
         }
         else if (quest.Type == RewardType.Gems)
         {
-            Debug.Log("<color=white>" + quest.Type.ToString() + " Claimed : </color>+" + quest.Amount);
-            /*CurrencyData.Gems += quest.Amount;*/
-            GameData.AddGems(quest.Amount);
-                
-            //TODO FX:
-            parentControl.GetComponent<DailyQuest>().UpdateGemsTextUi();
+            /*Debug.Log("<color=white>" + quest.Type.ToString() + " Claimed : </color>+" + quest.Amount);*/            
+            GameData.AddGems(quest.Amount);                            
         }
-        PlayerPrefs.SetInt(title.text, INSTANCE.claimed);     
-        gameObject.SetActive(false);
+        PlayerPrefs.SetInt(title.text, INSTANCE.claimed);
+        if (!isAchievement)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            claimPanel.SetActive(true);
+        }
     }
     
 

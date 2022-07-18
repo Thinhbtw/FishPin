@@ -127,17 +127,17 @@ namespace DailyQuestSystem
             //check if the game is opened for the first time then set Quest_Finish_DateTime to the current date time            
             if (string.IsNullOrEmpty(PlayerPrefs.GetString(INSTANCE.dailyTime)))
             {
-                Debug.Log("chua co time dau game daily");
+                /*Debug.Log("chua co time dau game daily");*/
                 PlayerPrefs.SetString(INSTANCE.dailyTime, currentDatetime.ToString());
             }
             if (string.IsNullOrEmpty(PlayerPrefs.GetString(INSTANCE.weeklyTime)))
             {
-                Debug.Log("chua co time dau game weekly");
+                /*Debug.Log("chua co time dau game weekly");*/
                 PlayerPrefs.SetString(INSTANCE.weeklyTime, currentDatetime.ToString());
             }
             if (string.IsNullOrEmpty(PlayerPrefs.GetString(INSTANCE.monthlyTime)))
             {
-                Debug.Log("chua co time dau game monthly");
+                /*Debug.Log("chua co time dau game monthly");*/
                 PlayerPrefs.SetString(INSTANCE.monthlyTime, currentDatetime.ToString());
             }
             
@@ -153,8 +153,8 @@ namespace DailyQuestSystem
             loadSumData(sumData, rewardsDBMonthly);
 
             //update mainmenu ui
-            UpdateCoinsTextUi();
-            UpdateGemsTextUi();
+            /*UpdateCoinsTextUi();
+            UpdateGemsTextUi();*/
 
             //add click events
             openButton.onClick.RemoveAllListeners();
@@ -271,7 +271,7 @@ namespace DailyQuestSystem
             {
                 PlayerPrefs.SetInt(data.GetQuest(i).title.ToString(), INSTANCE.unclaimAble);                
             }
-            Debug.Log("reset data at: " + data.name);
+            /*Debug.Log("reset data at: " + data.name);*/
         }
 
         void resetTimeData()
@@ -346,10 +346,10 @@ namespace DailyQuestSystem
                 switch (data.GetQuest(indexList[i]).Type)
                 {
                     case RewardType.Coins:
-                        listQuest[i].GetComponent<QuestScript>().setupQuest(iconCoinsSprite, data.GetQuest(indexList[i]).Amount, data.GetQuest(indexList[i]).title, data.GetQuest(indexList[i]), this.gameObject);
+                        listQuest[i].GetComponent<QuestScript>().setupQuest(iconCoinsSprite, data.GetQuest(indexList[i]).Amount, data.GetQuest(indexList[i]).title, data.GetQuest(indexList[i]),false);
                         break;
                     case RewardType.Gems:
-                        listQuest[i].GetComponent<QuestScript>().setupQuest(iconGemsSprite, data.GetQuest(indexList[i]).Amount, data.GetQuest(indexList[i]).title, data.GetQuest(indexList[i]), this.gameObject);
+                        listQuest[i].GetComponent<QuestScript>().setupQuest(iconGemsSprite, data.GetQuest(indexList[i]).Amount, data.GetQuest(indexList[i]).title, data.GetQuest(indexList[i]),false);
                         break;
                 }
             }
@@ -413,14 +413,14 @@ namespace DailyQuestSystem
         }
 
         //update main menu ui--------------------------------------------
-        public void UpdateCoinsTextUi()
+        /*public void UpdateCoinsTextUi()
         {
             //coinsText.text = CurrencyData.Coins.ToString();
         }
         public void UpdateGemsTextUi()
         {
             //gemsText.text = CurrencyData.Gems.ToString();
-        }
+        }*/
 
         // open | close ui ------------------------------
         void OnOpenButtonClick()

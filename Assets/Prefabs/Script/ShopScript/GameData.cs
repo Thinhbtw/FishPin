@@ -23,8 +23,6 @@ using System.Collections.Generic;
     public List<int> weeklyList = new List<int>();
     public List<int> monthlyList = new List<int>();
 }
-
-
 public static class GameData
 {
     static PlayerData playerData = new PlayerData();

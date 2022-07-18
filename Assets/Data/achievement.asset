@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be2b27009af19140850e728396ea285, type: 3}
+  m_Name: achievement
+  m_EditorClassIdentifier: 
+  quests:
+  - Type: 0
+    Amount: 10
+    title: do 1
+    required: 1
+    typeID: 0
+    process: 0
+  - Type: 0
+    Amount: 20
+    title: do 2
+    required: 2
+    typeID: 0
+    process: 0
+  - Type: 0
+    Amount: 30
+    title: do 3
+    required: 3
+    typeID: 0
+    process: 0
+  - Type: 0
+    Amount: 40
+    title: do 4
+    required: 4
+    typeID: 0
+    process: 0
+  - Type: 0
+    Amount: 50
+    title: do 5
+    required: 5
+    typeID: 0
+    process: 0
+  - Type: 0
+    Amount: 60
+    title: do 6
+    required: 6
+    typeID: 0
+    process: 0
+  - Type: 0
+    Amount: 70
+    title: do 7
+    required: 7
+    typeID: 0
+    process: 0
+  - Type: 0
+    Amount: 80
+    title: do 8
+    required: 8
+    typeID: 0
+    process: 0
+  - Type: 0
+    Amount: 90
+    title: do 9
+    required: 9
+    typeID: 0
+    process: 0
+  - Type: 0
+    Amount: 100
+    title: do 10
+    required: 10
+    typeID: 0
+    process: 0

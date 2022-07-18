@@ -32,6 +32,8 @@ public class missionCounter : MonoBehaviour
     [SerializeField] RewardDatabases rewardsDBDaily;
     [SerializeField] RewardDatabases rewardsDBWeekly;
     [SerializeField] RewardDatabases rewardsDBMonthly;
+
+    [SerializeField] RewardDatabases Achievement;
     
     // increasing and decreasing 
 
@@ -61,6 +63,13 @@ public class missionCounter : MonoBehaviour
                 quests.Add(rewardsDBMonthly.GetQuest(t));
             }
         }
+        for (int t = 0; t < Achievement.rewardsCount; t++)
+        {
+            if (Achievement.GetQuest(t).typeID == idtype)
+            {
+                quests.Add(Achievement.GetQuest(t));
+            }
+        }
         return quests;
     }    
     
@@ -85,6 +94,7 @@ public class missionCounter : MonoBehaviour
         rewardsDBDaily.increaseProcess(id);
         rewardsDBWeekly.increaseProcess(id);
         rewardsDBMonthly.increaseProcess(id);
+        Achievement.increaseProcess(id);
         List<Quest> q = questScanner(id);
         for (int i = 0; i < q.Count; i++)
         {
@@ -93,18 +103,5 @@ public class missionCounter : MonoBehaviour
                 PlayerPrefs.SetInt(q[i].title.ToString(), INSTANCE.claimAble);
             }
         }
-    }
-    /*public bool enemiesKilled(Quest quest)
-    {
-        missionCounterData.EnemiesKilled += 1;
-        if(missionCounterData.EnemiesKilled == quest.required)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-        
-    }*/
+    }    
 }
