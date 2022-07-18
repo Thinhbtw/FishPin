@@ -35,6 +35,7 @@ public static class GameData
 
     static GameData()
     {
+        
         LoadPlayerData();
         LoadThemeShopData();
         LoadQuestListIndexData();

@@ -19,11 +19,11 @@ MonoBehaviour:
     currencyImage: {fileID: 21300000, guid: a2b089348cbffed45a69e68a62cc0de3, type: 3}
   - image: {fileID: 21300000, guid: 1acbb9adb09162944b6970054e79ef65, type: 3}
     price: 5000
-    isPurchased: 1
+    isPurchased: 0
     currencyImage: {fileID: 21300000, guid: cae69e5d203600a42af439388fae972b, type: 3}
   - image: {fileID: 21300000, guid: 1acbb9adb09162944b6970054e79ef65, type: 3}
     price: 5000
-    isPurchased: 1
+    isPurchased: 0
     currencyImage: {fileID: 21300000, guid: cae69e5d203600a42af439388fae972b, type: 3}
   - image: {fileID: 21300000, guid: 1acbb9adb09162944b6970054e79ef65, type: 3}
     price: 10000
@@ -31,7 +31,7 @@ MonoBehaviour:
     currencyImage: {fileID: 21300000, guid: cae69e5d203600a42af439388fae972b, type: 3}
   - image: {fileID: 21300000, guid: 1acbb9adb09162944b6970054e79ef65, type: 3}
     price: 4000
-    isPurchased: 1
+    isPurchased: 0
     currencyImage: {fileID: 21300000, guid: cae69e5d203600a42af439388fae972b, type: 3}
   - image: {fileID: 21300000, guid: 1acbb9adb09162944b6970054e79ef65, type: 3}
     price: 10000

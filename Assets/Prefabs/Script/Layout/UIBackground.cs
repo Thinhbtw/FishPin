@@ -85,8 +85,9 @@ public class UIBackground : MonoBehaviour
         {
             ButtonInteracable(true);
         }
+        GameSharedUI.instance.UpdateCoinsUIText();
+        GameSharedUI.instance.UpdateGemsUIText();
 
-       
     }
 
     private void OnEnable()

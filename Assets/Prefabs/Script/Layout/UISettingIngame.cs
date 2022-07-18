@@ -37,6 +37,14 @@ public class UISettingIngame : MonoBehaviour
                     UIBackground.Instance.gameObject.SetActive(false);
                     Continue();
                 }
+                else
+                {
+                    UIShop.Instance.gameObject.SetActive(true);
+                    UIGameplay.Instance.gameObject.SetActive(false);
+                    UiEnd.Instance.gameObject.SetActive(false);
+                    UIBackground.Instance.gameObject.SetActive(false);
+                    Continue();
+                }
             });
         if (btnSetting != null)
             btnSetting.onClick.AddListener(() =>

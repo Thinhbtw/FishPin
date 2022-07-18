@@ -12,10 +12,10 @@ public class UIShop : MonoBehaviour
 
     void Awake()
     {
-        /*GameData.AddGems(1005);
-        GameData.AddCoin(2050);*/
-        canvas = GetComponent<Canvas>();
         Instance = (UIShop)this;
+        canvas = GetComponent<Canvas>();
+        canvas.sortingOrder = 12;
+        this.gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -33,14 +33,14 @@ public class UIShop : MonoBehaviour
 
     void ClickToExit()
     {
-        if (UIManager.Instance.list.Count == 2)
+        if (UIHome.Instance != null)
         {
-            UIManager.Instance.LoadPreviousDialog();
+            this.gameObject.SetActive(false);
             UIHome.Instance.gameObject.SetActive(true);
         }
         else if (UIManager.Instance.list.Count > 4)
         {
-            UIManager.Instance.RemoveFromListDialog(this.gameObject);
+            this.gameObject.SetActive(false);
             UISettingIngame.Instance.Pause();
             UISettingIngame.Instance.gameObject.SetActive(true);
             UIBackground.Instance.gameObject.SetActive(true);
