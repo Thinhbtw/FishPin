@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,39 +53,69 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\AnyThinkAds\Api\ATBannerAdListener.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeShopUI.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UIBackground.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\DestroyOnTouch1.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\UIManager.cs" />
+    <Compile Include="Assets\AnyThinkAds\Common\IATNativeAdClient.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATRect.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\Teleporter.cs" />
+    <Compile Include="Assets\AnyThinkAds\Thrid\JsonException.cs" />
+    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATDownloadClient.cs" />
+    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATAreaListener.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\Theme.cs" />
     <Compile Include="Assets\Prefabs\Script\StaticClass.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATInterstitialAd.cs" />
     <Compile Include="Assets\Prefabs\Script\PinMechanic\PullPin.cs" />
+    <Compile Include="Assets\AnyThinkAds\Platform\ATAdsClientFactory.cs" />
     <Compile Include="Assets\Prefabs\Script\Data\missionCounterData.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UISettingIngame.cs" />
+    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATSDKAPIClient.cs" />
     <Compile Include="Assets\Prefabs\Script\GameManager.cs" />
+    <Compile Include="Assets\AnyThinkAds\Thrid\JsonMockWrapper.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\TabButtons.cs" />
+    <Compile Include="Assets\AnyThinkAds\Common\IATRewardedVideoAdClient.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UI Quest\QuestScript.cs" />
+    <Compile Include="Assets\AnyThinkAds\Thrid\ParserToken.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\FishShopDatabase.cs" />
+    <Compile Include="Assets\AnyThinkAds\Thrid\JsonReader.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\PoisonScript.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UiEnd.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\achivement\achivementManager.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATNativeAd.cs" />
     <Compile Include="Assets\Prefabs\Script\tool\timeAPI\WorldTimeAPI.cs" />
+    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATInterstitialAdClient.cs" />
     <Compile Include="Assets\BinarySerializer\BinarySerializer.cs" />
+    <Compile Include="Assets\AnyThinkAds\Common\IATSDKAPIClient.cs" />
+    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATNativeBannerAdClient.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATInterstitialAutoAd.cs" />
+    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATNetTrafficListener.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\GameData.cs" />
+    <Compile Include="Assets\AnyThinkAds\Thrid\JsonData.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UIGameplay.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\FishTele.cs" />
+    <Compile Include="Assets\AnyThinkAds\Thrid\JsonWriter.cs" />
     <Compile Include="Assets\Prefabs\Script\tool\readTXTFile.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATSDKInitListener.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\FishItemUI.cs" />
     <Compile Include="Assets\Prefabs\Script\PinMechanic\TwoWayPin.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATNativeAdListener.cs" />
     <Compile Include="Assets\Prefabs\Script\AllFishMechanic\FishHealth.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\Dialog.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UIShop.cs" />
+    <Compile Include="Assets\AnyThinkAds\Thrid\JsonMapper.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATRewardedAutoVideo.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeItemUI.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\misssionCounter\missionCounter.cs" />
     <Compile Include="Assets\Prefabs\Script\Data\RewardDatabases.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UI Quest\DailyQuest.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATInterstitialAdListener.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\LevelProgressBar.cs" />
+    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATNativeAdClient.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\TabGroup.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\IceBlock.cs" />
     <Compile Include="Assets\Prefabs\Script\AllFishMechanic\BossMove.cs" />
@@ -93,75 +123,48 @@
     <Compile Include="Assets\Prefabs\Script\Layout\BtnSetLevel.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UISetting.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\achivement\archivement.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATDownloadAdListener.cs" />
     <Compile Include="Assets\Prefabs\Script\Clone.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\BoulderScript.cs" />
     <Compile Include="Assets\Prefabs\Script\LevelComplete.cs" />
     <Compile Include="Assets\Prefabs\Script\INSTANCE\INSTANCE.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATNativeItemProperty.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\GameSharedUI.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATNativeBannerAdListener.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATNativeBannerAd.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeShopDatabase.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATCallbackInfo.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATNativeAdView.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\Bomb.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\WInCondition.cs" />
+    <Compile Include="Assets\AnyThinkAds\Thrid\Netstandard15Polyfill.cs" />
+    <Compile Include="Assets\AnyThinkAds\Common\IATDownloadClient.cs" />
     <Compile Include="Assets\Prefabs\Script\AllFishMechanic\EnemyMoveAround.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATRewardedVideo.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UIHome.cs" />
+    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATMsgTools.cs" />
+    <Compile Include="Assets\AnyThinkAds\Common\IATNativeBannerAdClient.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATAdEventArgs.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\Blade.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATSDKAPI.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATRewardedVideoListener.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATDownloadManager.cs" />
     <Compile Include="Assets\Prefabs\Script\ChangingSkin\Fish.cs" />
+    <Compile Include="Assets\AnyThinkAds\Common\IATBannerAdClient.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\Spike.cs" />
     <Compile Include="Assets\Prefabs\Script\PinMechanic\ReUsePin.cs" />
     <Compile Include="Assets\Prefabs\Script\AllFishMechanic\Boss.cs" />
+    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATBannerAdClient.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATNativeConfig.cs" />
+    <Compile Include="Assets\AnyThinkAds\Thrid\Lexer.cs" />
+    <Compile Include="Assets\AnyThinkAds\Api\ATBannerAd.cs" />
+    <Compile Include="Assets\AnyThinkAds\Thrid\IJsonWrapper.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\IcePlatHealth.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\CanvasRenderMode.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\DestroyOnTouch.cs" />
-    <Compile Include="Assets\AnyThinkAds\Common\IATNativeAdClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATNativeAdView.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATInterstitialAutoAd.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATInterstitialAdListener.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATRewardedVideo.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATNativeBannerAd.cs" />
-    <Compile Include="Assets\AnyThinkAds\Thrid\Netstandard15Polyfill.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATAdEventArgs.cs" />
     <Compile Include="Assets\AnyThinkAds\Api\ATConst.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATDownloadAdListener.cs" />
-    <Compile Include="Assets\AnyThinkAds\Common\IATNativeBannerAdClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATNativeAdClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATSDKInitListener.cs" />
-    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATNetTrafficListener.cs" />
-    <Compile Include="Assets\AnyThinkAds\Thrid\ParserToken.cs" />
-    <Compile Include="Assets\AnyThinkAds\Common\IATDownloadClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATBannerAd.cs" />
-    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATSDKAPIClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATSDKAPI.cs" />
-    <Compile Include="Assets\AnyThinkAds\Thrid\JsonMapper.cs" />
-    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATMsgTools.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATInterstitialAd.cs" />
     <Compile Include="Assets\AnyThinkAds\Common\IATInterstitialAdClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATNativeAd.cs" />
-    <Compile Include="Assets\AnyThinkAds\Thrid\JsonWriter.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATNativeAdListener.cs" />
-    <Compile Include="Assets\AnyThinkAds\Thrid\IJsonWrapper.cs" />
-    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATBannerAdClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Common\IATSDKAPIClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATNativeConfig.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATNativeBannerAdListener.cs" />
-    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATNativeBannerAdClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATRewardedAutoVideo.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATNativeItemProperty.cs" />
-    <Compile Include="Assets\AnyThinkAds\Common\IATRewardedVideoAdClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATDownloadManager.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATRewardedVideoListener.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATBannerAdListener.cs" />
     <Compile Include="Assets\AnyThinkAds\Platform\Android\ATRewardedVideoAdClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Thrid\JsonReader.cs" />
-    <Compile Include="Assets\AnyThinkAds\Thrid\JsonData.cs" />
-    <Compile Include="Assets\AnyThinkAds\Thrid\JsonMockWrapper.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATCallbackInfo.cs" />
-    <Compile Include="Assets\AnyThinkAds\Thrid\Lexer.cs" />
-    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATInterstitialAdClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Platform\ATAdsClientFactory.cs" />
-    <Compile Include="Assets\AnyThinkAds\Api\ATRect.cs" />
-    <Compile Include="Assets\AnyThinkAds\Common\IATBannerAdClient.cs" />
-    <Compile Include="Assets\AnyThinkAds\Thrid\JsonException.cs" />
-    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATAreaListener.cs" />
-    <Compile Include="Assets\AnyThinkAds\Platform\Android\ATDownloadClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\AchivementData\archiveList.txt" />
