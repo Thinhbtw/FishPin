@@ -43,7 +43,12 @@ namespace AnyThinkAds.Api
             
 		}
 
-		public static ATBannerAd Instance 
+        public void setListener(ATBannerAdListener listener)
+        {
+            client.setListener(listener);
+        }
+
+        public static ATBannerAd Instance 
 		{
 			get 
 			{

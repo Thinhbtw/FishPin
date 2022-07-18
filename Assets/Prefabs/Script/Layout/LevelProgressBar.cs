@@ -8,7 +8,7 @@ public class LevelProgressBar : MonoBehaviour
     public Slider progressBar;
     UIGameplay uiGameplay;
     public GameObject progress;
-    int levelIndex;
+    int num;
     public Sprite[] image;
 
     // Start is called before the first frame update
@@ -30,6 +30,13 @@ public class LevelProgressBar : MonoBehaviour
             progress.transform.GetChild(2).GetComponent<Image>().sprite = image[0];
             progress.transform.GetChild(3).GetComponent<Image>().sprite = image[0];
         }
+
+        num = uiGameplay.levelAt % 5;
+        for(int i = 0; i < num; i++)
+        {
+            progress.transform.GetChild(i).GetComponent<Image>().sprite = image[1];
+        }
+        
     }
 
     private void Update()
@@ -41,8 +48,7 @@ public class LevelProgressBar : MonoBehaviour
         {
             progress.transform.GetChild((uiGameplay.levelAt % 5 - 1)).GetComponent<Image>().sprite = image[1];
             progressBar.value = Mathf.MoveTowards(progressBar.value, uiGameplay.levelAt % 5, Time.deltaTime * 1);
-            
-
+           
         }
 
         
