@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleScrollSnap", "SimpleScrollSnap.csproj", "{A2E5F2EC-C12D-090B-B09B-51B7325191C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{AA4E405E-93BA-A176-C6D8-C32C4977CD9C}"
@@ -16,14 +16,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilitiesEditor", "UtilitiesEditor.csproj", "{2153452E-C598-49C4-113A-1D5F09BC1B49}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInspectorAttributesEditor", "SimpleInspectorAttributesEditor.csproj", "{B30D4CC4-A3A9-8BF9-642C-9ACE13D105F2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleScrollSnap.Player", "SimpleScrollSnap.Player.csproj", "{C6C41AEA-1FD9-90AE-CFC4-2B7013EB03DC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp.Player", "Assembly-CSharp.Player.csproj", "{825E4737-368B-76F3-9420-E113BF8BF896}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInspectorAttributes.Player", "SimpleInspectorAttributes.Player.csproj", "{54BB6913-6B2C-EE6E-6F44-4E5E93779E43}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Player", "Utilities.Player.csproj", "{55EA5F59-0FDC-5393-26AF-E75F8A73C754}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,22 +55,6 @@ Global
 		{B30D4CC4-A3A9-8BF9-642C-9ACE13D105F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B30D4CC4-A3A9-8BF9-642C-9ACE13D105F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B30D4CC4-A3A9-8BF9-642C-9ACE13D105F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C6C41AEA-1FD9-90AE-CFC4-2B7013EB03DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6C41AEA-1FD9-90AE-CFC4-2B7013EB03DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6C41AEA-1FD9-90AE-CFC4-2B7013EB03DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6C41AEA-1FD9-90AE-CFC4-2B7013EB03DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{825E4737-368B-76F3-9420-E113BF8BF896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{825E4737-368B-76F3-9420-E113BF8BF896}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{825E4737-368B-76F3-9420-E113BF8BF896}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{825E4737-368B-76F3-9420-E113BF8BF896}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54BB6913-6B2C-EE6E-6F44-4E5E93779E43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54BB6913-6B2C-EE6E-6F44-4E5E93779E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54BB6913-6B2C-EE6E-6F44-4E5E93779E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54BB6913-6B2C-EE6E-6F44-4E5E93779E43}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55EA5F59-0FDC-5393-26AF-E75F8A73C754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55EA5F59-0FDC-5393-26AF-E75F8A73C754}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55EA5F59-0FDC-5393-26AF-E75F8A73C754}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55EA5F59-0FDC-5393-26AF-E75F8A73C754}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

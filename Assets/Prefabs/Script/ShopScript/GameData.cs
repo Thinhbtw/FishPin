@@ -41,6 +41,8 @@ public static class GameData
 
     static Theme selectedTheme;
 
+    static int loginday;
+
     static AdStates adStates = AdStates.Idle;
     static bool isAdsOn = false, IsAddMoney;
     static GameData()
