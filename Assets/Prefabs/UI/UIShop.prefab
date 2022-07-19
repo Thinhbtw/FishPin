@@ -607,10 +607,10 @@ RectTransform:
   m_Father: {fileID: 3205223082221763296}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 68.5, y: -469.02}
-  m_SizeDelta: {x: 129, y: 125.8}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5936923326515212608
 CanvasRenderer:
@@ -1337,7 +1337,7 @@ GameObject:
   - component: {fileID: 1642834688377994843}
   - component: {fileID: 4696409276019495033}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Gem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1457,7 +1457,7 @@ GameObject:
   - component: {fileID: 7010074593708894212}
   - component: {fileID: 7661292344898670456}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1751,10 +1751,10 @@ RectTransform:
   m_Father: {fileID: 3205223082221763296}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 68.5, y: -265.96}
-  m_SizeDelta: {x: 129, y: 125.8}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4973962538644563515
 CanvasRenderer:
@@ -6581,10 +6581,10 @@ RectTransform:
   m_Father: {fileID: 3205223082221763296}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 68.5, y: -367.49}
-  m_SizeDelta: {x: 129, y: 125.8}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1124553714909142542
 CanvasRenderer:
@@ -9680,7 +9680,7 @@ GameObject:
   - component: {fileID: 7900300853303521353}
   - component: {fileID: 7312845511821039586}
   m_Layer: 0
-  m_Name: Image
+  m_Name: WatchAdCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9705,10 +9705,10 @@ RectTransform:
   m_Father: {fileID: 3205223082221763296}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 68.5, y: -62.9}
-  m_SizeDelta: {x: 129, y: 125.8}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7900300853303521353
 CanvasRenderer:
@@ -10980,6 +10980,7 @@ GameObject:
   - component: {fileID: 7798695218896016446}
   - component: {fileID: 5047057948134842108}
   - component: {fileID: 3594350844552476680}
+  - component: {fileID: 3730736536415185338}
   m_Layer: 5
   m_Name: UIShop
   m_TagString: Untagged
@@ -11098,6 +11099,20 @@ MonoBehaviour:
   btnBack: {fileID: 6922687587104321863}
   btnBack2: {fileID: 345190392073782781}
   canvas: {fileID: 7798695218896016444}
+--- !u!114 &3730736536415185338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7798695218896016440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48eaccc141432454f83c2326b9f14fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  watchAdCoin: {fileID: 7661292344898670456}
+  watchAdGem: {fileID: 4696409276019495033}
 --- !u!1 &7862232679733335694
 GameObject:
   m_ObjectHideFlags: 0
@@ -11997,7 +12012,7 @@ GameObject:
   - component: {fileID: 723313264824634787}
   - component: {fileID: 5418548285336564496}
   m_Layer: 0
-  m_Name: Image (5)
+  m_Name: WatchAdGem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12022,10 +12037,10 @@ RectTransform:
   m_Father: {fileID: 3205223082221763296}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 68.5, y: -164.43}
-  m_SizeDelta: {x: 129, y: 125.8}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &723313264824634787
 CanvasRenderer:
@@ -12495,8 +12510,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 141.2, y: -12.09}
-  m_SizeDelta: {x: 282.4, y: 407.15}
+  m_AnchoredPosition: {x: 141.2, y: -0.000012398}
+  m_SizeDelta: {x: 282.4, y: 457.72}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5674100937310522119
 CanvasRenderer:

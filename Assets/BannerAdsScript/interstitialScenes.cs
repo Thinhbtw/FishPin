@@ -10,10 +10,10 @@ using System;
 /*using MiniJSON;*/
 
 public class interstitialScenes : MonoBehaviour {
-    
+
 
 #if UNITY_ANDROID
-    static string mPlacementId_interstitial_all = "b62958721b65f5"; // b62958721b65f5 b5baca54674522
+    static string mPlacementId_interstitial_all = "b5baca54674522"; // b62958721b65f5 b5baca54674522
 
     static string mPlacementId_Splash = "b62a19b9927141";
 
