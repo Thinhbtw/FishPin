@@ -25,7 +25,7 @@ public class UIBackground : MonoBehaviour
         if (skip != null)
             skip.onClick.AddListener(() =>
             {
-                if (watchAdSkip)
+                if (watchAdSkip && InternetConnection.instance.hasInternet)
                 {
                     watchAdSkip = false;
                     ToponAdsController.instance.OpenVideoAds();

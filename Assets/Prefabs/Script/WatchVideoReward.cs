@@ -13,7 +13,7 @@ public class WatchVideoReward : MonoBehaviour
         if (watchAdCoin != null)
             watchAdCoin.onClick.AddListener(() =>
             {
-                if (watchAdReward)
+                if (watchAdReward && InternetConnection.instance.hasInternet)
                 {
                     watchAdReward = false;
                     ToponAdsController.instance.OpenVideoAds();
@@ -23,7 +23,7 @@ public class WatchVideoReward : MonoBehaviour
         if (watchAdGem != null)
             watchAdGem.onClick.AddListener(() =>
             {
-                if (watchAdReward)
+                if (watchAdReward && InternetConnection.instance.hasInternet)
                 {
                     watchAdReward = false;
                     ToponAdsController.instance.OpenVideoAds();
