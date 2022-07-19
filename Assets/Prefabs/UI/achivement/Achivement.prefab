@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 6020490041526674814}
   - component: {fileID: 7622021473108179856}
   - component: {fileID: 5339502908397085878}
+  - component: {fileID: 8920835695241197992}
   m_Layer: 5
   m_Name: title
   m_TagString: Untagged
@@ -258,8 +259,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.28235295}
+  m_EffectColor: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
   m_EffectDistance: {x: 2.5, y: 1.84}
+  m_UseGraphicAlpha: 1
+--- !u!114 &8920835695241197992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877808063020004971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1.36, y: 0.57}
   m_UseGraphicAlpha: 1
 --- !u!1 &4146729017288212921
 GameObject:
@@ -745,6 +761,7 @@ GameObject:
   - component: {fileID: 8773534137152484676}
   - component: {fileID: 1642234443860980646}
   - component: {fileID: 6357473509309903333}
+  - component: {fileID: 6585540060299830171}
   m_Layer: 5
   m_Name: progress
   m_TagString: Untagged
@@ -827,4 +844,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: -1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &6585540060299830171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8718243687424170521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
+  m_EffectDistance: {x: 2.78, y: 1.97}
   m_UseGraphicAlpha: 1
