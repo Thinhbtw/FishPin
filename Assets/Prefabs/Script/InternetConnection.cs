@@ -8,24 +8,40 @@ public class InternetConnection : MonoBehaviour
 {
     // Start is called before the first frame update
     public static InternetConnection instance;
-    public bool hasInternet;
+    public bool hasInternet, gameIsOn;
     private void Awake()
     {
         instance = this;
-    }
-    void Start()
-    {
-        StartCoroutine(CheckingInternetConnection());
+        gameIsOn = true;
     }
 
-    IEnumerator CheckingInternetConnection()
+    [Obsolete]
+    void Start()
     {
-        yield return new WaitForSeconds(4f);
-        UnityWebRequest www = new UnityWebRequest("http://google.com");
-        yield return www.SendWebRequest();
-        if (www.error != null)
-            hasInternet = false;       
-        else
-            hasInternet = true;
+        StartCoroutine(CheckInternetConnection());
+    }
+
+   
+
+    [Obsolete]
+    IEnumerator CheckInternetConnection()
+    {
+        while (gameIsOn)
+        {
+            yield return new WaitForSeconds(2f);
+            const string echoServer = "http://www.example.com";
+
+            bool result;
+            using (var request = UnityWebRequest.Head(echoServer))
+            {
+                request.timeout = 3;
+                yield return request.SendWebRequest();
+                result = !request.isNetworkError && !request.isHttpError && request.responseCode == 200;
+            }
+            if (result)
+                hasInternet = true;
+            else
+                hasInternet = false;
+        }
     }
 }

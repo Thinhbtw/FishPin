@@ -25,11 +25,12 @@ public class UIBackground : MonoBehaviour
         if (skip != null)
             skip.onClick.AddListener(() =>
             {
-                if (watchAdSkip && InternetConnection.instance.hasInternet)
+                if (WatchVideoReward.instance.watchAdReward && InternetConnection.instance.hasInternet)
                 {
-                    watchAdSkip = false;
+                    WatchVideoReward.instance.watchAdReward = false;
                     ToponAdsController.instance.OpenVideoAds();
                     StartCoroutine(DelaySkip());
+                    StartCoroutine(WatchVideoReward.instance.DelayAdSkip());
                 }
             });
 
@@ -70,7 +71,6 @@ public class UIBackground : MonoBehaviour
                 break;
             }           
         }
-        watchAdSkip = true;
     }
 
 

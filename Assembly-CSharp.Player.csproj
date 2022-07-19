@@ -76,12 +76,14 @@
     <Compile Include="Assets\Prefabs\Script\GameManager.cs" />
     <Compile Include="Assets\AnyThinkAds\Thrid\JsonMockWrapper.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\TabButtons.cs" />
+    <Compile Include="Assets\Prefabs\Script\InternetConnection.cs" />
     <Compile Include="Assets\AnyThinkAds\Common\IATRewardedVideoAdClient.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UI Quest\QuestScript.cs" />
     <Compile Include="Assets\AnyThinkAds\Thrid\ParserToken.cs" />
     <Compile Include="Assets\Prefabs\Script\ShopScript\FishShopDatabase.cs" />
     <Compile Include="Assets\AnyThinkAds\Thrid\JsonReader.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\PoisonScript.cs" />
+    <Compile Include="Assets\Prefabs\Script\Manager\DailyCheckin\checkin.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\DailyCheckin\dailyCheckin.cs" />
     <Compile Include="Assets\Prefabs\Script\Layout\UiEnd.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\achivement\achivementManager.cs" />
@@ -168,7 +170,6 @@
     <Compile Include="Assets\AnyThinkAds\Api\ATConst.cs" />
     <Compile Include="Assets\AnyThinkAds\Common\IATInterstitialAdClient.cs" />
     <Compile Include="Assets\AnyThinkAds\Platform\Android\ATRewardedVideoAdClient.cs" />
-    <Compile Include="Assets\Prefabs\Script\InternetConnection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\AchivementData\archiveList.txt" />

@@ -235,6 +235,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &477133578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7661292344898670456, guid: 8c57afce3c3871442a8a724c985881f4, type: 3}
+  m_PrefabInstance: {fileID: 3730736536415185332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &507740552
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 744506819}
   - component: {fileID: 744506818}
+  - component: {fileID: 744506820}
   m_Layer: 0
   m_Name: InternetConnectionCheck
   m_TagString: Untagged
@@ -562,6 +574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasInternet: 0
+  gameIsOn: 0
 --- !u!4 &744506819
 Transform:
   m_ObjectHideFlags: 0
@@ -576,6 +589,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &744506820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744506817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48eaccc141432454f83c2326b9f14fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  watchAdCoin: {fileID: 477133578}
+  watchAdGem: {fileID: 1315800095}
+  watchAdReward: 0
 --- !u!1 &911415427
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,6 +847,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9cf0c9207d1a2c4389b0aab61d3e308, type: 3}
+--- !u!114 &1315800095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4696409276019495033, guid: 8c57afce3c3871442a8a724c985881f4, type: 3}
+  m_PrefabInstance: {fileID: 3730736536415185332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1316677256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,5 +1494,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3730736536415185338, guid: 8c57afce3c3871442a8a724c985881f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c57afce3c3871442a8a724c985881f4, type: 3}

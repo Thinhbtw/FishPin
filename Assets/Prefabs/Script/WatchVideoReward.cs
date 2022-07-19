@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class WatchVideoReward : MonoBehaviour
 {
+    public static WatchVideoReward instance;
     [SerializeField]Button watchAdCoin, watchAdGem;
-    bool watchAdReward;
+    public bool watchAdReward, watchAdSkip;
     void Awake()
     {
+        instance = this;
         watchAdReward = true;
+        watchAdSkip = true;
         if (watchAdCoin != null)
             watchAdCoin.onClick.AddListener(() =>
             {
@@ -18,6 +21,7 @@ public class WatchVideoReward : MonoBehaviour
                     watchAdReward = false;
                     ToponAdsController.instance.OpenVideoAds();
                     StartCoroutine(DelayRewardCoin());
+                    StartCoroutine(DelayAdReward());
                 }
             });
         if (watchAdGem != null)
@@ -28,6 +32,7 @@ public class WatchVideoReward : MonoBehaviour
                     watchAdReward = false;
                     ToponAdsController.instance.OpenVideoAds();
                     StartCoroutine(DelayRewardGem());
+                    StartCoroutine(DelayAdReward());
                 }
             });
         
@@ -35,15 +40,25 @@ public class WatchVideoReward : MonoBehaviour
 
     IEnumerator DelayRewardCoin()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         GameData.AddCoin(500);
+    }
+    public IEnumerator DelayAdReward()
+    {
+        yield return new WaitForSeconds(10f);
         watchAdReward = true;
     }
 
+    public IEnumerator DelayAdSkip()
+    {
+        yield return new WaitForSeconds(10f);
+        watchAdSkip = true;
+    }
+
+
     IEnumerator DelayRewardGem()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         GameData.AddGems(50);
-        watchAdReward = true;
     }
 }
