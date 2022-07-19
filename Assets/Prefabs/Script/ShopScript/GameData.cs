@@ -14,7 +14,8 @@ using System.Collections.Generic;
 {
     public int coin = 0;
     public int gems = 0;
-    public int selectedThemeIndex = 0;    
+    public int selectedThemeIndex = 0;
+    public int loginday = 0;
 }
 
 [System.Serializable]public class QuestListData
@@ -39,9 +40,7 @@ public static class GameData
     static ThemeShopData themeShopData = new ThemeShopData();
     static QuestListData QuestListData = new QuestListData();
 
-    static Theme selectedTheme;
-
-    static int loginday;
+    static Theme selectedTheme;    
 
     static AdStates adStates = AdStates.Idle;
     static bool isAdsOn = false, IsAddMoney;
@@ -91,6 +90,7 @@ public static class GameData
         SavePlayerData();
     }   
 
+    // list index daily
     public static void addlist(List<int> listIndex,int index)
     {
         listIndex.Add(index);
@@ -132,6 +132,25 @@ public static class GameData
         }
         SaveQuestListIndexData();
     }
+
+    // get data login
+    public static int getLoginDay()
+    {
+        return playerData.loginday;
+    }
+
+    public static void increasLoginDay()
+    {
+        playerData.loginday++;
+        SavePlayerData();
+    }
+
+    public static void resetLoginDay()
+    {
+        playerData.loginday = 0;
+        SavePlayerData();
+    }
+
     public static bool CanSpendGems(int amount)
     {
         return (playerData.gems >= amount);
@@ -165,6 +184,7 @@ public static class GameData
     {
         QuestListData = BinarySerializer.Load<QuestListData>("Quest_List_Index_Data.txt");
     }
+    
 
     //Theme Data Method
     #region Theme

@@ -2302,6 +2302,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8793634658547010311}
     m_Modifications:
+    - target: {fileID: 1121253961928805768, guid: a6cd786540876f1478e426313b8ed736, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1792739865508732834, guid: a6cd786540876f1478e426313b8ed736, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2389,6 +2393,14 @@ PrefabInstance:
     - target: {fileID: 3077515622917667383, guid: a6cd786540876f1478e426313b8ed736, type: 3}
       propertyPath: m_Name
       value: dailyLogin
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216971477124193689, guid: a6cd786540876f1478e426313b8ed736, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485237218487805672, guid: a6cd786540876f1478e426313b8ed736, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6cd786540876f1478e426313b8ed736, type: 3}
