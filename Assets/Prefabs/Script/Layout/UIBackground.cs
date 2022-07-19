@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,52 +14,66 @@ public class UIBackground : MonoBehaviour
     public GameObject background;
     public Text levelText;
     LevelComplete levelComplete;
-
+    bool watchAdSkip;
 
     private void Awake()
     {
+        watchAdSkip = true;
         Instance = (UIBackground)this;
         canvas = GetComponent<Canvas>();
         this.gameObject.SetActive(false);
         if (skip != null)
             skip.onClick.AddListener(() =>
             {
-                for (int i = 0; i < UIManager.Instance.listLevel.Count / 5; i++)
+                if (watchAdSkip)
                 {
-                    int num = i;
-                    if (PlayerPrefs.GetInt("Progress") < num * 5 && ((num * 5) - UIGameplay.Instance.levelAt) <= 5)
-                    {
-                        UIGameplay.Instance.levelAt = num * 5;
-
-                        var lvl = Instantiate(UIManager.Instance.listLevel[UIGameplay.Instance.levelAt], UIGameplay.Instance.levelField.transform);
-                        UIGameplay.Instance.Level.Add(lvl);
-                        Destroy(UIGameplay.Instance.Level[UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count]);
-                        UIGameplay.Instance.Level.RemoveAt(UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count);
-/*                        if(num + 1 < 10)
-                        {
-                            levelText.text = "0" + (num + 1).ToString();
-                        }
-                        else
-                        {
-                            levelText.text = (num + 1).ToString();
-                        }*/
-
-                        UiEnd.Instance.pannel.SetActive(false);
-
-                        PlayerPrefs.SetInt("Progress", UIGameplay.Instance.levelAt);
-                        PlayerPrefs.SetInt("Progress2", UIGameplay.Instance.levelAt);
-                        PlayerPrefs.SetInt("SelectedLevel",num);
-                        PlayerPrefs.SetString("LevelSkip", PlayerPrefs.GetString("LevelSkip") + (num - 1).ToString());
-                        
-                        break;
-                    }
-                    
+                    watchAdSkip = false;
+                    ToponAdsController.instance.OpenVideoAds();
+                    StartCoroutine(DelaySkip());
                 }
             });
 
         
 
     }
+
+    IEnumerator DelaySkip()
+    {
+        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < UIManager.Instance.listLevel.Count / 5; i++)
+        {
+            int num = i;
+            if (PlayerPrefs.GetInt("Progress") < num * 5 && ((num * 5) - UIGameplay.Instance.levelAt) <= 5)
+            {
+                UIGameplay.Instance.levelAt = num * 5;
+
+                var lvl = Instantiate(UIManager.Instance.listLevel[UIGameplay.Instance.levelAt], UIGameplay.Instance.levelField.transform);
+                UIGameplay.Instance.Level.Add(lvl);
+                Destroy(UIGameplay.Instance.Level[UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count]);
+                UIGameplay.Instance.Level.RemoveAt(UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count);
+                /*                        if(num + 1 < 10)
+                                        {
+                                            levelText.text = "0" + (num + 1).ToString();
+                                        }
+                                        else
+                                        {
+                                            levelText.text = (num + 1).ToString();
+                                        }*/
+
+                UiEnd.Instance.pannel.SetActive(false);
+
+                PlayerPrefs.SetInt("Progress", UIGameplay.Instance.levelAt);
+                PlayerPrefs.SetInt("Progress2", UIGameplay.Instance.levelAt);
+                PlayerPrefs.SetInt("SelectedLevel", num);
+                PlayerPrefs.SetString("LevelSkip", PlayerPrefs.GetString("LevelSkip") + (num - 1).ToString());
+
+                break;
+            }           
+        }
+        watchAdSkip = true;
+    }
+
+
 
     void ButtonInteracable(bool check)
     {

@@ -7,12 +7,12 @@ using UnityEngine.UI;
 using System; 
 using AnyThinkAds.ThirdParty.LitJson;
 
-public class vidoeScenes : MonoBehaviour { 
+public class vidoeScenes : MonoBehaviour {
 
 #if UNITY_ANDROID
  
 
-    static string mPlacementId_rewardvideo_all = "b6295885b01f2a";//tét b6295885b01f2a  b5b449f025ec7c
+    static string mPlacementId_rewardvideo_all = "b5b449f025ec7c";//tét b6295885b01f2a  b5b449f025ec7c
     static string showingScenario = "f5e71c46d1a28f";
 #elif UNITY_IOS || UNITY_IPHONE
     static string mPlacementId_rewardvideo_all = "b6295885b01f2a";//"b5b44a0f115321";
