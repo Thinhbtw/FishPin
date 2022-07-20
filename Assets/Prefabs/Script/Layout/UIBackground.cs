@@ -25,9 +25,9 @@ public class UIBackground : MonoBehaviour
         if (skip != null)
             skip.onClick.AddListener(() =>
             {
-                if (WatchVideoReward.instance.watchAdReward && InternetConnection.instance.hasInternet)
+                if (WatchVideoReward.instance.watchAdSkip && InternetConnection.instance.hasInternet)
                 {
-                    WatchVideoReward.instance.watchAdReward = false;
+                    WatchVideoReward.instance.watchAdSkip = false;
                     ToponAdsController.instance.OpenVideoAds();
                     StartCoroutine(DelaySkip());
                     StartCoroutine(WatchVideoReward.instance.DelayAdSkip());
@@ -115,6 +115,7 @@ public class UIBackground : MonoBehaviour
             {
                 var lvl = Instantiate(UIManager.Instance.listLevel[UIGameplay.Instance.levelAt], UIGameplay.Instance.levelField.transform);
                 UIGameplay.Instance.Level.Add(lvl);
+                
                 Destroy(UIGameplay.Instance.Level[UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count]);
                 UIGameplay.Instance.Level.RemoveAt(UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count);
                 UiEnd.Instance.pannel.SetActive(false);

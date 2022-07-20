@@ -1039,7 +1039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5214921816002065238, guid: aaca11dda989d8e4f9651b39237112f4, type: 3}
       propertyPath: m_LinearDrag
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5214921816002065238, guid: aaca11dda989d8e4f9651b39237112f4, type: 3}
       propertyPath: m_GravityScale

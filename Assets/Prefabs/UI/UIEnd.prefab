@@ -116,6 +116,7 @@ MonoBehaviour:
   image:
   - {fileID: 21300000, guid: 158586ab164b6974ea0985537017e20b, type: 3}
   - {fileID: 21300000, guid: 48b311ef385347a4db55e6e637f5d2d5, type: 3}
+  cupAnima: {fileID: 204661954116017018}
 --- !u!1 &121121629290332197
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,8 +450,9 @@ GameObject:
   - component: {fileID: 7758108263538806675}
   - component: {fileID: 2864332706813180767}
   - component: {fileID: 9043312928672131397}
+  - component: {fileID: 204661954116017018}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: Cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -513,6 +515,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &204661954116017018
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825909514173573654}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7bb5b427e0ae92348bbc4cb061c0569e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2525128223070582347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,7 +1066,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL 05
+  m_Text: LEVEL 0
 --- !u!114 &5169439063072026646
 MonoBehaviour:
   m_ObjectHideFlags: 0

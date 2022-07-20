@@ -49,21 +49,24 @@ public class UiEnd : MonoBehaviour
 
     public IEnumerator WaitPanel(bool win)
     {
-        yield return new WaitForSeconds(2);
         if (PlayerPrefs.GetInt("SelectedLevel") < 10)
         {
             textLevel.text = "Level 0" + (PlayerPrefs.GetInt("SelectedLevel") + 1).ToString();
+            
         }
         else
         {
             textLevel.text = "Level " + (PlayerPrefs.GetInt("SelectedLevel") + 1).ToString();
         }
+        yield return new WaitForSeconds(2);      
         if (win)
         {
             StopAllCoroutines();
             winMenu.SetActive(true);
             btnNext.image.sprite = imgBtn[0];
             pannel.SetActive(true);
+            yield return new WaitForSeconds(1.3f);
+            ToponAdsController.instance.OpenInterstitialAds();
         }
         else
         {
@@ -75,6 +78,8 @@ public class UiEnd : MonoBehaviour
             loseMenu.SetActive(true);
             btn.SetActive(true);
             pannel.SetActive(true);
+            yield return new WaitForSeconds(1.3f);
+            ToponAdsController.instance.OpenInterstitialAds();
         }
         yield break;
     }
@@ -143,6 +148,7 @@ public class UiEnd : MonoBehaviour
             {
                 if (myScript.isDed)
                 {
+                    ToponAdsController.instance.OpenVideoAds();
                     var lvl = Instantiate(UIManager.Instance.listLevel[uiGameplay.levelAt], uiGameplay.levelField.transform);
                     uiGameplay.Level.Add(lvl);
                     Destroy(uiGameplay.Level[uiGameplay.Level.Count - uiGameplay.Level.Count]);
@@ -150,7 +156,7 @@ public class UiEnd : MonoBehaviour
                     loseMenu.SetActive(false);
                     winMenu.SetActive(false);
                     pannel.SetActive(false);
-
+                    PlayerPrefs.SetInt("SelectedLevel", (UIGameplay.Instance.levelAt % 5) + 1);
                     myScript.isDed = false;
                     btn.SetActive(false);
                 }
