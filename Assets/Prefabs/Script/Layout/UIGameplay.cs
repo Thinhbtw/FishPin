@@ -20,10 +20,11 @@ public class UIGameplay : MonoBehaviour
         stillatDefault = true;
         levelPrefs = PlayerPrefs.GetInt("Progress2");
         levelAt = levelPrefs;
+        PlayerPrefs.SetInt("SelectedLevel", levelAt / 5);
     }
-
     public void OnEnable()
     {
+        
         if (PlayerPrefs.HasKey("Progress") == false)
             PlayerPrefs.SetInt("Progress", 0);
         if (PlayerPrefs.HasKey("Progress2") == false)

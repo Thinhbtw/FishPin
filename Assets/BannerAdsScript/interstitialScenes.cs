@@ -41,28 +41,9 @@ public class interstitialScenes : MonoBehaviour {
         //StartCoroutine(ShowSlpashInter());
         //EventManager.ShowInterstitialAd.BoradCastEvent();
     }
-    public bool isShowed=false;
-    public float timeCheck;
-    //public Text Check;
-    //public Text Check1;
-    //public Text Check2;
-    public float t = 0;
     // Update is called once per frame
     void Update() {
-        
-        t+=Time.deltaTime;
-        if (t <= timeCheck)
-        {
-            if (!isShowed)
-            {
-                ShowSlpashInter();
-            } 
-        }
-        else
-        {
-            isShowed = true;
-        }
-        loadInterstitialAd();
+       loadInterstitialAd();
     }
 	void LoadSlpashInter()
     {
@@ -100,7 +81,7 @@ public class interstitialScenes : MonoBehaviour {
         {
             //Debug.Log("=========== show Splash =======");
             ATInterstitialAd.Instance.showInterstitialAd(mPlacementId_Splash);
-            isShowed = true;
+
         }
     }
 

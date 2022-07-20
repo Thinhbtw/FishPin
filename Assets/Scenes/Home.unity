@@ -604,6 +604,7 @@ MonoBehaviour:
   watchAdCoin: {fileID: 477133578}
   watchAdGem: {fileID: 1315800095}
   watchAdReward: 0
+  watchAdSkip: 0
 --- !u!1 &911415427
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,9 +902,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15341506bc62e14b9f12f914d345285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShowed: 0
-  timeCheck: 0
-  t: 20
 --- !u!114 &1327023187 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8048273771988941225, guid: 8c57afce3c3871442a8a724c985881f4, type: 3}

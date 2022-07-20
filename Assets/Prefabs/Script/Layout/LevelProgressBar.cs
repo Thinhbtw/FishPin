@@ -10,6 +10,7 @@ public class LevelProgressBar : MonoBehaviour
     public GameObject progress;
     int num;
     public Sprite[] image;
+    [SerializeField] Animator cupAnima;
 
     // Start is called before the first frame update
 
@@ -48,12 +49,11 @@ public class LevelProgressBar : MonoBehaviour
         {
             progress.transform.GetChild((uiGameplay.levelAt % 5 - 1)).GetComponent<Image>().sprite = image[1];
             progressBar.value = Mathf.MoveTowards(progressBar.value, uiGameplay.levelAt % 5, Time.deltaTime * 1);
-           
+            cupAnima.enabled = false;
+
         }
-
-        
-        
-
-
+        else
+            cupAnima.enabled = true;
+     
     }
 }
