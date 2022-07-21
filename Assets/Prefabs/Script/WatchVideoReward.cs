@@ -16,6 +16,7 @@ public class WatchVideoReward : MonoBehaviour
         if (watchAdCoin != null)
             watchAdCoin.onClick.AddListener(() =>
             {
+                SoundManager.PlaySound("click");
                 if (watchAdReward && InternetConnection.instance.hasInternet)
                 {
                     watchAdReward = false;
@@ -27,6 +28,7 @@ public class WatchVideoReward : MonoBehaviour
         if (watchAdGem != null)
             watchAdGem.onClick.AddListener(() =>
             {
+                SoundManager.PlaySound("click");
                 if (watchAdReward && InternetConnection.instance.hasInternet)
                 {
                     watchAdReward = false;

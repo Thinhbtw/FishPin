@@ -185,7 +185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelField: {fileID: 9132334451937166867}
-  listLevel: []
   Level: []
   hasFound: 0
   hasNextLevel: 0

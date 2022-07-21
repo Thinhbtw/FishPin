@@ -21,11 +21,12 @@ public class UISettingIngame : MonoBehaviour
         if (btnContinue != null)
             btnContinue.onClick.AddListener(() => 
             {
+                SoundManager.PlaySound("click");
                 UIManager.Instance.RemoveFromListDialog(this.gameObject);
                 UIGameplay.Instance.gameObject.SetActive(true); 
                 Continue();
             });
-        if (btnShop != null)
+        /*if (btnShop != null)
             btnShop.onClick.AddListener(() =>
             {
                 if (UIShop.Instance == null)
@@ -45,11 +46,12 @@ public class UISettingIngame : MonoBehaviour
                     UIBackground.Instance.gameObject.SetActive(false);
                     Continue();
                 }
-            });
+            });*/
         if (btnSetting != null)
             btnSetting.onClick.AddListener(() =>
             {
-                if(UISetting.Instance == null)
+                SoundManager.PlaySound("click");
+                if (UISetting.Instance == null)
                 {
                     UIManager.Instance.AddToListDialog(UIManager.Instance.UISetting);
                     UISetting.Instance.canvas.sortingOrder = 12;
@@ -72,5 +74,10 @@ public class UISettingIngame : MonoBehaviour
     {
         Time.timeScale = 1f;
         UIBackground.Instance.isPause = false;
+    }
+    private void OnDisable()
+    {
+        btnContinue.onClick.RemoveAllListeners();
+        btnSetting.onClick.RemoveAllListeners();
     }
 }

@@ -34,6 +34,7 @@ public class UISetting : MonoBehaviour
         if (btnMusic != null)
             btnMusic.onClick.AddListener(() =>
             {
+                SoundManager.PlaySound("click");
                 if (PlayerPrefs.GetString("SaveSettings").Contains("0"))
                 {
                     PlayerPrefs.SetString("SaveSettings", PlayerPrefs.GetString("SaveSettings").Replace("0", "1"));
@@ -52,6 +53,7 @@ public class UISetting : MonoBehaviour
         if (btnNotification != null)
             btnNotification.onClick.AddListener(() =>
             {
+                SoundManager.PlaySound("click");
                 if (PlayerPrefs.GetString("SaveSettings").Contains("2"))
                 {
                     PlayerPrefs.SetString("SaveSettings", PlayerPrefs.GetString("SaveSettings").Replace("2", "3"));
@@ -68,6 +70,7 @@ public class UISetting : MonoBehaviour
         if (btnVibrate != null)
             btnVibrate.onClick.AddListener(() =>
             {
+                SoundManager.PlaySound("click");
                 if (PlayerPrefs.GetString("SaveSettings").Contains("5"))
                 {
                     PlayerPrefs.SetString("SaveSettings", PlayerPrefs.GetString("SaveSettings").Replace("5", "4"));
@@ -88,8 +91,9 @@ public class UISetting : MonoBehaviour
     {
         if (btnBack != null)
             btnBack.onClick.AddListener(() =>
-            {               
-                if(UIManager.Instance.list.Count > 2 && UIManager.Instance.list.Count < 4)
+            {
+                SoundManager.PlaySound("click");
+                if (UIManager.Instance.list.Count > 2 && UIManager.Instance.list.Count < 4)
                 {
                     UIManager.Instance.LoadPreviousDialog();
                     UIGameplay.Instance.gameObject.SetActive(false);
@@ -116,5 +120,10 @@ public class UISetting : MonoBehaviour
     private void Update()
     {
         Debug.Log(PlayerPrefs.GetString("SaveSettings"));
+    }
+
+    private void OnDisable()
+    {
+        btnBack.onClick.RemoveAllListeners();
     }
 }

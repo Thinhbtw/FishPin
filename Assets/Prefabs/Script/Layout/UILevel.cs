@@ -35,6 +35,7 @@ public class UILevel : MonoBehaviour
 
     void LoadLevel(int value)
     {
+        SoundManager.PlaySound("click");
         if (UIGameplay.Instance != null && UIHome.Instance == null)
         {
             UIGameplay.Instance.levelAt = (value * 5);
@@ -45,8 +46,7 @@ public class UILevel : MonoBehaviour
             UiEnd.Instance.pannel.SetActive(false);
 
 
-
-            UIManager.Instance.LoadPreviousDialog();
+            this.gameObject.SetActive(false);
             UIGameplay.Instance.gameObject.SetActive(true);
             UiEnd.Instance.gameObject.SetActive(true);
             UIBackground.Instance.gameObject.SetActive(true);
@@ -56,11 +56,10 @@ public class UILevel : MonoBehaviour
         {
             UIManager.Instance.AddToListDialog(UIManager.Instance.UIGameplay);
             UIManager.Instance.AddToListDialog(UIManager.Instance.UIEnd);
-            UIManager.Instance.AddToListDialog(UIManager.Instance.UILevel);
+            /*UIManager.Instance.AddToListDialog(UIManager.Instance.UILevel);*/
             this.gameObject.SetActive(false);
             UIBackground.Instance.gameObject.SetActive(true);
             UiEnd.Instance.canvas.sortingOrder = 10;
-            UIManager.Instance.RemoveFromListDialog(this.gameObject);
             UIManager.Instance.RemoveFromListDialog(UIHome.Instance.gameObject);
 
 
@@ -72,8 +71,6 @@ public class UILevel : MonoBehaviour
             UiEnd.Instance.pannel.SetActive(false);
 
 
-
-            UIManager.Instance.LoadPreviousDialog();
             UIGameplay.Instance.gameObject.SetActive(true);
             UiEnd.Instance.gameObject.SetActive(true);
             UIBackground.Instance.gameObject.SetActive(true);
@@ -86,6 +83,7 @@ public class UILevel : MonoBehaviour
         if (btnBack != null)
             btnBack.onClick.AddListener(() =>
             {
+                SoundManager.PlaySound("click");
                 if (UIGameplay.Instance != null && UIHome.Instance == null)
                 {
                     this.gameObject.SetActive(false);
@@ -128,6 +126,11 @@ public class UILevel : MonoBehaviour
         }
 
 
+    }
+
+    private void OnDisable()
+    {
+        btnBack.onClick.RemoveAllListeners();
     }
 
 

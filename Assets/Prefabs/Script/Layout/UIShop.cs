@@ -33,6 +33,7 @@ public class UIShop : MonoBehaviour
 
     void ClickToExit()
     {
+        SoundManager.PlaySound("click");
         if (UIHome.Instance != null)
         {
             this.gameObject.SetActive(false);
@@ -53,5 +54,11 @@ public class UIShop : MonoBehaviour
     {
         GameSharedUI.instance.UpdateCoinsUIText();
         GameSharedUI.instance.UpdateGemsUIText();
+    }
+
+    private void OnDisable()
+    {
+        btnBack.onClick.RemoveAllListeners();
+        btnBack2.onClick.RemoveAllListeners();
     }
 }

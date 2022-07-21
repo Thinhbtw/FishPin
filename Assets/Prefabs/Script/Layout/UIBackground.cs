@@ -25,6 +25,7 @@ public class UIBackground : MonoBehaviour
         if (skip != null)
             skip.onClick.AddListener(() =>
             {
+                SoundManager.PlaySound("click");
                 if (WatchVideoReward.instance.watchAdSkip && InternetConnection.instance.hasInternet)
                 {
                     WatchVideoReward.instance.watchAdSkip = false;
@@ -113,6 +114,7 @@ public class UIBackground : MonoBehaviour
         if (reset != null)
             reset.onClick.AddListener(() =>
             {
+                SoundManager.PlaySound("click");
                 var lvl = Instantiate(UIManager.Instance.listLevel[UIGameplay.Instance.levelAt], UIGameplay.Instance.levelField.transform);
                 UIGameplay.Instance.Level.Add(lvl);
                 
@@ -124,6 +126,7 @@ public class UIBackground : MonoBehaviour
         if (home != null)
             home.onClick.AddListener(() =>
             {
+                SoundManager.PlaySound("click");
                 if (UIHome.Instance == null)
                 {
                     UIManager.Instance.GoBackToHome();
@@ -143,6 +146,7 @@ public class UIBackground : MonoBehaviour
         if (pause != null)
             pause.onClick.AddListener(() =>
             {
+                SoundManager.PlaySound("click");
                 if (UISettingIngame.Instance == null)
                 {
                     UIManager.Instance.AddToListDialog(UIManager.Instance.UISettingIngame);
@@ -157,6 +161,7 @@ public class UIBackground : MonoBehaviour
         {
             level.onClick.AddListener(() =>
             {
+                SoundManager.PlaySound("click");
                 if (UILevel.Instance == null)
                 {
                     UIManager.Instance.AddToListDialog(UIManager.Instance.UILevel);
@@ -176,5 +181,12 @@ public class UIBackground : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        reset.onClick.RemoveAllListeners();
+        home.onClick.RemoveAllListeners();
+        level.onClick.RemoveAllListeners();
+        pause.onClick.RemoveAllListeners();
+    }
 
 }

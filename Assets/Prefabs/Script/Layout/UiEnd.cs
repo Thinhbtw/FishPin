@@ -92,9 +92,7 @@ public class UiEnd : MonoBehaviour
     }
 
     private void OnEnable()
-    {
-        
-        
+    {   
         isComplete = false;
         canvas.sortingOrder = 10;
         if (btnNext != null)
@@ -102,6 +100,7 @@ public class UiEnd : MonoBehaviour
             {
                 if(myScript.isDed)
                 {
+                    SoundManager.PlaySound("click");
                     int i = PlayerPrefs.GetInt("SelectedLevel");
                     var lvl = Instantiate(UIManager.Instance.listLevel[i * 5], uiGameplay.levelField.transform);
                     uiGameplay.Level.Add(lvl);
@@ -118,6 +117,7 @@ public class UiEnd : MonoBehaviour
 
                 else if(!myScript.isDed)
                 {
+                    SoundManager.PlaySound("click");
                     if (UIManager.Instance.listLevel.Count % 5 == 0)
                     {
                         progressBar.progressBar.value = 0;
@@ -140,6 +140,7 @@ public class UiEnd : MonoBehaviour
             {
                 if (myScript.isDed)
                 {
+                    SoundManager.PlaySound("click");
                     ToponAdsController.instance.OpenVideoAds();
                     var lvl = Instantiate(UIManager.Instance.listLevel[uiGameplay.levelAt], uiGameplay.levelField.transform);
                     uiGameplay.Level.Add(lvl);
@@ -154,5 +155,11 @@ public class UiEnd : MonoBehaviour
                     btn.SetActive(false);
                 }
             });
+    }
+
+    private void OnDisable()
+    {
+        btnResetCurLevel.onClick.RemoveAllListeners();
+        btnNext.onClick.RemoveAllListeners();
     }
 }
