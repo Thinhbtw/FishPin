@@ -47,7 +47,7 @@ public class UIBackground : MonoBehaviour
             if (PlayerPrefs.GetInt("Progress") < num * 5 && ((num * 5) - UIGameplay.Instance.levelAt) <= 5)
             {
                 UIGameplay.Instance.levelAt = num * 5;
-
+                PlayerPrefs.SetInt("SelectedLevel", num);
                 var lvl = Instantiate(UIManager.Instance.listLevel[UIGameplay.Instance.levelAt], UIGameplay.Instance.levelField.transform);
                 UIGameplay.Instance.Level.Add(lvl);
                 Destroy(UIGameplay.Instance.Level[UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count]);
@@ -65,7 +65,7 @@ public class UIBackground : MonoBehaviour
 
                 PlayerPrefs.SetInt("Progress", UIGameplay.Instance.levelAt);
                 PlayerPrefs.SetInt("Progress2", UIGameplay.Instance.levelAt);
-                PlayerPrefs.SetInt("SelectedLevel", num);
+                
                 PlayerPrefs.SetString("LevelSkip", PlayerPrefs.GetString("LevelSkip") + (num - 1).ToString());
 
                 break;

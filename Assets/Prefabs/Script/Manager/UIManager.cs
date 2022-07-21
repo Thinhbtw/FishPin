@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     public List<GameObject> list;
     private void Awake()
     {
-        /*PlayerPrefs.DeleteAll();*/
+        PlayerPrefs.DeleteAll();
         list = new List<GameObject>();
         if (Instance == null)
             instance = this;
