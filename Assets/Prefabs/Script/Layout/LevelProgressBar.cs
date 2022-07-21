@@ -11,13 +11,16 @@ public class LevelProgressBar : MonoBehaviour
     int num;
     public Sprite[] image;
     [SerializeField] Animator cupAnima;
+    [SerializeField] GameObject plus50;
+    bool hasAddCoin;
 
     // Start is called before the first frame update
 
     private void Awake()
     {
         uiGameplay = FindObjectOfType<UIGameplay>();
-
+        plus50.SetActive(false);
+        hasAddCoin = false;
     }
 
     private void OnEnable()
@@ -45,15 +48,24 @@ public class LevelProgressBar : MonoBehaviour
         if(uiGameplay == null)
             uiGameplay = FindObjectOfType<UIGameplay>();
 
-        if (progressBar.value <= 4 && uiGameplay.levelAt % 5 != 0)
+        if (progressBar.value < 4 && uiGameplay.levelAt % 5 != 0)
         {
             progress.transform.GetChild((uiGameplay.levelAt % 5 - 1)).GetComponent<Image>().sprite = image[1];
             progressBar.value = Mathf.MoveTowards(progressBar.value, uiGameplay.levelAt % 5, Time.deltaTime * 1);
             cupAnima.enabled = false;
 
         }
-        else
+        else if(progressBar.value == 4 && uiGameplay.levelAt % 5 == 0)
+        {
             cupAnima.enabled = true;
+            if (!PlayerPrefs.GetString("LevelComplete").Contains((uiGameplay.levelAt / 5).ToString()) && !hasAddCoin)
+            {
+                plus50.SetActive(true);
+                GameData.AddCoin(50);
+                hasAddCoin = true;
+            }
+        }
      
     }
+
 }

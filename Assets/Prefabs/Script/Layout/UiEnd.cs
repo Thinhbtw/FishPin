@@ -9,7 +9,7 @@ public class UiEnd : MonoBehaviour
     public static UiEnd Instance;
     public GameObject pannel;
     [SerializeField] Button btnNext, btnResetCurLevel;
-    [SerializeField] GameObject btn, winMenu, loseMenu;
+    [SerializeField] GameObject btn, winMenu, loseMenu, PlusCoin;
     [SerializeField] Text textLevel;
     public Canvas canvas;
     LevelComplete myScript;
@@ -18,6 +18,7 @@ public class UiEnd : MonoBehaviour
     public bool isComplete;
     LevelProgressBar progressBar;
     public Sprite[] imgBtn;
+    
 
     private void Awake()
     {
@@ -35,17 +36,6 @@ public class UiEnd : MonoBehaviour
         progressBar = FindObjectOfType<LevelProgressBar>();
         missionCounter = FindObjectOfType<missionCounter>();
     }
-
-    /*public void DieWhenWinning()
-    {
-        StopAllCoroutines();
-        winMenu.SetActive(false);
-        loseMenu.SetActive(true);
-        btnNext.image.sprite = imgBtn[1];
-        myScript.isComplete = true;
-        myScript.isDed = true;
-        btn.SetActive(true);
-    }*/
 
     public IEnumerator WaitPanel(bool win)
     {
@@ -120,6 +110,7 @@ public class UiEnd : MonoBehaviour
                     uiGameplay.levelAt = i * 5;
                     loseMenu.SetActive(false);
                     winMenu.SetActive(false);
+                    PlusCoin.SetActive(false);
                     btnResetCurLevel.gameObject.SetActive(false);
                     pannel.SetActive(false);
                     myScript.isDed = false;
@@ -136,6 +127,7 @@ public class UiEnd : MonoBehaviour
                     missionCounter.Increasing(typeID.levelFinished);
                     loseMenu.SetActive(false);
                     winMenu.SetActive(false);
+                    PlusCoin.SetActive(false);
                     btnResetCurLevel.gameObject.SetActive(false);
                     pannel.SetActive(false);
                     uiGameplay.hasNextLevel = true;
@@ -155,6 +147,7 @@ public class UiEnd : MonoBehaviour
                     uiGameplay.Level.RemoveAt(uiGameplay.Level.Count - uiGameplay.Level.Count);
                     loseMenu.SetActive(false);
                     winMenu.SetActive(false);
+                    PlusCoin.SetActive(false);
                     pannel.SetActive(false);
                     PlayerPrefs.SetInt("SelectedLevel", (UIGameplay.Instance.levelAt % 5) + 1);
                     myScript.isDed = false;
