@@ -2,11 +2,6 @@
   <packages>
     <package>androidx.appcompat:appcompat:1.1.0</package>
     <package>com.google.android.gms:play-services-ads:21.0.0</package>
-    <package>com.google.android.gms:play-services-ads-identifier:18.0.1</package>
-    <package>com.google.android.gms:play-services-appset:16.0.2</package>
-    <package>com.google.android.gms:play-services-basement:18.0.0</package>
-    <package>com.ironsource.adapters:admobadapter:4.3.29</package>
-    <package>com.ironsource.sdk:mediationsdk:7.2.3.1</package>
   </packages>
   <files />
   <settings>

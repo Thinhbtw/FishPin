@@ -6,12 +6,6 @@
         maven {
             url "https://maven.google.com"
         }
-        maven {
-            url "https://maven.google.com/" // Assets/IronSource/Editor/ISAdMobAdapterDependencies.xml:8, Assets/IronSource/Editor/IronSourceSDKDependencies.xml:16, Assets/IronSource/Editor/IronSourceSDKDependencies.xml:24, Assets/IronSource/Editor/IronSourceSDKDependencies.xml:32
-        }
-        maven {
-            url "https://android-sdk.is.com/" // Assets/IronSource/Editor/IronSourceSDKDependencies.xml:8, Assets/IronSource/Editor/ISAdMobAdapterDependencies.xml:16
-        }
         mavenLocal()
         jcenter()
         mavenCentral()
@@ -25,12 +19,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 // Android Resolver Dependencies Start
     implementation 'androidx.appcompat:appcompat:1.1.0' // Assets/AnyThinkAds/Plugins/Android/NonChina/Editor/Dependencies.xml:3
-    implementation 'com.google.android.gms:play-services-ads:21.0.0' // Assets/IronSource/Editor/ISAdMobAdapterDependencies.xml:8
-    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1' // Assets/IronSource/Editor/IronSourceSDKDependencies.xml:16
-    implementation 'com.google.android.gms:play-services-appset:16.0.2' // Assets/IronSource/Editor/IronSourceSDKDependencies.xml:24
-    implementation 'com.google.android.gms:play-services-basement:18.0.0' // Assets/IronSource/Editor/IronSourceSDKDependencies.xml:32
-    implementation 'com.ironsource.adapters:admobadapter:4.3.29' // Assets/IronSource/Editor/ISAdMobAdapterDependencies.xml:16
-    implementation 'com.ironsource.sdk:mediationsdk:7.2.3.1' // Assets/IronSource/Editor/IronSourceSDKDependencies.xml:8
+    implementation 'com.google.android.gms:play-services-ads:21.0.0' // Assets/AnyThinkAds/Plugins/Android/NonChina/mediation/admob/Editor/Dependencies.xml:3
 // Android Resolver Dependencies End
 **DEPS**}
 
