@@ -2552,6 +2552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dailyLogin
       objectReference: {fileID: 0}
+    - target: {fileID: 5600008448967130281, guid: a6cd786540876f1478e426313b8ed736, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8216971477124193689, guid: a6cd786540876f1478e426313b8ed736, type: 3}
       propertyPath: m_Color.a
       value: 1

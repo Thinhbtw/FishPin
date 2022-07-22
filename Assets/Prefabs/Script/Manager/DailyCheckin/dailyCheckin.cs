@@ -90,8 +90,13 @@ public class dailyCheckin : MonoBehaviour
             if (elapsedDay > loginDelayLost)
             {
                 //reset streak
-                Debug.Log("reset day");
+                /*Debug.Log("reset day");*/
+                resetLogDB();
+                /*loginDB.resetStat();*/
+                //reset data stat
+
                 GameData.resetLoginDay();
+                /*Debug.Log("the day after reset: "+GameData.getLoginDay());*/          
                 PlayerPrefs.SetString("loginday", currentDatetime.ToString());
             }
             else
@@ -99,9 +104,9 @@ public class dailyCheckin : MonoBehaviour
                 if (elapsedDay > nextLoginCheckDelay)
                 {
                     //update streak
-                    Debug.Log("update day");                    
+                    /*Debug.Log("update day"); */                   
                     GameData.increasLoginDay();
-                    Debug.Log("this is day: " + GameData.getLoginDay());
+                    /*Debug.Log("this is day: " + GameData.getLoginDay());*/
                     PlayerPrefs.SetString("loginday", currentDatetime.ToString());
                 }
             }
@@ -122,14 +127,21 @@ public class dailyCheckin : MonoBehaviour
         if (GameData.getLoginDay() > 7)
         {
             resetLogDB();
+            /*loginDB.resetStat();*/
+            /*GameData.resetLoginDay();*/
         }
     }
     void resetLogDB()
     {
-        GameData.resetLoginDay();
-        for(int i = 0; i < loginDB.dailyLogCount; i++)
+        /*GameData.resetLoginDay();
+        for (int i = 0; i < 7; i++)
         {
-            loginDB.resetStat(i);
+            Debug.Log(loginDB.dailyLogCount);
+
+        }*/
+        for (int i = 0; i < general.transform.childCount; i++)
+        {
+            general.transform.GetChild(i).GetComponent<checkin>().resetStat();
         }
     }
 

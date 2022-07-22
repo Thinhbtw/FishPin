@@ -140,19 +140,28 @@ public static class GameData
     }
 
     public static void increasLoginDay()
-    {
-        playerData.loginday++;
-        PlayerPrefs.SetInt("Day"+playerData.loginday, 1);
-        SavePlayerData();
+    {        
+                
+        if (playerData.loginday < 7)
+        {
+            playerData.loginday++;
+            PlayerPrefs.SetInt("Day" + playerData.loginday, INSTANCE.claimAble);
+            SavePlayerData();
+        }
+        else
+        {
+            resetLoginDay();
+        }
+        
     }
 
     public static void resetLoginDay()
     {
-        for(int i = 1; i <= playerData.loginday; i++)
+        playerData.loginday = 1;        
+        for (int i = 1; i <= 7; i++)
         {
-            PlayerPrefs.SetInt("Day" + i, 0);
-        }
-        playerData.loginday = 1;
+            PlayerPrefs.SetInt("Day" + i, INSTANCE.unclaimAble);
+        }        
         SavePlayerData();
     }
 

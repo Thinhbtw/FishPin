@@ -11,14 +11,9 @@ public class checkin : MonoBehaviour
     [SerializeField] Image rewardImage;
     [SerializeField] Text rewardAmount;
     [SerializeField] GameObject claimedImage;
-    private void Awake()
-    {
-        if (GameData.getLoginDay() == Log.logDay)
-        {
-            PlayerPrefs.SetInt("Day" + Log.logDay, 1);
-        }
-    }
+    
 
+    public int currentday;
     public void setupLogin(dailyLog log,Sprite icon)
     {
         Log = log;
@@ -26,23 +21,37 @@ public class checkin : MonoBehaviour
         rewardAmount.text ="+" + log.amount.ToString();       
         GetComponent<Button>().onClick.RemoveAllListeners();
         GetComponent<Button>().onClick.AddListener(claimButton);
+
+        if (GameData.getLoginDay() == Log.logDay)
+        {            
+            PlayerPrefs.SetInt("Day" + Log.logDay, INSTANCE.claimAble);
+        }
     }
 
     private void Update()
-    {        
-        if (PlayerPrefs.GetInt("Day" + Log.logDay) != 1)
+    {
+        /*Debug.Log(PlayerPrefs.GetInt("Day" + 1));*/
+        currentday = GameData.getLoginDay();
+        if (PlayerPrefs.GetInt("Day" + Log.logDay) == INSTANCE.claimed)
         {
-            GetComponent<Button>().enabled = false;            
+            GetComponent<Button>().enabled = false;
+            claimedImage.SetActive(true);
         }
-        else
+        if (PlayerPrefs.GetInt("Day" + Log.logDay) == INSTANCE.unclaimAble)
         {
-            GetComponent<Button>().enabled = true;            
+            GetComponent<Button>().enabled = false;
+            claimedImage.SetActive(false);
         }
+        if (PlayerPrefs.GetInt("Day" + Log.logDay) == INSTANCE.claimAble)
+        {
+            GetComponent<Button>().enabled = true;
+            claimedImage.SetActive(false);
+        }            
         if (Log.stat)
         {
             if (GameData.getLoginDay() == Log.logDay)
-            {
-                PlayerPrefs.SetInt("Day" + Log.logDay, 1);
+            {                
+                PlayerPrefs.SetInt("Day" + Log.logDay, INSTANCE.claimAble);
             }
         }
         
@@ -58,8 +67,13 @@ public class checkin : MonoBehaviour
         {
             GameData.AddGems(Log.amount);
         }
-        PlayerPrefs.SetInt("Day" + Log.logDay,0);
-        Log.stat = false;
+        PlayerPrefs.SetInt("Day" + Log.logDay,INSTANCE.claimed);        
         claimedImage.SetActive(true);
+        Log.stat = false;
+    }
+
+    public void resetStat()
+    {
+        Log.stat = true;
     }
 }
