@@ -18,20 +18,23 @@ public class SoundManager : MonoBehaviour
 
     public static void PlaySound(string clip)
     {
-        switch (clip)
+        if (PlayerPrefs.GetString("SaveSettings").Contains("0"))
         {
-            case "click":
-                audioSrc.PlayOneShot(click);
-                break;
-            case "bombExplo":
-                audioSrc.PlayOneShot(bombExplo);
-                break;
-            case "purchased":
-                audioSrc.PlayOneShot(purchased);
-                break;
-            case "confeti":
-                audioSrc.PlayOneShot(confeti);
-                break;
+            switch (clip)
+            {
+                case "click":
+                    audioSrc.PlayOneShot(click);
+                    break;
+                case "bombExplo":
+                    audioSrc.PlayOneShot(bombExplo);
+                    break;
+                case "purchased":
+                    audioSrc.PlayOneShot(purchased);
+                    break;
+                case "confeti":
+                    audioSrc.PlayOneShot(confeti);
+                    break;
+            }
         }
     }
 

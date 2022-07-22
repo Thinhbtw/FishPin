@@ -168,10 +168,10 @@
     <Compile Include="Assets\Prefabs\Script\GameMechanic\IcePlatHealth.cs" />
     <Compile Include="Assets\Prefabs\Script\Manager\CanvasRenderMode.cs" />
     <Compile Include="Assets\Prefabs\Script\GameMechanic\DestroyOnTouch.cs" />
+    <Compile Include="Assets\Prefabs\Script\Manager\SoundManager.cs" />
     <Compile Include="Assets\AnyThinkAds\Api\ATConst.cs" />
     <Compile Include="Assets\AnyThinkAds\Common\IATInterstitialAdClient.cs" />
     <Compile Include="Assets\AnyThinkAds\Platform\Android\ATRewardedVideoAdClient.cs" />
-    <Compile Include="Assets\Prefabs\Script\Manager\SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\AchivementData\archiveList.txt" />

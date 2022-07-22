@@ -29,6 +29,7 @@ public static class StaticClass
     public static string Snake_clipExplo = "Snake_Explo";
     public static string Snake_clipHurt = "Snake_Hurt";
     public static string Snake_clipIdle = "Snake_Idle";
+    public static string Snake_clipMove = "Snake_Move";
 
 
     //1TimePin

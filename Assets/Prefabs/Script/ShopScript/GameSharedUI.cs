@@ -33,12 +33,10 @@ public class GameSharedUI : MonoBehaviour
     void SetCoinsText(Text text, int value)
     {
         if (value >= 10000)
-        {
             text.text = ((value >= 10550 ? value - 50 : value) / 1000D).ToString("0.#k");
-        }
         else if (value >= 1000)
             text.text = value >= 1000 ? ((value >= 1005 ? value - 5 : value) / 1000D).ToString("0.##k") : value.ToString("#,0");
-        else if (value % 1000 == 0)
+        else if (value % 1000 == 0 && value >= 1000)
             text.text = string.Format("{0}K", (value / 1000), GetFirstDigitFromNumber(value % 1000));
         else
             text.text = value.ToString();

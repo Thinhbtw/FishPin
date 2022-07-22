@@ -62,6 +62,7 @@ public class achivementManager : MonoBehaviour
         if (btnBack != null)
             btnBack.onClick.AddListener(() =>
             {
+                SoundManager.PlaySound("click");
                 if (UIManager.Instance.list.Count == 2)
                 {
                     UIManager.Instance.LoadPreviousDialog();

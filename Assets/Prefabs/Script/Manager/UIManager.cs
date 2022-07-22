@@ -18,6 +18,10 @@ public class UIManager : MonoBehaviour
         listLevel = new List<GameObject>(Resources.LoadAll<GameObject>("Level"));
         var UI = Instantiate(UIHome, transform);
         list.Add(UI);
+        if (!PlayerPrefs.HasKey("SaveSettings"))
+        {
+            PlayerPrefs.SetString("SaveSettings", "024");
+        }
     }
 
     public void AddToListDialog(GameObject UI)
@@ -76,9 +80,4 @@ public class UIManager : MonoBehaviour
         PlayerPrefs.DeleteKey("SelectedLevel");
     }
 
-    private void Update()
-    {
-        /*Debug.Log(PlayerPrefs.GetString("LevelComplete") + " + " + PlayerPrefs.GetString("LevelSkip"));*/
-
-    }
 }
