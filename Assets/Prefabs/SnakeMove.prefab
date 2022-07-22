@@ -76,6 +76,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rectTransform: {fileID: 8123071097206669374}
+  fish: {fileID: 0}
+  anim: {fileID: 8123071097706111731}
 --- !u!1 &8123071097752076555
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,5 +299,10 @@ PrefabInstance:
 --- !u!224 &8123071097206669374 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3114050628775649715, guid: f60b148f177286f4fa6b544b3daad4c1, type: 3}
+  m_PrefabInstance: {fileID: 6597112288023290253}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8123071097706111731 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3114050629350048638, guid: f60b148f177286f4fa6b544b3daad4c1, type: 3}
   m_PrefabInstance: {fileID: 6597112288023290253}
   m_PrefabAsset: {fileID: 0}

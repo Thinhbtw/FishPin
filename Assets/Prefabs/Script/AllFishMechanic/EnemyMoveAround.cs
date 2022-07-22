@@ -8,6 +8,7 @@ public class EnemyMoveAround : MonoBehaviour
      Boss boss;
      BossMove bossMove;
     [SerializeField] FishHealth fish;
+    [SerializeField]Animator anim;
 
     float dirX, moveSpeed;
     Rigidbody2D rb;
@@ -39,8 +40,15 @@ public class EnemyMoveAround : MonoBehaviour
     void FixedUpdate()
     {
 
-        if(boss.onGround && !fish.Winning && !boss.isDed)
+        if (boss.onGround && !fish.Winning && !boss.isDed)
+        {
             rb.velocity = new Vector2(dirX * StaticClass.Boss_speed, rb.velocity.y);
+            anim.Play(StaticClass.Snake_clipMove);
+        }
+        else
+        {
+            anim.Play(StaticClass.Snake_clipIdle);
+        }
         if (dirX > 0f && boss.onGround && !bossMove.inRange)
             rectTransform.rotation = Quaternion.Euler(0, 180f, 0);
         else if (dirX < 0f && boss.onGround && !bossMove.inRange)
