@@ -16,6 +16,10 @@ public class ThemeShopUI : MonoBehaviour
         SetSelectedTheme();
         SelectedItemUI(GameData.GetSelectedThemeIndex()); 
         ChangeTheme();
+        if(PlayerPrefs.HasKey("Progress") == false)
+        {
+            Debug.Log("Set");
+        }
     }
 
     void SetSelectedTheme()
@@ -34,6 +38,7 @@ public class ThemeShopUI : MonoBehaviour
         }
         for (int i = 0; i < themeDB.ThemesCount; i++)
         {
+            int num = i;
             Theme theme = themeDB.GetTheme(i);
             ThemeItemUI uiItem = Instantiate(themeItemPrefab, itemContent.transform).GetComponent<ThemeItemUI>();
 
@@ -53,16 +58,17 @@ public class ThemeShopUI : MonoBehaviour
                 uiItem.OnItemPurchased(i, OnItemPurchased);
             }
         }
+        
     }
 
     void ChangeTheme()
     {
         Theme theme = GameData.GetSelectedTheme();
-        Debug.Log("Chuyen Theme");
     }
 
     void OnItemSelected(int index)
     {
+        SoundManager.PlaySound("click");
         SelectedItemUI(index);
 
         GameData.SetSelectedTheme(themeDB.GetTheme(index), index);
@@ -71,6 +77,7 @@ public class ThemeShopUI : MonoBehaviour
 
     void SelectedItemUI(int itemIndex)
     {
+        
         previousSelectedItemIndex = newSelectedItemIndex;
         newSelectedItemIndex = itemIndex;
 
@@ -89,11 +96,13 @@ public class ThemeShopUI : MonoBehaviour
 
     void OnItemPurchased(int index)
     {
+
         Theme theme = themeDB.GetTheme(index);
         ThemeItemUI uiItem = GetItemUI(index);
 
         if (GameData.CanSpendGems(theme.price))
         {
+            SoundManager.PlaySound("purchased");
             //Proceed with the purchase operation
             GameData.SpendGems(theme.price);
 
@@ -112,6 +121,7 @@ public class ThemeShopUI : MonoBehaviour
         }
         else
         {
+            SoundManager.PlaySound("click");
             //No enough coins..
             Debug.Log("ko du gems");
         }

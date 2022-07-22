@@ -14,10 +14,6 @@ public class UISetting : MonoBehaviour
     private void Awake()
     {
         Instance = (UISetting)this;
-        if (!PlayerPrefs.HasKey("SaveSettings"))
-        {
-            PlayerPrefs.SetString("SaveSettings", "024");
-        }
         if (PlayerPrefs.GetString("SaveSettings").Contains("0"))
             btnMusic.image.sprite = spriteArray[0];
         if (PlayerPrefs.GetString("SaveSettings").Contains("1"))
