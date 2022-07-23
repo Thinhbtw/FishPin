@@ -24,7 +24,7 @@ public class LevelComplete : MonoBehaviour
         isComplete = isWin;
         if(isWin == true)
         {
-            
+            SoundManager.PlaySound("confeti");
             Confetti.SetActive(true);
         }
         
