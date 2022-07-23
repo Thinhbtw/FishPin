@@ -68,7 +68,7 @@ public class checkin : MonoBehaviour
 
     void claimButton()
     {
-        SoundManager.PlaySound("reward");
+        SoundManager.PlaySound("purchased");
         if(Log.rewardType == RewardType.Coins)
         {
             GameData.AddCoin(Log.amount);

@@ -71,7 +71,7 @@ public class QuestScript : MonoBehaviour
 
     void claimButton()
     {
-        SoundManager.PlaySound("reward");
+        SoundManager.PlaySound("purchased");
         //check reward Type
         if (quest.Type == RewardType.Coins)
         {

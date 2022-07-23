@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip click, bombExplo, purchased, confeti, fail, success, fizz, bonk, reward;
+    public static AudioClip click, bombExplo, purchased, confeti, fail, success, fizz, bonk;
     static AudioSource audioSrc;
     [SerializeField] GameObject backgroundAudio;
 
@@ -18,8 +18,7 @@ public class SoundManager : MonoBehaviour
         fail = Resources.Load<AudioClip>("Audio/FAIL");
         success = Resources.Load<AudioClip>("Audio/SUCCESS");
         fizz = Resources.Load<AudioClip>("Audio/fizz");
-        bonk = Resources.Load<AudioClip>("Audio/bonk");
-        reward = Resources.Load<AudioClip>("Audio/rewardSound");
+        bonk = Resources.Load<AudioClip>("Audio/bonk");        
     }
 
     private void Update()
@@ -63,10 +62,7 @@ public class SoundManager : MonoBehaviour
                     break;
                 case "bonk":
                     audioSrc.PlayOneShot(bonk);
-                    break;
-                case "reward":
-                    audioSrc.PlayOneShot(reward);
-                    break;
+                    break;               
             }
         }
     }
