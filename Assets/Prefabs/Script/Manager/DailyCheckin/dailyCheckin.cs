@@ -140,11 +140,13 @@ public class dailyCheckin : MonoBehaviour
 
     void OnCloseButtonClick()
     {
+        SoundManager.PlaySound("click");
         canvas.SetActive(false);
     }
 
     void onOpenButtonClick()
     {
+        SoundManager.PlaySound("click");
         canvas.SetActive(true);
     }
 

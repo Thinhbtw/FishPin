@@ -55,7 +55,7 @@ public class QuestScript : MonoBehaviour
 
         if (!isAchievement)
         {
-            /*progressBar.GetComponent<Slider>().value = quest.process;*/
+            progressBar.GetComponent<Slider>().value = quest.process;
         }
                 
         if (PlayerPrefs.GetInt(title.text) == INSTANCE.unclaimAble || PlayerPrefs.GetInt(title.text) == INSTANCE.claimed)
@@ -70,7 +70,8 @@ public class QuestScript : MonoBehaviour
     
 
     void claimButton()
-    {        
+    {
+        SoundManager.PlaySound("reward");
         //check reward Type
         if (quest.Type == RewardType.Coins)
         {

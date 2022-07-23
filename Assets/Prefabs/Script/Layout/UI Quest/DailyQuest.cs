@@ -186,22 +186,26 @@ namespace DailyQuestSystem
 
         void OnDailyClick()
         {
+            SoundManager.PlaySound("click");
             onQuestBtnClick("D");
         }
 
         void OnWeeklyClick()
         {
+            SoundManager.PlaySound("click");
             onQuestBtnClick("W");
         }
 
         void OnMonthlyClick()
         {
+            SoundManager.PlaySound("click");
             onQuestBtnClick("M");
         }
 
         void onQuestBtnClick(string id)
         {
-            switch(id)
+            SoundManager.PlaySound("click");
+            switch (id)
             {
                 case "D":
                     btnStatus = questBtnType.daily;                    
@@ -425,6 +429,7 @@ namespace DailyQuestSystem
         // open | close ui ------------------------------
         void OnOpenButtonClick()
         {
+            SoundManager.PlaySound("click");
             questCanvas.SetActive(true);
             switch (btnStatus)
             {
@@ -441,6 +446,7 @@ namespace DailyQuestSystem
         }
         void OnCloseButtonClick()
         {
+            SoundManager.PlaySound("click");
             questCanvas.SetActive(false);
         }
        
