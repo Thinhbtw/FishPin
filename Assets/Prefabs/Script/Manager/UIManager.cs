@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         PlayerPrefs.DeleteAll();
-        GameData.AddGems(10000);
         list = new List<GameObject>();
         if (Instance == null)
             instance = this;

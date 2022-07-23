@@ -15,6 +15,7 @@ public class DestroyOnTouch : MonoBehaviour
     {
         if (collision.gameObject.tag == "Water")
         {
+            SoundManager.PlaySound("fizz");
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }

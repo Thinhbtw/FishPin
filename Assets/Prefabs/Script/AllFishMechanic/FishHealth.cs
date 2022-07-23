@@ -70,7 +70,6 @@ public class FishHealth : MonoBehaviour
             animator.SetLayerWeight(1, 0);
             animator.Play(StaticClass.Fish_clipDie);
             myScript.setGameEnd(false);
-            Debug.Log("THua");
             if (Winning)
                 uiGameplay.levelAt = uiGameplay.levelAt - 1;
 
@@ -79,6 +78,7 @@ public class FishHealth : MonoBehaviour
         if (collision.gameObject.tag == "Boulder" || collision.gameObject.tag == "IceBlock")
         {
             Physics2D.IgnoreLayerCollision(10, 6);
+            SoundManager.PlaySound("bonk");
             myScript.isDed = true;
             animator.SetLayerWeight(1, 0);
             animator.Play(StaticClass.Fish_clipStun);

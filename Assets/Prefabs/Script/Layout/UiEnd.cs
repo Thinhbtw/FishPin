@@ -55,6 +55,7 @@ public class UiEnd : MonoBehaviour
             winMenu.SetActive(true);
             btnNext.image.sprite = imgBtn[0];
             pannel.SetActive(true);
+            SoundManager.PlaySound("success");
             yield return new WaitForSeconds(1.3f);
             ToponAdsController.instance.OpenInterstitialAds();
         }
@@ -68,6 +69,7 @@ public class UiEnd : MonoBehaviour
             loseMenu.SetActive(true);
             btn.SetActive(true);
             pannel.SetActive(true);
+            SoundManager.PlaySound("fail");
             yield return new WaitForSeconds(1.3f);
             ToponAdsController.instance.OpenInterstitialAds();
         }

@@ -64,6 +64,7 @@ public class Boss : MonoBehaviour
             if(collision.gameObject.tag == "Boulder" || collision.gameObject.tag == "Untagged" || collision.gameObject.tag == "IceBlock")
             {
                 IgnoreColision(true);
+                SoundManager.PlaySound("bonk");
                 isDed = true;
                 anima.Play(clipDie);
                 StartCoroutine(Destroy());
@@ -93,6 +94,7 @@ public class Boss : MonoBehaviour
 
             if (collision.gameObject.tag == "Fish")
             {
+                SoundManager.PlaySound("bonk");
                 anima.SetLayerWeight(1, 1);
             }
         }
