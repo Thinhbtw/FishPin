@@ -26,6 +26,7 @@ public class Bomb : MonoBehaviour
             || collision.gameObject.tag == "Fish") 
         {
             anim.Play(StaticClass.Bomb_Explo);
+            SoundManager.PlaySound("bombExplo");
             Handheld.Vibrate();
             StartCoroutine(Destroy());
         }
