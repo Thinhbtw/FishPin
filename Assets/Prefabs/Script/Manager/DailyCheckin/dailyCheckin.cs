@@ -16,6 +16,7 @@ public class dailyCheckin : MonoBehaviour
     [SerializeField] float checkTimeDelay = 1f;
     [SerializeField] loginDataReward loginDB;
     [SerializeField] GameObject canvas;
+    [SerializeField] GameObject notification;
 
     [Space]
     [Header("Reward Image")]
@@ -31,8 +32,7 @@ public class dailyCheckin : MonoBehaviour
     {
         public int logDay;
         public RewardType rewardType;
-        public int amount;
-        public bool stat;
+        public int amount;        
     }
 
     /*private void Awake()
@@ -90,8 +90,7 @@ public class dailyCheckin : MonoBehaviour
             if (elapsedDay > loginDelayLost)
             {
                 //reset streak
-                /*Debug.Log("reset day");*/
-                resetLogDB();
+                /*Debug.Log("reset day");*/                
                 /*loginDB.resetStat();*/
                 //reset data stat
 
@@ -116,6 +115,7 @@ public class dailyCheckin : MonoBehaviour
 
     private void Update()
     {
+        /*Debug.Log(PlayerPrefs.GetInt("Day" + 1));*/
         if (WorldTimeAPI.Instance.IsTimeLodaed)
         {
             currentDatetime = WorldTimeAPI.Instance.GetCurrentDateTime();
@@ -125,25 +125,18 @@ public class dailyCheckin : MonoBehaviour
             currentDatetime = DateTime.Now;
         }
         if (GameData.getLoginDay() > 7)
-        {
-            resetLogDB();
-            /*loginDB.resetStat();*/
-            /*GameData.resetLoginDay();*/
+        {            
+            GameData.resetLoginDay();            
         }
-    }
-    void resetLogDB()
-    {
-        /*GameData.resetLoginDay();
-        for (int i = 0; i < 7; i++)
+        if (checkNofti())
         {
-            Debug.Log(loginDB.dailyLogCount);
-
-        }*/
-        for (int i = 0; i < general.transform.childCount; i++)
-        {
-            general.transform.GetChild(i).GetComponent<checkin>().resetStat();
+            notification.SetActive(true);
         }
-    }
+        else
+        {
+            notification.SetActive(false);
+        }
+    }    
 
     void OnCloseButtonClick()
     {
@@ -153,6 +146,18 @@ public class dailyCheckin : MonoBehaviour
     void onOpenButtonClick()
     {
         canvas.SetActive(true);
+    }
+
+    bool checkNofti()
+    {
+        for(int i = 0; i < 7; i++)
+        {
+            if (PlayerPrefs.GetInt("Day" + (i + 1)) == INSTANCE.claimAble)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
