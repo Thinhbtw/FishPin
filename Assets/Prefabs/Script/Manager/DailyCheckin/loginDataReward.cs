@@ -16,14 +16,6 @@ public class loginDataReward : ScriptableObject
     public dailyLog getdailyLog(int index)
     {
         return DailyLogs[index];
-    }
-    
-    public void resetStat()
-    {
-        for(int i = 0; i < DailyLogs.Length; i++)
-        {
-            DailyLogs[i].stat = true;
-        }
-    }
+    }       
 
 }

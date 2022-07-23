@@ -47,7 +47,7 @@ public class checkin : MonoBehaviour
             GetComponent<Button>().enabled = true;
             claimedImage.SetActive(false);
         }            
-        if (Log.stat)
+        if (PlayerPrefs.GetInt("Day"+Log.logDay)==INSTANCE.unclaimAble)
         {
             if (GameData.getLoginDay() == Log.logDay)
             {                
@@ -77,12 +77,7 @@ public class checkin : MonoBehaviour
             GameData.AddGems(Log.amount);
         }
         PlayerPrefs.SetInt("Day" + Log.logDay,INSTANCE.claimed);        
-        claimedImage.SetActive(true);
-        Log.stat = false;
+        claimedImage.SetActive(true);        
     }
-
-    public void resetStat()
-    {
-        Log.stat = true;
-    }
+    
 }
