@@ -54,7 +54,16 @@ public class checkin : MonoBehaviour
                 PlayerPrefs.SetInt("Day" + Log.logDay, INSTANCE.claimAble);
             }
         }
-        
+        if (GameData.getLoginDay() == Log.logDay)
+        {
+            //out line on
+            GetComponentInChildren<Outline>().enabled = true;
+        }
+        else
+        {
+            //out line off
+            GetComponentInChildren<Outline>().enabled = false;
+        }
     }
 
     void claimButton()
