@@ -31,8 +31,8 @@ public class achivementManager : MonoBehaviour
 
     void Start()
     {
-        resetQuestData(AchievementListData);
-        for(int i = 0; i < AchievementListData.rewardsCount; i++)
+        /*resetQuestData(AchievementListData);*/
+        for (int i = 0; i < AchievementListData.rewardsCount; i++)
         {
             GameObject achieve = Instantiate(achivePref, general.transform);            
             achivements.Add(achieve);
@@ -45,7 +45,8 @@ public class achivementManager : MonoBehaviour
         data.resetProcess();
         for (int i = 0; i < data.rewardsCount; i++)
         {
-            PlayerPrefs.SetInt(data.GetQuest(i).title.ToString(), INSTANCE.unclaimAble);
+            /*PlayerPrefs.SetInt(data.GetQuest(i).title.ToString(), INSTANCE.unclaimAble);*/
+            Debug.Log(PlayerPrefs.GetInt(data.GetQuest(i).title.ToString()));
         }
         /*Debug.Log("reset data at: " + data.name);*/
     }

@@ -8,8 +8,7 @@ public class missionCounter : MonoBehaviour
     #region Singleton class: misssionCounter
 
     public static missionCounter Instance;
-
-    public GameObject questoke;
+    
 
     void Awake()
     {
@@ -99,8 +98,9 @@ public class missionCounter : MonoBehaviour
         for (int i = 0; i < q.Count; i++)
         {
             if (q[i].required <= q[i].process && PlayerPrefs.GetInt(q[i].title.ToString()) == INSTANCE.unclaimAble)
-            {
+            {                
                 PlayerPrefs.SetInt(q[i].title.ToString(), INSTANCE.claimAble);
+                Debug.Log(q[i].title);
             }
         }
     }    

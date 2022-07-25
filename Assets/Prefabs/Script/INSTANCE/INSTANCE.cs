@@ -75,9 +75,9 @@ public class INSTANCE : MonoBehaviour
     public static string monthlyID = "M";
 
     //quest Stat
-    public static int claimed = 2;
-    public static int claimAble = 0;
-    public static int unclaimAble = 1;
+    public static int claimed = 3;
+    public static int claimAble = 2;
+    public static int unclaimAble = 0;
 
     //time data
     public static string dailyTime = "Quest_Start_Time_Daily";

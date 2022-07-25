@@ -43,7 +43,8 @@ public class QuestScript : MonoBehaviour
         
 
     private void Update()
-    {        
+    {                
+        
         if(quest.process<= quest.required)
         {
             numberProgress.text = quest.process + "/" + quest.required.ToString();
@@ -58,11 +59,11 @@ public class QuestScript : MonoBehaviour
             progressBar.GetComponent<Slider>().value = quest.process;
         }
                 
-        if (PlayerPrefs.GetInt(title.text) == INSTANCE.unclaimAble || PlayerPrefs.GetInt(title.text) == INSTANCE.claimed)
+        if (PlayerPrefs.GetInt(title.text) != INSTANCE.claimAble)
         {            
             Deactivate();
         }
-        else
+        else if(PlayerPrefs.GetInt(title.text) == INSTANCE.claimAble)
         {            
             Active();
         }
