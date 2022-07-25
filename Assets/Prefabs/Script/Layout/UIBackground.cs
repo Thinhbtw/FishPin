@@ -30,6 +30,7 @@ public class UIBackground : MonoBehaviour
                 {
                     WatchVideoReward.instance.watchAdSkip = false;
                     /*ToponAdsController.instance.OpenVideoAds();*/
+                    IronSource.Agent.showRewardedVideo();
                     StartCoroutine(DelaySkip());
                     StartCoroutine(WatchVideoReward.instance.DelayAdSkip());
                 }

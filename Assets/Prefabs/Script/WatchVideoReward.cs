@@ -6,13 +6,24 @@ using UnityEngine.UI;
 public class WatchVideoReward : MonoBehaviour
 {
     public static WatchVideoReward instance;
-    [SerializeField]Button watchAdCoin, watchAdGem;
+    [SerializeField] Button watchAdCoin, watchAdGem;
     public bool watchAdReward, watchAdSkip;
     void Awake()
     {
+        
+        
         instance = this;
         watchAdReward = true;
         watchAdSkip = true;
+
+        IronSource.Agent.loadRewardedVideo();
+        IronSource.Agent.loadBanner(IronSourceBannerSize.BANNER, IronSourceBannerPosition.BOTTOM);
+        IronSource.Agent.loadInterstitial();
+
+    }
+
+    private void OnEnable()
+    {
         if (watchAdCoin != null)
             watchAdCoin.onClick.AddListener(() =>
             {
@@ -21,6 +32,7 @@ public class WatchVideoReward : MonoBehaviour
                 {
                     watchAdReward = false;
                     /*ToponAdsController.instance.OpenVideoAds();*/
+                    IronSource.Agent.showRewardedVideo();
                     StartCoroutine(DelayRewardCoin());
                     StartCoroutine(DelayAdReward());
                 }
@@ -33,11 +45,17 @@ public class WatchVideoReward : MonoBehaviour
                 {
                     watchAdReward = false;
                     /*ToponAdsController.instance.OpenVideoAds();*/
+                    IronSource.Agent.showRewardedVideo();
                     StartCoroutine(DelayRewardGem());
                     StartCoroutine(DelayAdReward());
                 }
             });
-        
+    }
+
+    private void OnDisable()
+    {
+        watchAdCoin.onClick.RemoveAllListeners();
+        watchAdGem.onClick.RemoveAllListeners();
     }
 
     IEnumerator DelayRewardCoin()

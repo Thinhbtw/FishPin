@@ -52,16 +52,22 @@ public class UiEnd : MonoBehaviour
         if (win)
         {
             StopAllCoroutines();
+            IronSource.Agent.loadInterstitial();
             winMenu.SetActive(true);
             btnNext.image.sprite = imgBtn[0];
             pannel.SetActive(true);
             SoundManager.PlaySound("success");
             yield return new WaitForSeconds(1.3f);
             /*ToponAdsController.instance.OpenInterstitialAds();*/
+            if(IronSource.Agent.isInterstitialReady())
+            {
+                IronSource.Agent.showInterstitial();
+            }
         }
         else
         {
             StopAllCoroutines();
+            IronSource.Agent.loadInterstitial();
             myScript.isComplete = true;
             myScript.check = true;
             btnNext.image.sprite = imgBtn[1];
@@ -72,6 +78,10 @@ public class UiEnd : MonoBehaviour
             SoundManager.PlaySound("fail");
             yield return new WaitForSeconds(1.3f);
             /*ToponAdsController.instance.OpenInterstitialAds();*/
+            if (IronSource.Agent.isInterstitialReady())
+            {
+                IronSource.Agent.showInterstitial();
+            }
         }
         yield break;
     }
@@ -144,6 +154,7 @@ public class UiEnd : MonoBehaviour
                 {
                     SoundManager.PlaySound("click");
                     /*ToponAdsController.instance.OpenVideoAds();*/
+                    IronSource.Agent.showRewardedVideo();
                     var lvl = Instantiate(UIManager.Instance.listLevel[uiGameplay.levelAt], uiGameplay.levelField.transform);
                     uiGameplay.Level.Add(lvl);
                     Destroy(uiGameplay.Level[uiGameplay.Level.Count - uiGameplay.Level.Count]);
