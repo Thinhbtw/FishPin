@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilitiesEditor", "Utilitie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleInspectorAttributesEditor", "SimpleInspectorAttributesEditor.csproj", "{B30D4CC4-A3A9-8BF9-642C-9ACE13D105F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{4F642049-685B-DAAA-1D45-E6921E4B9528}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleScrollSnap", "SimpleScrollSnap.Player.csproj", "{C6C41AEA-1FD9-90AE-CFC4-2B7013EB03DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.Player.csproj", "{825E4737-368B-76F3-9420-E113BF8BF896}"
@@ -63,6 +65,10 @@ Global
 		{B30D4CC4-A3A9-8BF9-642C-9ACE13D105F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B30D4CC4-A3A9-8BF9-642C-9ACE13D105F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B30D4CC4-A3A9-8BF9-642C-9ACE13D105F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F642049-685B-DAAA-1D45-E6921E4B9528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F642049-685B-DAAA-1D45-E6921E4B9528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F642049-685B-DAAA-1D45-E6921E4B9528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F642049-685B-DAAA-1D45-E6921E4B9528}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C6C41AEA-1FD9-90AE-CFC4-2B7013EB03DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C6C41AEA-1FD9-90AE-CFC4-2B7013EB03DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6C41AEA-1FD9-90AE-CFC4-2B7013EB03DC}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -29,7 +29,7 @@ public class UIBackground : MonoBehaviour
                 if (WatchVideoReward.instance.watchAdSkip && InternetConnection.instance.hasInternet)
                 {
                     WatchVideoReward.instance.watchAdSkip = false;
-                    ToponAdsController.instance.OpenVideoAds();
+                    /*ToponAdsController.instance.OpenVideoAds();*/
                     StartCoroutine(DelaySkip());
                     StartCoroutine(WatchVideoReward.instance.DelayAdSkip());
                 }

@@ -260,12 +260,12 @@ public static class GameData
     }
     public static void showVideosAds()
     {
-        ToponAdsController.instance.OpenInterstitialAds();
+        /*ToponAdsController.instance.OpenInterstitialAds();*/
     }
     public static void showRewardAds(bool isAddCoin)
     {
         isAdsOn = true;
-        ToponAdsController.instance.OpenVideoAds();
+        /*ToponAdsController.instance.OpenVideoAds();*/
     }
 
     #endregion

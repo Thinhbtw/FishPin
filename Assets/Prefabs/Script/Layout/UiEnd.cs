@@ -57,7 +57,7 @@ public class UiEnd : MonoBehaviour
             pannel.SetActive(true);
             SoundManager.PlaySound("success");
             yield return new WaitForSeconds(1.3f);
-            ToponAdsController.instance.OpenInterstitialAds();
+            /*ToponAdsController.instance.OpenInterstitialAds();*/
         }
         else
         {
@@ -71,7 +71,7 @@ public class UiEnd : MonoBehaviour
             pannel.SetActive(true);
             SoundManager.PlaySound("fail");
             yield return new WaitForSeconds(1.3f);
-            ToponAdsController.instance.OpenInterstitialAds();
+            /*ToponAdsController.instance.OpenInterstitialAds();*/
         }
         yield break;
     }
@@ -143,7 +143,7 @@ public class UiEnd : MonoBehaviour
                 if (myScript.isDed)
                 {
                     SoundManager.PlaySound("click");
-                    ToponAdsController.instance.OpenVideoAds();
+                    /*ToponAdsController.instance.OpenVideoAds();*/
                     var lvl = Instantiate(UIManager.Instance.listLevel[uiGameplay.levelAt], uiGameplay.levelField.transform);
                     uiGameplay.Level.Add(lvl);
                     Destroy(uiGameplay.Level[uiGameplay.Level.Count - uiGameplay.Level.Count]);
