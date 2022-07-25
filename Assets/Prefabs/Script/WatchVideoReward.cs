@@ -20,7 +20,7 @@ public class WatchVideoReward : MonoBehaviour
                 if (watchAdReward && InternetConnection.instance.hasInternet)
                 {
                     watchAdReward = false;
-                    ToponAdsController.instance.OpenVideoAds();
+                    /*ToponAdsController.instance.OpenVideoAds();*/
                     StartCoroutine(DelayRewardCoin());
                     StartCoroutine(DelayAdReward());
                 }
@@ -32,7 +32,7 @@ public class WatchVideoReward : MonoBehaviour
                 if (watchAdReward && InternetConnection.instance.hasInternet)
                 {
                     watchAdReward = false;
-                    ToponAdsController.instance.OpenVideoAds();
+                    /*ToponAdsController.instance.OpenVideoAds();*/
                     StartCoroutine(DelayRewardGem());
                     StartCoroutine(DelayAdReward());
                 }
@@ -43,7 +43,7 @@ public class WatchVideoReward : MonoBehaviour
     IEnumerator DelayRewardCoin()
     {
         yield return new WaitForSeconds(1f);
-        GameData.AddCoin(500);
+        GameData.AddCoin(50);
     }
     public IEnumerator DelayAdReward()
     {

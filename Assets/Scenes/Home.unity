@@ -584,7 +584,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 655133413}
-  - component: {fileID: 655133414}
   m_Layer: 0
   m_Name: Video
   m_TagString: Untagged
@@ -606,18 +605,6 @@ Transform:
   m_Father: {fileID: 1237330062}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &655133414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655133412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9419b31c7c30f6a48b6071fb060f373d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &659517937
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +797,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1062867885}
-  - component: {fileID: 1062867886}
   m_Layer: 0
   m_Name: Banner
   m_TagString: Untagged
@@ -832,18 +818,6 @@ Transform:
   m_Father: {fileID: 1237330062}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1062867886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062867884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7646075a5e3a7ad418d664e4356b55b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1100740028 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1100740028, guid: 38fa7aec3c8e54244a74291dfccffa60, type: 3}
@@ -1002,7 +976,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1237330062}
-  - component: {fileID: 1237330061}
   m_Layer: 0
   m_Name: AdController
   m_TagString: Untagged
@@ -1010,22 +983,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1237330061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237330057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f78e547623a7a4ab24860c832c2b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vidSce: {fileID: 655133414}
-  intSce: {fileID: 1316677258}
-  banSce: {fileID: 1062867886}
-  adStates: 0
 --- !u!4 &1237330062
 Transform:
   m_ObjectHideFlags: 0
@@ -1136,7 +1093,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1316677257}
-  - component: {fileID: 1316677258}
   m_Layer: 0
   m_Name: Intertitial
   m_TagString: Untagged
@@ -1158,18 +1114,6 @@ Transform:
   m_Father: {fileID: 1237330062}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1316677258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1316677256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a15341506bc62e14b9f12f914d345285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1327023187 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8048273771988941225, guid: 8c57afce3c3871442a8a724c985881f4, type: 3}
@@ -1280,7 +1224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9215ae1114df5ad49ace1e55838d28be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questoke: {fileID: 0}
   rewardsDBDaily: {fileID: 11400000, guid: 4d7af2f7bae9a6141a52b5a1631823a4, type: 2}
   rewardsDBWeekly: {fileID: 11400000, guid: 1878f083b18eda047bda5194523a3182, type: 2}
   rewardsDBMonthly: {fileID: 11400000, guid: ab73de343619eba47af8fb7a3291e493, type: 2}
