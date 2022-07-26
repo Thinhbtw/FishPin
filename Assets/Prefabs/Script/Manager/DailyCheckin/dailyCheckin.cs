@@ -43,8 +43,7 @@ public class dailyCheckin : MonoBehaviour
     }*/
 
     private void OnEnable()
-    {
-        NotificationPushManager.instance.notificationCreating("Hop on!", "dont miss everyday gift", NotificationPushManager.fireTimeType.seconds, 3, "daily");
+    {        
 
         openButton.onClick.RemoveAllListeners();
         closeButton.onClick.RemoveAllListeners();
@@ -71,6 +70,7 @@ public class dailyCheckin : MonoBehaviour
         day7.GetComponent<checkin>().setupLogin(loginDB.getdailyLog(6), iconGemsSprite);
         StopAllCoroutines();        
         StartCoroutine(logindaily());
+        NotificationPushManager.instance.notificationCreating("Hop on!", "dont miss everyday gift", NotificationPushManager.fireTimeType.seconds, 3, "daily");
     }
     void getRealTime()
     {

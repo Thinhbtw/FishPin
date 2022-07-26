@@ -39,8 +39,8 @@ public class NotificationPushManager : MonoBehaviour
     public void notificationCreating(string notificationTitle,string notificationText,fireTimeType type,int Time,string channelId)
     {
         var notification = new AndroidNotification();
-        notification.Title = "Your Title";
-        notification.Text = "Your Text";
+        notification.Title = notificationTitle;
+        notification.Text = notificationText;
         switch (type)
         {
             case fireTimeType.seconds:
