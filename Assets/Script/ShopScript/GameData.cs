@@ -10,6 +10,7 @@ using System.Collections.Generic;
     public List<int> purchaseThemeIndex = new List<int>();  
 }
 
+
 [System.Serializable] public class PlayerData
 {
     public int coin = 0;
@@ -38,7 +39,7 @@ public static class GameData
 {
     static PlayerData playerData = new PlayerData();
     static ThemeShopData themeShopData = new ThemeShopData();
-    static QuestListData QuestListData = new QuestListData();
+    static QuestListData QuestListData = new QuestListData();    
 
     static Theme selectedTheme;    
 
@@ -49,7 +50,7 @@ public static class GameData
         
         LoadPlayerData();
         LoadThemeShopData();
-        LoadQuestListIndexData();
+        LoadQuestListIndexData();        
         IsAddMoney = false;
     }
 
@@ -207,11 +208,12 @@ public static class GameData
         themeShopData.purchaseThemeIndex.Add(themeIndex);
         SaveThemeShopData();
     }
-
     public static List<int> GetAllPurchasedTheme()
     {
         return themeShopData.purchaseThemeIndex;
     }
+    
+
     public static int GetPurchasedTheme(int index)
     {
         return themeShopData.purchaseThemeIndex[index];
@@ -244,7 +246,7 @@ public static class GameData
     {
         BinarySerializer.Save(themeShopData, "theme-shop-data.txt");
 
-    }
+    }       
 
     #endregion
 
