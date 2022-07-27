@@ -70,7 +70,7 @@ public class dailyCheckin : MonoBehaviour
         day7.GetComponent<checkin>().setupLogin(loginDB.getdailyLog(6), iconGemsSprite);
         StopAllCoroutines();        
         StartCoroutine(logindaily());
-        NotificationPushManager.instance.notificationCreating("Hop on!", "dont miss everyday gift", NotificationPushManager.fireTimeType.seconds, 3, "daily");
+        //NotificationPushManager.instance.notificationCreating("Hop on!", "dont miss everyday gift", NotificationPushManager.fireTimeType.seconds, 3, "daily");
     }
     void getRealTime()
     {

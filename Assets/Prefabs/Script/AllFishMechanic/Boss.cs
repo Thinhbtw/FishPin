@@ -94,6 +94,7 @@ public class Boss : MonoBehaviour
 
             if (collision.gameObject.tag == "Fish")
             {
+                isDed = true;
                 anima.SetLayerWeight(1, 1);
                 SoundManager.PlaySound("bonk");
             }

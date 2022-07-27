@@ -18,8 +18,6 @@ public class InternetConnection : MonoBehaviour
         string appKey = "85460dcd";
 #elif UNITY_IPHONE
                 string appKey = "8545d445";
-#else
-                string appKey = "unexpected_platform";
 #endif
         IronSource.Agent.validateIntegration();
 
