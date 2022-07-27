@@ -5,7 +5,28 @@ using UnityEngine;
 
 public class NotificationPushManager : MonoBehaviour
 {
-    public static NotificationPushManager instance;
+    #region Singleton class: NotificationPushManager
+
+    public static NotificationPushManager Instance;
+
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    #endregion    
+    /*public static NotificationPushManager instance;
+    public static string channelID;
+    public static AndroidNotification notif;
     public enum fireTimeType
     {
         seconds,
@@ -21,6 +42,7 @@ public class NotificationPushManager : MonoBehaviour
         AndroidNotificationCenter.CancelAllDisplayedNotifications();
 
         channelCreating("daily","dailyLogin",Importance.Default,"reminder login");
+        notificationCreating("Hop on!", "dont miss everyday gift", NotificationPushManager.fireTimeType.seconds, 5, "daily");
     }
 
     // Create the android notification channel to send the messages through
@@ -55,12 +77,49 @@ public class NotificationPushManager : MonoBehaviour
         }
         //send the notification
         var nofId = AndroidNotificationCenter.SendNotification(notification, channelId);
-
-        //If the script is run and a message is already scheduled, cancel it and re-schedule another message
         if(AndroidNotificationCenter.CheckScheduledNotificationStatus(nofId) == NotificationStatus.Scheduled)
         {
+            //reschedule 
             AndroidNotificationCenter.CancelNotification(nofId);
             AndroidNotificationCenter.SendNotification(notification, channelId);
         }
+    }
+    
+    */
+    
+    private void OnApplicationPause(bool pause)
+    {    
+        //Remove all notification that have already been displayed
+        AndroidNotificationCenter.CancelAllDisplayedNotifications();
+
+        //create channel for the notification
+        var channel = new AndroidNotificationChannel()
+        {
+            Id = "channel_id",
+            Name = "Default Channel",
+            Importance = Importance.Default,
+            Description = "Reminder notifications",
+        };
+        AndroidNotificationCenter.RegisterNotificationChannel(channel);
+
+        //create notification
+        var notification = new AndroidNotification();
+        notification.Title = "Hop on!";
+        notification.Text = "Dont miss everyday gift";
+        notification.FireTime = System.DateTime.Now.AddSeconds(15);
+
+        if (PlayerPrefs.GetInt("NotificationStat") == 0)
+        {
+            //sending notification
+            var id = AndroidNotificationCenter.SendNotification(notification, "channel_id");
+            //check if is scheduled
+            if (AndroidNotificationCenter.CheckScheduledNotificationStatus(id) == NotificationStatus.Scheduled)
+            {
+                //reschedule 
+                AndroidNotificationCenter.CancelNotification(id);
+                AndroidNotificationCenter.SendNotification(notification, "channel_id");
+            }
+        }
+        
     }
 }
