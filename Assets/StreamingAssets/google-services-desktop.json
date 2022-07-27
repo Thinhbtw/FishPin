@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "663387853296",
+    "project_id": "fishpin-test",
+    "storage_bucket": "fishpin-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663387853296:android:d053b426317b90fec48d35",
+        "android_client_info": {
+          "package_name": "com.google.FishPin.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663387853296-ofj711nuhf0lo440m12s46ta0tgc7ljk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoOF45kK5YUYod-MzevZKHjEuv6wO2bVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663387853296-ofj711nuhf0lo440m12s46ta0tgc7ljk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">663387853296</string>
+  <string name="google_storage_bucket" translatable="false">fishpin-test.appspot.com</string>
+  <string name="project_id" translatable="false">fishpin-test</string>
+  <string name="google_api_key" translatable="false">AIzaSyDoOF45kK5YUYod-MzevZKHjEuv6wO2bVE</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDoOF45kK5YUYod-MzevZKHjEuv6wO2bVE</string>
+  <string name="google_app_id" translatable="false">1:663387853296:android:d053b426317b90fec48d35</string>
+  <string name="default_web_client_id" translatable="false">663387853296-ofj711nuhf0lo440m12s46ta0tgc7ljk.apps.googleusercontent.com</string>
+</resources>

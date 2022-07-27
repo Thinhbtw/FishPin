@@ -58,116 +58,133 @@
     <Compile Include="Assets\IronSource\Scripts\IronSourceRewardedVideoEvents.cs" />
     <Compile Include="Assets\IronSource\DemoScene\IronSourceDemoScript.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceInterstitialEvents.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeShopUI.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\UIBackground.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameMechanic\DestroyOnTouch1.cs" />
-    <Compile Include="Assets\Prefabs\Script\Manager\UIManager.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameMechanic\Teleporter.cs" />
+    <Compile Include="Assets\Script\ShopScript\Theme\ThemeShopUI.cs" />
+    <Compile Include="Assets\Script\Layout\UIBackground.cs" />
+    <Compile Include="Assets\Script\GameMechanic\DestroyOnTouch1.cs" />
+    <Compile Include="Assets\Script\Manager\UIManager.cs" />
+    <Compile Include="Assets\Script\GameMechanic\Teleporter.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceBannerAndroid.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\Theme.cs" />
-    <Compile Include="Assets\Prefabs\Script\StaticClass.cs" />
+    <Compile Include="Assets\Script\ShopScript\Theme\Theme.cs" />
+    <Compile Include="Assets\Script\StaticClass.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceInitilizer.cs" />
-    <Compile Include="Assets\Prefabs\Script\PinMechanic\PullPin.cs" />
-    <Compile Include="Assets\Prefabs\Script\Data\missionCounterData.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\UISettingIngame.cs" />
+    <Compile Include="Assets\Script\PinMechanic\PullPin.cs" />
+    <Compile Include="Assets\Script\Data\missionCounterData.cs" />
+    <Compile Include="Assets\Script\Layout\UISettingIngame.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnitySegment.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityRewardedVideo.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\TabButtons.cs" />
+    <Compile Include="Assets\Script\ShopScript\TabButtons.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceImpressionData.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceConfig.cs" />
-    <Compile Include="Assets\Prefabs\Script\InternetConnection.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\UI Quest\QuestScript.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\FishShopDatabase.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameMechanic\PoisonScript.cs" />
-    <Compile Include="Assets\Prefabs\Script\Manager\DailyCheckin\checkin.cs" />
-    <Compile Include="Assets\Prefabs\Script\Manager\DailyCheckin\dailyCheckin.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\UiEnd.cs" />
-    <Compile Include="Assets\Prefabs\Script\Manager\achivement\achivementManager.cs" />
+    <Compile Include="Assets\Script\InternetConnection.cs" />
+    <Compile Include="Assets\Script\Layout\UI Quest\QuestScript.cs" />
+    <Compile Include="Assets\Script\ShopScript\FishShopDatabase.cs" />
+    <Compile Include="Assets\Script\GameMechanic\PoisonScript.cs" />
+    <Compile Include="Assets\Script\Manager\DailyCheckin\checkin.cs" />
+    <Compile Include="Assets\Script\Manager\DailyCheckin\dailyCheckin.cs" />
+    <Compile Include="Assets\Script\Layout\UiEnd.cs" />
+    <Compile Include="Assets\Script\Manager\achivement\achivementManager.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityInterstitial.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceInterstitialAndroid.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceInitializationAndroid.cs" />
-    <Compile Include="Assets\Prefabs\Script\tool\timeAPI\WorldTimeAPI.cs" />
+    <Compile Include="Assets\Script\tool\timeAPI\WorldTimeAPI.cs" />
     <Compile Include="Assets\BinarySerializer\BinarySerializer.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityInitialization.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceJSON.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceError.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceBannerLevelPlayAndroid.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\GameData.cs" />
+    <Compile Include="Assets\Script\ShopScript\GameData.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceEvents.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\UIGameplay.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameMechanic\FishTele.cs" />
-    <Compile Include="Assets\Prefabs\Script\Manager\DailyCheckin\loginDataReward.cs" />
+    <Compile Include="Assets\Script\Layout\UIGameplay.cs" />
+    <Compile Include="Assets\Script\GameMechanic\FishTele.cs" />
+    <Compile Include="Assets\Script\Manager\DailyCheckin\loginDataReward.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceEventsDispatcher.cs" />
-    <Compile Include="Assets\Prefabs\Script\tool\readTXTFile.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\FishItemUI.cs" />
-    <Compile Include="Assets\Prefabs\Script\PinMechanic\TwoWayPin.cs" />
-    <Compile Include="Assets\Prefabs\Script\AllFishMechanic\FishHealth.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\Dialog.cs" />
+    <Compile Include="Assets\Script\tool\readTXTFile.cs" />
+    <Compile Include="Assets\Script\ShopScript\FishItemUI.cs" />
+    <Compile Include="Assets\Script\PinMechanic\TwoWayPin.cs" />
+    <Compile Include="Assets\Script\AllFishMechanic\FishHealth.cs" />
+    <Compile Include="Assets\Script\Layout\Dialog.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceRewardedVideoLevelPlayAndroid.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\UIShop.cs" />
+    <Compile Include="Assets\Script\Layout\UIShop.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceRewardedVideoManualAndroid.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeItemUI.cs" />
+    <Compile Include="Assets\Script\ShopScript\Theme\ThemeItemUI.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSource.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceMediationSettings.cs" />
-    <Compile Include="Assets\Prefabs\Script\Manager\misssionCounter\missionCounter.cs" />
+    <Compile Include="Assets\Script\Manager\misssionCounter\missionCounter.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityOfferwall.cs" />
-    <Compile Include="Assets\Prefabs\Script\Data\RewardDatabases.cs" />
+    <Compile Include="Assets\Script\Data\RewardDatabases.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityLevelPlayInterstitial.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\UI Quest\DailyQuest.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\LevelProgressBar.cs" />
+    <Compile Include="Assets\Script\Layout\UI Quest\DailyQuest.cs" />
+    <Compile Include="Assets\Script\Layout\LevelProgressBar.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityImpressionData.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceRewardedVideoLevelPlayManualAndroid.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\TabGroup.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameMechanic\IceBlock.cs" />
-    <Compile Include="Assets\Prefabs\Script\AllFishMechanic\BossMove.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\UILevel.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\BtnSetLevel.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\UISetting.cs" />
-    <Compile Include="Assets\Prefabs\Script\Manager\achivement\archivement.cs" />
-    <Compile Include="Assets\Prefabs\Script\Clone.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameMechanic\BoulderScript.cs" />
+    <Compile Include="Assets\Script\ShopScript\TabGroup.cs" />
+    <Compile Include="Assets\Script\GameMechanic\IceBlock.cs" />
+    <Compile Include="Assets\Script\AllFishMechanic\BossMove.cs" />
+    <Compile Include="Assets\Script\Layout\UILevel.cs" />
+    <Compile Include="Assets\Script\Layout\BtnSetLevel.cs" />
+    <Compile Include="Assets\Script\Layout\UISetting.cs" />
+    <Compile Include="Assets\Script\Manager\achivement\archivement.cs" />
+    <Compile Include="Assets\Script\GameMechanic\Clone.cs" />
+    <Compile Include="Assets\Script\GameMechanic\BoulderScript.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceIAgent.cs" />
-    <Compile Include="Assets\Prefabs\Script\LevelComplete.cs" />
-    <Compile Include="Assets\Prefabs\Script\INSTANCE\INSTANCE.cs" />
+    <Compile Include="Assets\Script\GameMechanic\LevelComplete.cs" />
+    <Compile Include="Assets\Script\INSTANCE\INSTANCE.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceOfferwallAndroid.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceBannerEvents.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceRewardedVideoAndroid.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\GameSharedUI.cs" />
-    <Compile Include="Assets\Prefabs\Script\ShopScript\Theme\ThemeShopDatabase.cs" />
+    <Compile Include="Assets\Script\ShopScript\GameSharedUI.cs" />
+    <Compile Include="Assets\Script\ShopScript\Theme\ThemeShopDatabase.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityLevelPlayRewardedVideo.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameMechanic\Bomb.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameMechanic\WInCondition.cs" />
+    <Compile Include="Assets\Script\GameMechanic\Bomb.cs" />
+    <Compile Include="Assets\Script\GameMechanic\WInCondition.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceSegmentAndroid.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceInterstitialLevelPlayAndroid.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityLevelPlayRewardedVideoManual.cs" />
-    <Compile Include="Assets\Prefabs\Script\AllFishMechanic\EnemyMoveAround.cs" />
-    <Compile Include="Assets\Prefabs\Script\Layout\UIHome.cs" />
-    <Compile Include="Assets\Prefabs\Script\WatchVideoReward.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameMechanic\Blade.cs" />
+    <Compile Include="Assets\Script\AllFishMechanic\EnemyMoveAround.cs" />
+    <Compile Include="Assets\Script\Layout\UIHome.cs" />
+    <Compile Include="Assets\Script\WatchVideoReward.cs" />
+    <Compile Include="Assets\Script\GameMechanic\Blade.cs" />
     <Compile Include="Assets\IronSource\Scripts\AndroidAgent.cs" />
-    <Compile Include="Assets\Prefabs\Script\ChangingSkin\Fish.cs" />
+    <Compile Include="Assets\Script\ChangingSkin\Fish.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityRewardedVideoManual.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameMechanic\Spike.cs" />
-    <Compile Include="Assets\Prefabs\Script\PinMechanic\ReUsePin.cs" />
-    <Compile Include="Assets\Prefabs\Script\AllFishMechanic\Boss.cs" />
-    <Compile Include="Assets\Prefabs\Script\Manager\notification\NotificationPushManager.cs" />
+    <Compile Include="Assets\Script\GameMechanic\Spike.cs" />
+    <Compile Include="Assets\Script\PinMechanic\ReUsePin.cs" />
+    <Compile Include="Assets\Script\AllFishMechanic\Boss.cs" />
+    <Compile Include="Assets\Script\Manager\notification\NotificationPushManager.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityBanner.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceAdInfo.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceUtils.cs" />
     <Compile Include="Assets\IronSource\Scripts\iOSAgent.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityLevelPlayBanner.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameMechanic\IcePlatHealth.cs" />
-    <Compile Include="Assets\Prefabs\Script\Manager\CanvasRenderMode.cs" />
-    <Compile Include="Assets\Prefabs\Script\GameMechanic\DestroyOnTouch.cs" />
-    <Compile Include="Assets\Prefabs\Script\Manager\SoundManager.cs" />
+    <Compile Include="Assets\Script\GameMechanic\IcePlatHealth.cs" />
+    <Compile Include="Assets\Script\Manager\CanvasRenderMode.cs" />
+    <Compile Include="Assets\Script\GameMechanic\DestroyOnTouch.cs" />
+    <Compile Include="Assets\Script\Manager\SoundManager.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceConstants.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceImpressionDataAndroid.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourcePlacement.cs" />
+    <Compile Include="Assets\Script\Firebase\FirebaseInit.cs" />
+    <Compile Include="Assets\Script\Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Parse\Plugins\Unity.Compat.dll" />
+    <None Include="Assets\Firebase\Plugins\Firebase.Analytics.dll" />
+    <None Include="Assets\Firebase\Plugins\iOS\Firebase.Analytics.dll" />
+    <None Include="Assets\Firebase\Plugins\Firebase.App.dll" />
+    <None Include="Assets\Parse\Plugins\Unity.Tasks.dll" />
+    <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppAnalytics.dll" />
+    <None Include="Assets\Firebase\Plugins\Firebase.TaskExtension.dll" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
     <None Include="Assets\IronSource\Plugins\Android\IronSource.plugin\AndroidManifest.xml" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-analytics-unity\maven-metadata.xml" />
+    <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppApp-9_3_0.dll" />
     <None Include="Assets\Resources\AchivementData\archiveList.txt" />
+    <None Include="Assets\Parse\Plugins\dotNet45\Unity.Compat.dll" />
+    <None Include="Assets\Firebase\Plugins\Firebase.Platform.dll" />
+    <None Include="Assets\Parse\Plugins\dotNet45\Unity.Tasks.dll" />
+    <None Include="Assets\Firebase\Plugins\Google.MiniJson.dll" />
+    <None Include="Assets\Firebase\Plugins\iOS\Firebase.App.dll" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -440,8 +457,29 @@
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Google.MiniJson">
+      <HintPath>Assets\Firebase\Plugins\Google.MiniJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\AOT\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tasks">
+      <HintPath>Assets\Parse\Plugins\dotNet45\Unity.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Platform">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Compat">
+      <HintPath>Assets\Parse\Plugins\dotNet45\Unity.Compat.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
