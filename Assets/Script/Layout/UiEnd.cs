@@ -39,6 +39,7 @@ public class UiEnd : MonoBehaviour
 
     public IEnumerator WaitPanel(bool win)
     {
+        Debug.Log("Selected Level " + (PlayerPrefs.GetInt("SelectedLevel") + 1));
         if (PlayerPrefs.GetInt("SelectedLevel") < 10)
         {
             textLevel.text = "Level 0" + (PlayerPrefs.GetInt("SelectedLevel") + 1).ToString();
@@ -163,7 +164,10 @@ public class UiEnd : MonoBehaviour
                     winMenu.SetActive(false);
                     PlusCoin.SetActive(false);
                     pannel.SetActive(false);
-                    PlayerPrefs.SetInt("SelectedLevel", (UIGameplay.Instance.levelAt % 5) + 1);
+                    if(UIGameplay.Instance.levelAt % 5 == 0)
+                        PlayerPrefs.SetInt("SelectedLevel", UIGameplay.Instance.levelAt / 5);
+                    else
+                        PlayerPrefs.SetInt("SelectedLevel", ((UIGameplay.Instance.levelAt / 5) + 1));
                     myScript.isDed = false;
                     btn.SetActive(false);
                 }

@@ -9,7 +9,7 @@ public class UIBackground : MonoBehaviour
     [SerializeField]Button reset, home, pause, skip, level;
     public static UIBackground Instance;
     [SerializeField]Canvas canvas;
-    public bool isPause, isSkip;
+    public bool isPause, isSkip, spam;
     public List<GameObject> listLevel;
     public GameObject background;
     public Text levelText;
@@ -18,6 +18,7 @@ public class UIBackground : MonoBehaviour
 
     private void Awake()
     {
+        spam = true;
         watchAdSkip = true;
         Instance = (UIBackground)this;
         canvas = GetComponent<Canvas>();
@@ -115,13 +116,18 @@ public class UIBackground : MonoBehaviour
         if (reset != null)
             reset.onClick.AddListener(() =>
             {
-                SoundManager.PlaySound("click");
-                var lvl = Instantiate(UIManager.Instance.listLevel[UIGameplay.Instance.levelAt], UIGameplay.Instance.levelField.transform);
-                UIGameplay.Instance.Level.Add(lvl);
-                
-                Destroy(UIGameplay.Instance.Level[UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count]);
-                UIGameplay.Instance.Level.RemoveAt(UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count);
-                UiEnd.Instance.pannel.SetActive(false);
+                if (spam)
+                {
+                    spam = false;
+                    SoundManager.PlaySound("click");
+                    var lvl = Instantiate(UIManager.Instance.listLevel[UIGameplay.Instance.levelAt], UIGameplay.Instance.levelField.transform);
+                    UIGameplay.Instance.Level.Add(lvl);
+
+                    Destroy(UIGameplay.Instance.Level[UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count]);
+                    UIGameplay.Instance.Level.RemoveAt(UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count);
+                    StartCoroutine(checkSpam());
+                    UiEnd.Instance.pannel.SetActive(false);
+                }
             });
 
         if (home != null)
@@ -180,6 +186,12 @@ public class UIBackground : MonoBehaviour
             });
             
         }
+    }
+
+    IEnumerator checkSpam()
+    {
+        yield return new WaitForSeconds(0.5f);
+        spam = true;
     }
 
     private void OnDisable()

@@ -6,7 +6,7 @@ public class UnsupportedPlatformAgent : IronSourceIAgent
 {
 	public UnsupportedPlatformAgent ()
 	{
-		Debug.Log ("Unsupported Platform");
+		//Debug.Log ("Unsupported Platform");
 	}
 	
 	#region IronSourceAgent implementation
@@ -36,7 +36,7 @@ public class UnsupportedPlatformAgent : IronSourceIAgent
 	
 	public void validateIntegration ()
 	{
-		Debug.Log ("Unsupported Platform");
+		//Debug.Log ("Unsupported Platform");
 	}
 	
 	public void shouldTrackNetworkState (bool track)
@@ -90,7 +90,7 @@ public class UnsupportedPlatformAgent : IronSourceIAgent
 
 	public void init (string appKey)
 	{
-		Debug.Log ("Unsupported Platform");
+		//Debug.Log ("Unsupported Platform");
 	}
 
 	public void init (string appKey, params string[] adUnits)
@@ -107,7 +107,7 @@ public class UnsupportedPlatformAgent : IronSourceIAgent
 
 	public void loadRewardedVideo()
 	{
-		Debug.Log("Unsupported Platform");
+		//Debug.Log("Unsupported Platform");
 	}
 
 
@@ -172,7 +172,7 @@ public class UnsupportedPlatformAgent : IronSourceIAgent
 
 	public void loadInterstitial ()
 	{
-		Debug.Log ("Unsupported Platform");
+		//Debug.Log ("Unsupported Platform");
 	}
 
 	public void showInterstitial ()
@@ -242,7 +242,7 @@ public class UnsupportedPlatformAgent : IronSourceIAgent
 
 	public void loadBanner (IronSourceBannerSize size, IronSourceBannerPosition position)
 	{
-		Debug.Log ("Unsupported Platform");
+		//Debug.Log ("Unsupported Platform");
 	}
 	
 	public void loadBanner (IronSourceBannerSize size, IronSourceBannerPosition position, string placementName)

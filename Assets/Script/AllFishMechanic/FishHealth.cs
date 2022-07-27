@@ -66,6 +66,7 @@ public class FishHealth : MonoBehaviour
         if (collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Spike" || collision.gameObject.tag == "Poison")
         {
             Physics2D.IgnoreLayerCollision(10, 6);
+            Physics2D.IgnoreLayerCollision(10, 9);
             myScript.isDed = true;
             animator.SetLayerWeight(1, 0);
             animator.Play(StaticClass.Fish_clipDie);
@@ -128,7 +129,7 @@ public class FishHealth : MonoBehaviour
             Physics2D.IgnoreLayerCollision(10, 12);
             Physics2D.IgnoreLayerCollision(10, 13);
             animator.Play(StaticClass.Fish_clipWin);
-            animator.SetLayerWeight(1, 1);
+            
             myScript.setGameEnd(true);
             if (runProgress)
             {         
