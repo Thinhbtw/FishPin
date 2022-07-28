@@ -52,14 +52,14 @@ public class UISetting : MonoBehaviour
                 SoundManager.PlaySound("click");
                 if (PlayerPrefs.GetString("SaveSettings").Contains("2"))
                 {
-                    PlayerPrefs.SetInt("NotificationStat", 0);
+                    NotificationPushManager.Instance.NotificationOnOff(false);
                     PlayerPrefs.SetString("SaveSettings", PlayerPrefs.GetString("SaveSettings").Replace("2", "3"));
                     btnNotification.image.sprite = spriteArray[3];
                     return;
                 }
                 if (PlayerPrefs.GetString("SaveSettings").Contains("3"))
                 {
-                    PlayerPrefs.SetInt("NotificationStat", 1);
+                    NotificationPushManager.Instance.NotificationOnOff(true);
                     PlayerPrefs.SetString("SaveSettings", PlayerPrefs.GetString("SaveSettings").Replace("3", "2"));
                     btnNotification.image.sprite = spriteArray[2];
                     return;

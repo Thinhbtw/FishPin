@@ -27,7 +27,10 @@ public class Bomb : MonoBehaviour
         {
             anim.Play(StaticClass.Bomb_Explo);
             SoundManager.PlaySound("bombExplo");
-            Handheld.Vibrate();
+            if (PlayerPrefs.GetString("SaveSettings").Contains("4"))
+            {
+                Handheld.Vibrate();
+            }
             StartCoroutine(Destroy());
         }
     }

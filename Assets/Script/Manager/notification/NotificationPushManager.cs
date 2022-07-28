@@ -104,14 +104,15 @@ public class NotificationPushManager : MonoBehaviour
         };
         AndroidNotificationCenter.RegisterNotificationChannel(channel);
 
-        //create notification
-        var notification = new AndroidNotification();
-        notification.Title = "Hop on!";
-        notification.Text = "Dont miss everyday gift";
-        notification.FireTime = System.DateTime.Now.AddSeconds(15);
-
-        if (PlayerPrefs.GetInt("NotificationStat") == 0)
+        
+        if (PlayerPrefs.GetString("SaveSettings").Contains("2"))
         {
+            //create notification
+            var notification = new AndroidNotification();
+            notification.Title = "Hop on!";
+            notification.Text = "Dont miss everyday gift";
+            notification.FireTime = System.DateTime.Now.AddSeconds(15);
+
             //sending notification
             notificationID = AndroidNotificationCenter.SendNotification(notification, "channel_id");
             //check if is scheduled
@@ -122,7 +123,7 @@ public class NotificationPushManager : MonoBehaviour
                 AndroidNotificationCenter.SendNotification(notification, "channel_id");
             }
         }
-        
+
 
     }
     public void NotificationOnOff(bool stat)
