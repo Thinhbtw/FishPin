@@ -5,6 +5,8 @@ public class ThemeShopUI : MonoBehaviour
     [SerializeField] GameObject itemContent;
     [SerializeField] GameObject themeItemPrefab;
     [SerializeField] ThemeShopDatabase themeDB;
+    [SerializeField] GameObject UIanimGem;
+    [SerializeField] Animator anim;
 
     int newSelectedItemIndex = 0;
     int previousSelectedItemIndex = 0;
@@ -19,7 +21,7 @@ public class ThemeShopUI : MonoBehaviour
         if(PlayerPrefs.HasKey("Progress") == false)
         {
             Debug.Log("Set");
-        }
+        }        
     }
 
     void SetSelectedTheme()
@@ -92,7 +94,7 @@ public class ThemeShopUI : MonoBehaviour
     {
         return itemContent.transform.GetChild(itemIndex).GetComponent<ThemeItemUI>();
     }
-
+    
 
     void OnItemPurchased(int index)
     {
@@ -123,7 +125,7 @@ public class ThemeShopUI : MonoBehaviour
         {
             SoundManager.PlaySound("click");
             //No enough coins..
-            Debug.Log("ko du gems");
+            anim.Play("NotEnGemAnimation",0,0);
         }
     }
 
