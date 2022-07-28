@@ -122,7 +122,7 @@ public class UIBackground : MonoBehaviour
                     SoundManager.PlaySound("click");
                     var lvl = Instantiate(UIManager.Instance.listLevel[UIGameplay.Instance.levelAt], UIGameplay.Instance.levelField.transform);
                     UIGameplay.Instance.Level.Add(lvl);
-
+                    
                     Destroy(UIGameplay.Instance.Level[UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count]);
                     UIGameplay.Instance.Level.RemoveAt(UIGameplay.Instance.Level.Count - UIGameplay.Instance.Level.Count);
                     StartCoroutine(checkSpam());

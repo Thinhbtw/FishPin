@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835098220982774713, guid: e5f7e1e7c353ae64b862a30c9e46e4ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59
+      value: 23.4
       objectReference: {fileID: 0}
     - target: {fileID: 7835098220982774713, guid: e5f7e1e7c353ae64b862a30c9e46e4ae, type: 3}
       propertyPath: m_LocalPosition.y
@@ -656,7 +656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2452839465693125155, guid: a8a3f3ab35a9f7c4699b24fc7fbf4486, type: 3}
       propertyPath: amountToMelt
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2452839465693125180, guid: a8a3f3ab35a9f7c4699b24fc7fbf4486, type: 3}
       propertyPath: m_Pivot.x

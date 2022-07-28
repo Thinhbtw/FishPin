@@ -5,6 +5,7 @@ using UnityEngine;
 public class DestroyOnTouch : MonoBehaviour
 {
     public Rigidbody2D rb;
+    int i; 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,9 +19,8 @@ public class DestroyOnTouch : MonoBehaviour
             SoundManager.PlaySound("fizz");
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
+         
         }
     }
-
-
 
 }

@@ -8,6 +8,8 @@ public class SoundManager : MonoBehaviour
     static AudioSource audioSrc;
     [SerializeField] GameObject backgroundAudio;
 
+    
+
     private void Awake()
     {
         audioSrc = GetComponent<AudioSource>();
@@ -18,7 +20,8 @@ public class SoundManager : MonoBehaviour
         fail = Resources.Load<AudioClip>("Audio/FAIL");
         success = Resources.Load<AudioClip>("Audio/SUCCESS");
         fizz = Resources.Load<AudioClip>("Audio/fizz");
-        bonk = Resources.Load<AudioClip>("Audio/bonk");        
+        bonk = Resources.Load<AudioClip>("Audio/bonk");     
+        
     }
 
     private void Update()
@@ -52,7 +55,7 @@ public class SoundManager : MonoBehaviour
                     audioSrc.PlayOneShot(confeti);
                     break;
                 case "fail":
-                    audioSrc.PlayOneShot(fail);
+                    audioSrc.PlayOneShot(fail);                   
                     break;
                 case "success":
                     audioSrc.PlayOneShot(success);
@@ -62,9 +65,13 @@ public class SoundManager : MonoBehaviour
                     break;
                 case "bonk":
                     audioSrc.PlayOneShot(bonk);
-                    break;               
+                    break;
             }
+                
+            
+            
         }
+        
     }
 
 }
