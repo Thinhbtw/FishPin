@@ -8,6 +8,7 @@ public class Boss : MonoBehaviour
     public bool isDed, onGround;
     int curHealth;
     LevelComplete myScript;
+    [SerializeField] bool crabIgnoreStone, snakeIgnoreStone;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class Boss : MonoBehaviour
         onGround = true;
         IgnoreColision(false);
         Physics2D.IgnoreLayerCollision(9, 9);
+        Physics2D.IgnoreLayerCollision(9, 12, false);
     }
 
     private void Start()
@@ -39,8 +41,8 @@ public class Boss : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayClip("BossParent", StaticClass.Boss_clipDie, StaticClass.Boss_clipExplo, StaticClass.Boss_clipPoison, collision);
-        PlayClip("SnakeParent", StaticClass.Snake_clipDie, StaticClass.Snake_clipExplo, "", collision);
+        PlayClip("BossParent", StaticClass.Boss_clipDie, StaticClass.Boss_clipExplo, StaticClass.Boss_clipPoison, collision, crabIgnoreStone);
+        PlayClip("SnakeParent", StaticClass.Snake_clipDie, StaticClass.Snake_clipExplo, "", collision, snakeIgnoreStone);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -50,12 +52,16 @@ public class Boss : MonoBehaviour
 
     }
 
-    void PlayClip(string bossName, string clipDie, string clipExplo, string clipPoison, Collision2D collision)
+    void PlayClip(string bossName, string clipDie, string clipExplo, string clipPoison, Collision2D collision, bool needToIgnoreCollider)
     {
-        if (this.gameObject.name.Contains(bossName))
+        if (gameObject.name.Contains(bossName))
         {
             if (collision.gameObject.tag == "Spike" || collision.gameObject.tag == "Poison")
             {
+                if (needToIgnoreCollider)
+                {
+                    Physics2D.IgnoreLayerCollision(9, 12, true);
+                }
                 IgnoreColision(true);
                 isDed = true;
                 anima.Play(clipPoison);
@@ -63,9 +69,13 @@ public class Boss : MonoBehaviour
             }
             if(collision.gameObject.tag == "Boulder" || collision.gameObject.tag == "Untagged" || collision.gameObject.tag == "IceBlock")
             {
+                if(needToIgnoreCollider)
+                {
+                    Physics2D.IgnoreLayerCollision(9, 12, true);
+                }
                 IgnoreColision(true);
-                SoundManager.PlaySound("bonk");
                 isDed = true;
+                SoundManager.PlaySound("bonk");
                 anima.Play(clipDie);
                 StartCoroutine(Destroy());
             }
@@ -107,6 +117,7 @@ public class Boss : MonoBehaviour
         Physics2D.IgnoreLayerCollision(9, 8, check);
         Physics2D.IgnoreLayerCollision(9, 13, check);
         Physics2D.IgnoreLayerCollision(9, 10, check);
+        Physics2D.IgnoreLayerCollision(9, 17, check);
     }
 
     IEnumerator Destroy()

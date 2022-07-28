@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3497895439010381236}
   - component: {fileID: 134692898092687873}
   - component: {fileID: 4673737751148083082}
+  - component: {fileID: 6662972163195062916}
+  - component: {fileID: 1430084038225720389}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Ground
@@ -148,6 +150,50 @@ PolygonCollider2D:
       - {x: 1.9699999, y: -4.015}
       - {x: -2.6699998, y: -4.015}
       - {x: -2.6699998, y: -3.995}
+--- !u!68 &6662972163195062916
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273227110226257430}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0.4
+  m_Points:
+  - {x: -3.7351584, y: -4.766301}
+  - {x: 2.9133832, y: -4.9671793}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!68 &1430084038225720389
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273227110226257430}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0.4
+  m_Points:
+  - {x: -3.771682, y: -5.058489}
+  - {x: -3.7886574, y: 0.27392536}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &3106102164282387774
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7835098220982774713, guid: e5f7e1e7c353ae64b862a30c9e46e4ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59
+      value: 23.4
       objectReference: {fileID: 0}
     - target: {fileID: 7835098220982774713, guid: e5f7e1e7c353ae64b862a30c9e46e4ae, type: 3}
       propertyPath: m_LocalPosition.y
@@ -656,7 +702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2452839465693125155, guid: a8a3f3ab35a9f7c4699b24fc7fbf4486, type: 3}
       propertyPath: amountToMelt
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2452839465693125180, guid: a8a3f3ab35a9f7c4699b24fc7fbf4486, type: 3}
       propertyPath: m_Pivot.x

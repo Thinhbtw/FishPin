@@ -1023,6 +1023,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1017589757943622532}
     m_Modifications:
+    - target: {fileID: 5600062946393134353, guid: ab4f771e974ea654d89675b2073f5b97, type: 3}
+      propertyPath: m_Radius
+      value: 1.6225277
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600062946393134353, guid: ab4f771e974ea654d89675b2073f5b97, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0266818
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600062946393134353, guid: ab4f771e974ea654d89675b2073f5b97, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.07601567
+      objectReference: {fileID: 0}
     - target: {fileID: 5678696811249920572, guid: ab4f771e974ea654d89675b2073f5b97, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

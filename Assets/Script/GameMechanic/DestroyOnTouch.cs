@@ -5,6 +5,7 @@ using UnityEngine;
 public class DestroyOnTouch : MonoBehaviour
 {
     public Rigidbody2D rb;
+    int i; 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -15,12 +16,11 @@ public class DestroyOnTouch : MonoBehaviour
     {
         if (collision.gameObject.tag == "Water")
         {
-            SoundManager.PlaySound("fizz");
+            SoundManager.PlaySound2("fizz");
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
+         
         }
     }
-
-
 
 }

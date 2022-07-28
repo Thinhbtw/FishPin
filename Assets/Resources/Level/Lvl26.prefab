@@ -1289,6 +1289,10 @@ PrefabInstance:
       propertyPath: fishHealth
       value: 
       objectReference: {fileID: 7977044244757821562}
+    - target: {fileID: 965890878, guid: aaca11dda989d8e4f9651b39237112f4, type: 3}
+      propertyPath: crabIgnoreStone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5214921816002065236, guid: aaca11dda989d8e4f9651b39237112f4, type: 3}
       propertyPath: m_Name
       value: BossParent

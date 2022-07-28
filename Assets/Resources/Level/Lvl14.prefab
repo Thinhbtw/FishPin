@@ -665,6 +665,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1017589757943622532}
     m_Modifications:
+    - target: {fileID: 7835098219560115478, guid: e5f7e1e7c353ae64b862a30c9e46e4ae, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7835098220982774712, guid: e5f7e1e7c353ae64b862a30c9e46e4ae, type: 3}
       propertyPath: m_Mass
       value: 0.0001
@@ -1008,6 +1012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeMove
       objectReference: {fileID: 0}
+    - target: {fileID: 8123071097752076555, guid: 5dd582740f7074a409dd07ab9ab67183, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8123071098155881932, guid: 5dd582740f7074a409dd07ab9ab67183, type: 3}
       propertyPath: m_Size.y
       value: 13.72113
@@ -1015,6 +1023,10 @@ PrefabInstance:
     - target: {fileID: 8123071098155881932, guid: 5dd582740f7074a409dd07ab9ab67183, type: 3}
       propertyPath: m_Offset.y
       value: -263.91147
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123071098155881934, guid: 5dd582740f7074a409dd07ab9ab67183, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dd582740f7074a409dd07ab9ab67183, type: 3}

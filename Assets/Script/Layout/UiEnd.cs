@@ -167,10 +167,6 @@ public class UiEnd : MonoBehaviour
                     winMenu.SetActive(false);
                     PlusCoin.SetActive(false);
                     pannel.SetActive(false);
-                    if(UIGameplay.Instance.levelAt % 5 == 0)
-                        PlayerPrefs.SetInt("SelectedLevel", UIGameplay.Instance.levelAt / 5);
-                    else
-                        PlayerPrefs.SetInt("SelectedLevel", ((UIGameplay.Instance.levelAt / 5) + 1));
                     myScript.isDed = false;
                     btn.SetActive(false);
                 }

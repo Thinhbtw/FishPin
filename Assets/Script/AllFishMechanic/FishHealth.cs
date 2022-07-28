@@ -37,12 +37,7 @@ public class FishHealth : MonoBehaviour
     void Start()
     {
         Physics2D.IgnoreLayerCollision(10, 6);
-        Physics2D.IgnoreLayerCollision(10, 7, false);
-        Physics2D.IgnoreLayerCollision(10, 8, false);
-        Physics2D.IgnoreLayerCollision(10, 9, false);
-        Physics2D.IgnoreLayerCollision(10, 11, false);
-        Physics2D.IgnoreLayerCollision(10, 12, false);
-        Physics2D.IgnoreLayerCollision(10, 13, false);
+        IgnoreCollsion(false);
         animator.SetLayerWeight(1, 0);
 
 
@@ -65,8 +60,7 @@ public class FishHealth : MonoBehaviour
 
         if (collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Spike" || collision.gameObject.tag == "Poison")
         {
-            Physics2D.IgnoreLayerCollision(10, 6);
-            Physics2D.IgnoreLayerCollision(10, 9);
+            IgnoreCollsion(true);
             myScript.isDed = true;
             animator.SetLayerWeight(1, 0);
             animator.Play(StaticClass.Fish_clipDie);
@@ -78,7 +72,7 @@ public class FishHealth : MonoBehaviour
 
         if (collision.gameObject.tag == "Boulder" || collision.gameObject.tag == "IceBlock")
         {
-            Physics2D.IgnoreLayerCollision(10, 6);
+            IgnoreCollsion(true);
             SoundManager.PlaySound("bonk");
             myScript.isDed = true;
             animator.SetLayerWeight(1, 0);
@@ -90,7 +84,7 @@ public class FishHealth : MonoBehaviour
 
         if (collision.gameObject.tag == "Bomb")
         {
-            Physics2D.IgnoreLayerCollision(10, 6);
+            IgnoreCollsion(true);
             myScript.isDed = true;
             animator.SetLayerWeight(1, 0);
             animator.Play(StaticClass.Fish_clipBurn);
@@ -113,6 +107,16 @@ public class FishHealth : MonoBehaviour
         yield break;
     }
 
+    void IgnoreCollsion(bool check)
+    {
+        Physics2D.IgnoreLayerCollision(10, 7, check);
+        Physics2D.IgnoreLayerCollision(10, 8, check);
+        Physics2D.IgnoreLayerCollision(10, 9, check);
+        Physics2D.IgnoreLayerCollision(10, 11, check);
+        Physics2D.IgnoreLayerCollision(10, 12, check);
+        Physics2D.IgnoreLayerCollision(10, 13, check);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -122,12 +126,7 @@ public class FishHealth : MonoBehaviour
             curHealth = 100;
             runProgress = true;
             Winning = true;
-            Physics2D.IgnoreLayerCollision(10, 7);
-            Physics2D.IgnoreLayerCollision(10, 8);
-            Physics2D.IgnoreLayerCollision(10, 9);
-            Physics2D.IgnoreLayerCollision(10, 11);
-            Physics2D.IgnoreLayerCollision(10, 12);
-            Physics2D.IgnoreLayerCollision(10, 13);
+            IgnoreCollsion(true);
             animator.Play(StaticClass.Fish_clipWin);
             
             myScript.setGameEnd(true);
@@ -142,7 +141,7 @@ public class FishHealth : MonoBehaviour
         if (curHealth == 0)
         {
 
-            Physics2D.IgnoreLayerCollision(10, 11);
+            IgnoreCollsion(true);
             myScript.isDed = true;
             animator.Play(StaticClass.Fish_clipBurn);
             if (!myScript.check)
