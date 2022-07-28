@@ -31,8 +31,8 @@ public class WatchVideoReward : MonoBehaviour
                 if (watchAdReward && InternetConnection.instance.hasInternet)
                 {
                     watchAdReward = false;
-                    /*ToponAdsController.instance.OpenVideoAds();*/
                     IronSource.Agent.showRewardedVideo();
+                    FirebaseInit.Instance.WatchAds();
                     StartCoroutine(DelayRewardCoin());
                     StartCoroutine(DelayAdReward());
                 }
@@ -44,8 +44,8 @@ public class WatchVideoReward : MonoBehaviour
                 if (watchAdReward && InternetConnection.instance.hasInternet)
                 {
                     watchAdReward = false;
-                    /*ToponAdsController.instance.OpenVideoAds();*/
                     IronSource.Agent.showRewardedVideo();
+                    FirebaseInit.Instance.WatchAds();
                     StartCoroutine(DelayRewardGem());
                     StartCoroutine(DelayAdReward());
                 }
@@ -79,6 +79,6 @@ public class WatchVideoReward : MonoBehaviour
     IEnumerator DelayRewardGem()
     {
         yield return new WaitForSeconds(1f);
-        GameData.AddGems(50);
+        GameData.AddGems(5);
     }
 }

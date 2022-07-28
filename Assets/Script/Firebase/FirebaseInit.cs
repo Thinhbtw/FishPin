@@ -11,10 +11,26 @@ public class FirebaseInit : Singleton<FirebaseInit>
         {
             FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
         });
+
     }
 
     public void EventAds()
     {
         
+    }
+
+    public void OpenGame()
+    {
+        FirebaseAnalytics.LogEvent(FirebaseAnalytics.EventAppOpen);
+    }
+
+    public void OnCloseGame()
+    {
+        FirebaseAnalytics.LogEvent(FirebaseAnalytics.EventLevelEnd);
+    }
+
+    public void WatchAds()
+    {
+        FirebaseAnalytics.LogEvent(FirebaseAnalytics.EventAdImpression);
     }
 }

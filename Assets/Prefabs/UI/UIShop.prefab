@@ -11113,6 +11113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   watchAdCoin: {fileID: 7661292344898670456}
   watchAdGem: {fileID: 4696409276019495033}
+  watchAdReward: 0
+  watchAdSkip: 0
 --- !u!1 &7862232679733335694
 GameObject:
   m_ObjectHideFlags: 0
