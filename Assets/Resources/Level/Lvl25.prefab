@@ -2086,6 +2086,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderParent
       objectReference: {fileID: 0}
+    - target: {fileID: 6284167706418191282, guid: ab4f771e974ea654d89675b2073f5b97, type: 3}
+      propertyPath: m_LinearDrag
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4f771e974ea654d89675b2073f5b97, type: 3}
 --- !u!224 &405936697723283110 stripped
@@ -2815,6 +2819,10 @@ PrefabInstance:
     - target: {fileID: 3114050628775649678, guid: f60b148f177286f4fa6b544b3daad4c1, type: 3}
       propertyPath: Boss_maxRange
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114050628775649679, guid: f60b148f177286f4fa6b544b3daad4c1, type: 3}
+      propertyPath: snakeIgnoreStone
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3114050628775649714, guid: f60b148f177286f4fa6b544b3daad4c1, type: 3}
       propertyPath: m_Name

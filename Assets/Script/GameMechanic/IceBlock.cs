@@ -28,7 +28,7 @@ public class IceBlock : MonoBehaviour
             this.transform.GetChild(0).gameObject.SetActive(false);
             for (int i = 0; i < Quanitty; i++)
             {
-                var newFliud = Instantiate(water, this.transform.position + new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(0f, 0.15f), this.transform.position.z), Quaternion.identity);
+                var newFliud = Instantiate(water, this.transform.position + new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(0f, 0.3f), this.transform.position.z), Quaternion.identity);
                 newFliud.transform.parent = this.gameObject.transform;
             }
             

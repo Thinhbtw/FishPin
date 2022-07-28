@@ -18,13 +18,21 @@ public class UIGameplay : MonoBehaviour
         Instance = (UIGameplay)this;
                  
         stillatDefault = true;
-        levelPrefs = PlayerPrefs.GetInt("Progress2");
-        levelAt = levelPrefs;
+        if (PlayerPrefs.GetInt("Progress2") == UIManager.Instance.listLevel.Count)
+        {
+            PlayerPrefs.SetInt("Progress2", (UIManager.Instance.listLevel.Count - 1));
+            levelPrefs = PlayerPrefs.GetInt("Progress2");
+            levelAt = levelPrefs;
+        }
+        else
+        {
+            levelPrefs = PlayerPrefs.GetInt("Progress2");
+            levelAt = levelPrefs;
+        }
         PlayerPrefs.SetInt("SelectedLevel", levelAt / 5);
     }
     public void OnEnable()
     {
-        
         if (PlayerPrefs.HasKey("Progress") == false)
             PlayerPrefs.SetInt("Progress", 0);
         if (PlayerPrefs.HasKey("Progress2") == false)
@@ -53,6 +61,14 @@ public class UIGameplay : MonoBehaviour
 
         if (uiEnd.isComplete && hasNextLevel && whichLevel < UIManager.Instance.listLevel.Count - 1)
         {
+            if(PlayerPrefs.GetInt("Progress2") == UIManager.Instance.listLevel.Count)
+            {
+                UIManager.Instance.GoBackToHome();
+                UIManager.Instance.AddToListDialog(UIManager.Instance.UIHome);
+                UIBackground.Instance.gameObject.SetActive(false);
+                return;
+            }
+
             var lvl = Instantiate(UIManager.Instance.listLevel[levelAt], levelField.transform);
             Level.Add(lvl);
             Destroy(Level[Level.Count - Level.Count]);
@@ -67,8 +83,9 @@ public class UIGameplay : MonoBehaviour
             }
             uiEnd.isComplete = false;
             hasNextLevel = false;
-            
+
         }
+
 
         
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2452839465693125180}
   - component: {fileID: 2452839465693125154}
   - component: {fileID: 2452839465693125155}
-  m_Layer: 5
+  m_Layer: 17
   m_Name: IceBlockParent
   m_TagString: IceBlock
   m_Icon: {fileID: 0}
@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   water: {fileID: 5024421772091208294, guid: 9f31622502b1c2c4e880a7e3a8f6a0a5, type: 3}
   Quanitty: 20
+  amountToMelt: 0
 --- !u!1 &2452839467252898077
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +85,7 @@ GameObject:
   - component: {fileID: 2452839467252898076}
   - component: {fileID: 2452839467252898051}
   - component: {fileID: 2452839467252898050}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: iceBlock
   m_TagString: IceBlock
   m_Icon: {fileID: 0}
