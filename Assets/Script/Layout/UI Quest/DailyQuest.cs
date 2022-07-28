@@ -51,8 +51,7 @@ namespace DailyQuestSystem
         [SerializeField] Transform questTransform;
 
         /*[SerializeField] Text QuestTypeTitle;*/
-
-        public int questCheck;
+        
 
         [Space]
         [Header("Reward Image")]
@@ -226,8 +225,7 @@ namespace DailyQuestSystem
         IEnumerator checkForQuestReload()
         {            
             while (true)
-            {
-                notificationCheck();
+            {                
                 //check reset daily
                 resetTime(INSTANCE.dailyTime, nextQuestDelay_Daily, rewardsDBDaily);
                 //check reset weekly
@@ -388,8 +386,7 @@ namespace DailyQuestSystem
 
         //check notification------------------
         public void notificationCheck()
-        {
-            questCheck = rewardsDBDaily.rewardsCount + rewardsDBWeekly.rewardsCount + rewardsDBMonthly.rewardsCount;
+        {            
             for (int i = 0; i < sumData.Count; i++)
             {
                 if (PlayerPrefs.GetInt(sumData[i].title) == INSTANCE.claimAble)
@@ -402,7 +399,8 @@ namespace DailyQuestSystem
         }
 
         private void Update()
-        {            
+        {
+            notificationCheck();
             glowingCheck();            
 
             if (WorldTimeAPI.Instance.IsTimeLodaed)

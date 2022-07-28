@@ -85,14 +85,7 @@ public class QuestScript : MonoBehaviour
             GameData.AddGems(quest.Amount);                            
         }
         PlayerPrefs.SetInt(title.text, INSTANCE.claimed);
-        if (!isAchievement)
-        {
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            claimPanel.SetActive(true);
-        }
+        claimPanel.SetActive(true);
     }
     
 
@@ -102,7 +95,11 @@ public class QuestScript : MonoBehaviour
     public void Deactivate()
     {        
         gameObject.GetComponent<Button>().enabled = false;
-        //status = questStatus.claimed;               
+        //status = questStatus.claimed;
+        if (PlayerPrefs.GetInt(title.text) == INSTANCE.claimed)
+        {
+            claimPanel.SetActive(true);
+        }
     }
     public void Active()
     {

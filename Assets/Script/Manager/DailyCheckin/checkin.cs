@@ -21,11 +21,7 @@ public class checkin : MonoBehaviour
         rewardAmount.text ="+" + log.amount.ToString();       
         GetComponent<Button>().onClick.RemoveAllListeners();
         GetComponent<Button>().onClick.AddListener(claimButton);
-
-        if (GameData.getLoginDay() == Log.logDay)
-        {            
-            PlayerPrefs.SetInt("Day" + Log.logDay, INSTANCE.claimAble);
-        }
+        
     }
 
     private void Update()
