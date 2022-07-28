@@ -24,6 +24,8 @@ public class NotificationPushManager : MonoBehaviour
     }
 
     #endregion    
+
+    private static int notificationID;
     /*public static NotificationPushManager instance;
     public static string channelID;
     public static AndroidNotification notif;
@@ -111,15 +113,44 @@ public class NotificationPushManager : MonoBehaviour
         if (PlayerPrefs.GetInt("NotificationStat") == 0)
         {
             //sending notification
-            var id = AndroidNotificationCenter.SendNotification(notification, "channel_id");
+            notificationID = AndroidNotificationCenter.SendNotification(notification, "channel_id");
             //check if is scheduled
-            if (AndroidNotificationCenter.CheckScheduledNotificationStatus(id) == NotificationStatus.Scheduled)
+            if (AndroidNotificationCenter.CheckScheduledNotificationStatus(notificationID) == NotificationStatus.Scheduled)
             {
                 //reschedule 
-                AndroidNotificationCenter.CancelNotification(id);
+                AndroidNotificationCenter.CancelNotification(notificationID);
                 AndroidNotificationCenter.SendNotification(notification, "channel_id");
             }
         }
         
+    }
+    public void NotificationOnOff(bool stat)
+    {
+        if (stat)
+        {
+            var notification = new AndroidNotification();
+            notification.Title = "Hop on!";
+            notification.Text = "Dont miss everyday gift";
+            notification.FireTime = System.DateTime.Now.AddSeconds(15);
+            if (AndroidNotificationCenter.CheckScheduledNotificationStatus(notificationID) == NotificationStatus.Scheduled)
+            {
+                //reschedule 
+                AndroidNotificationCenter.CancelNotification(notificationID);                
+                AndroidNotificationCenter.SendNotification(notification, "channel_id");
+            }
+            else if (AndroidNotificationCenter.CheckScheduledNotificationStatus(notificationID) == NotificationStatus.Delivered)
+            {
+                // Remove the previously shown notification from the status bar.
+                AndroidNotificationCenter.CancelNotification(notificationID);
+            }
+            else if (AndroidNotificationCenter.CheckScheduledNotificationStatus(notificationID) == NotificationStatus.Unknown)
+            {
+                AndroidNotificationCenter.SendNotification(notification, "channel_id");
+            }
+        }
+        else
+        {
+            AndroidNotificationCenter.CancelAllNotifications();
+        }
     }
 }
