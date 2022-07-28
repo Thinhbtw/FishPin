@@ -63,6 +63,7 @@ public class UiEnd : MonoBehaviour
             if(IronSource.Agent.isInterstitialReady())
             {
                 IronSource.Agent.showInterstitial();
+                FirebaseInit.Instance.WatchAds();
             }
         }
         else
@@ -82,6 +83,7 @@ public class UiEnd : MonoBehaviour
             if (IronSource.Agent.isInterstitialReady())
             {
                 IronSource.Agent.showInterstitial();
+                FirebaseInit.Instance.WatchAds();
             }
         }
         yield break;
@@ -156,6 +158,7 @@ public class UiEnd : MonoBehaviour
                     SoundManager.PlaySound("click");
                     /*ToponAdsController.instance.OpenVideoAds();*/
                     IronSource.Agent.showRewardedVideo();
+                    FirebaseInit.Instance.WatchAds();
                     var lvl = Instantiate(UIManager.Instance.listLevel[uiGameplay.levelAt], uiGameplay.levelField.transform);
                     uiGameplay.Level.Add(lvl);
                     Destroy(uiGameplay.Level[uiGameplay.Level.Count - uiGameplay.Level.Count]);
