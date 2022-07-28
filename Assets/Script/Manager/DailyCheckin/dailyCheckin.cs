@@ -156,10 +156,10 @@ public class dailyCheckin : MonoBehaviour
         for(int i = 0; i < 7; i++)
         {
             if (PlayerPrefs.GetInt("Day" + (i + 1)) == INSTANCE.claimAble)
-            {
+            {                
                 return true;
             }
-        }
+        }        
         return false;
     }
 

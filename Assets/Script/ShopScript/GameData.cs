@@ -159,10 +159,11 @@ public static class GameData
     public static void resetLoginDay()
     {
         playerData.loginday = 1;        
-        for (int i = 1; i <= 7; i++)
+        for (int i = 2; i <= 7; i++)
         {
             PlayerPrefs.SetInt("Day" + i, INSTANCE.unclaimAble);
-        }        
+        }
+        PlayerPrefs.SetInt("Day" + 1, INSTANCE.claimAble);
         SavePlayerData();
     }
 
