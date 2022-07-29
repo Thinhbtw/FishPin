@@ -114,11 +114,7 @@ public class UISetting : MonoBehaviour
                 }
             });
     }
-
-    private void Update()
-    {
-        Debug.Log(PlayerPrefs.GetString("SaveSettings"));
-    }
+    
 
     private void OnDisable()
     {

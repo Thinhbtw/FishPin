@@ -16,7 +16,7 @@ MonoBehaviour:
   - Type: 0
     Amount: 10
     title: do 1
-    required: 0
+    required: 1
     typeID: 0
     process: 0
   - Type: 0

@@ -43,8 +43,7 @@ public class QuestScript : MonoBehaviour
         
 
     private void Update()
-    {                
-        
+    {                        
         if(quest.process<= quest.required)
         {
             numberProgress.text = quest.process + "/" + quest.required.ToString();
@@ -53,7 +52,7 @@ public class QuestScript : MonoBehaviour
         {
             numberProgress.text = quest.required.ToString() + "/" + quest.required.ToString();
         }
-
+        Debug.Log(numberProgress.text);
         if (!isAchievement)
         {
             progressBar.GetComponent<Slider>().value = quest.process;

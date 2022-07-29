@@ -90,23 +90,22 @@ public class NotificationPushManager : MonoBehaviour
     */
     
     private void OnApplicationPause(bool pause)
-    {    
-        //Remove all notification that have already been displayed
-        AndroidNotificationCenter.CancelAllDisplayedNotifications();
-
-        //create channel for the notification
-        var channel = new AndroidNotificationChannel()
-        {
-            Id = "channel_id",
-            Name = "Default Channel",
-            Importance = Importance.Default,
-            Description = "Reminder notifications",
-        };
-        AndroidNotificationCenter.RegisterNotificationChannel(channel);
-
-        
+    {
         if (PlayerPrefs.GetString("SaveSettings").Contains("2"))
         {
+            //Remove all notification that have already been displayed
+            AndroidNotificationCenter.CancelAllDisplayedNotifications();
+
+            //create channel for the notification
+            var channel = new AndroidNotificationChannel()
+            {
+                Id = "channel_id",
+                Name = "Default Channel",
+                Importance = Importance.Default,
+                Description = "Reminder notifications",
+            };
+            AndroidNotificationCenter.RegisterNotificationChannel(channel);
+
             //create notification
             var notification = new AndroidNotification();
             notification.Title = "Hop on!";
@@ -122,33 +121,36 @@ public class NotificationPushManager : MonoBehaviour
                 AndroidNotificationCenter.CancelNotification(notificationID);
                 AndroidNotificationCenter.SendNotification(notification, "channel_id");
             }
+
         }
-
-
     }
     public void NotificationOnOff(bool stat)
     {
         if (stat)
         {
-            var notification = new AndroidNotification();
+            /*var notification = new AndroidNotification();
             notification.Title = "Hop on!";
             notification.Text = "Dont miss everyday gift";
             notification.FireTime = System.DateTime.Now.AddSeconds(15);
             if (AndroidNotificationCenter.CheckScheduledNotificationStatus(notificationID) == NotificationStatus.Scheduled)
             {
                 //reschedule 
-                AndroidNotificationCenter.CancelNotification(notificationID);                
+                Debug.Log("scheduled");
+                AndroidNotificationCenter.CancelNotification(notificationID);
                 AndroidNotificationCenter.SendNotification(notification, "channel_id");
             }
             else if (AndroidNotificationCenter.CheckScheduledNotificationStatus(notificationID) == NotificationStatus.Delivered)
             {
                 // Remove the previously shown notification from the status bar.
+                Debug.Log("delivered");
                 AndroidNotificationCenter.CancelNotification(notificationID);
             }
             else if (AndroidNotificationCenter.CheckScheduledNotificationStatus(notificationID) == NotificationStatus.Unknown)
             {
+                Debug.Log("unknown");
                 AndroidNotificationCenter.SendNotification(notification, "channel_id");
             }
+            OnApplicationPause(true);*/
         }
         else
         {
