@@ -52,12 +52,10 @@ public class LevelProgressBar : MonoBehaviour
         {
             progress.transform.GetChild((uiGameplay.levelAt % 5 - 1)).GetComponent<Image>().sprite = image[1];
             progressBar.value = Mathf.MoveTowards(progressBar.value, uiGameplay.levelAt % 5, Time.deltaTime * 1);
-            cupAnima.enabled = false;
 
         }
         else if(progressBar.value == 4 && uiGameplay.levelAt % 5 == 0)
         {
-            cupAnima.enabled = true;
             if (!PlayerPrefs.GetString("LevelComplete").Contains((uiGameplay.levelAt / 5).ToString()) && !hasAddCoin)
             {
                 plus50.SetActive(true);
