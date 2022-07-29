@@ -1949,15 +1949,15 @@ PrefabInstance:
       objectReference: {fileID: 4502808252157587020}
     - target: {fileID: 7129921935181180846, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
       propertyPath: nextQuestDelay_Daily
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7129921935181180846, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
       propertyPath: nextQuestDelay_Weekly
-      value: 60
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7129921935181180846, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
       propertyPath: nextQuestDelay_Monthly
-      value: 120
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7619814033140064727, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
       propertyPath: m_AnchorMax.y

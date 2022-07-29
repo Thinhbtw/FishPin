@@ -252,19 +252,28 @@ namespace DailyQuestSystem
             if (elapsedSecs >= nextQuestDelay)
             {
                 resetQuestData(database);
-                PlayerPrefs.SetString(timeName, currentDatetime.ToString());                
+                PlayerPrefs.SetString(timeName, currentDatetime.ToString());                                
+                switch (timeName)
+                {
+                    case "Quest_Start_Time_Daily":
+                        GameData.resetListIndexByid(INSTANCE.dailyID);                        
+                        break;
+                    case "Quest_Start_Time_Weekly":
+                        GameData.resetListIndexByid(INSTANCE.weeklyID);                        
+                        break;
+                    case "Quest_Start_Time_Monthly":
+                        GameData.resetListIndexByid(INSTANCE.monthlyID);                        
+                        break;
+                }
                 switch (btnStatus)
                 {
-                    case questBtnType.daily:
-                        GameData.resetListIndexByid(INSTANCE.dailyID);
+                    case questBtnType.daily:                        
                         loadQuest(rewardsDBDaily, listDaily, questTransform, INSTANCE.dailyID);
                         break;
-                    case questBtnType.weekly:
-                        GameData.resetListIndexByid(INSTANCE.weeklyID);
+                    case questBtnType.weekly:                        
                         loadQuest(rewardsDBWeekly, listWeekly, questTransform, INSTANCE.weeklyID);
                         break;
-                    case questBtnType.monthly:
-                        GameData.resetListIndexByid(INSTANCE.monthlyID);
+                    case questBtnType.monthly:                        
                         loadQuest(rewardsDBMonthly, listMonthly, questTransform, INSTANCE.monthlyID);
                         break;
                 }
