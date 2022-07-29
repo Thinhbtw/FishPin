@@ -16,60 +16,60 @@ MonoBehaviour:
   - Type: 0
     Amount: 10
     title: do 1
-    required: 1
+    required: 0
     typeID: 0
     process: 0
   - Type: 0
     Amount: 20
     title: do 2
     required: 2
-    typeID: 0
+    typeID: 1
     process: 0
   - Type: 0
     Amount: 30
     title: do 3
     required: 3
-    typeID: 0
+    typeID: 2
     process: 0
   - Type: 0
     Amount: 40
     title: do 4
     required: 4
-    typeID: 0
+    typeID: 3
     process: 0
   - Type: 0
     Amount: 50
     title: do 5
     required: 5
-    typeID: 0
+    typeID: 4
     process: 0
   - Type: 0
     Amount: 60
     title: do 6
     required: 6
-    typeID: 0
+    typeID: 5
     process: 0
   - Type: 0
     Amount: 70
     title: do 7
     required: 7
-    typeID: 0
+    typeID: 6
     process: 0
   - Type: 0
     Amount: 80
     title: do 8
     required: 8
-    typeID: 0
+    typeID: 7
     process: 0
   - Type: 0
     Amount: 90
     title: do 9
     required: 9
-    typeID: 0
+    typeID: 1
     process: 0
   - Type: 0
     Amount: 100
     title: do 10
     required: 10
-    typeID: 0
+    typeID: 3
     process: 0

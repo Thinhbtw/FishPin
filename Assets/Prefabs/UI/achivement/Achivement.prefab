@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 2707822646159868429}
   - component: {fileID: 2760212425680437946}
   - component: {fileID: 4171587613672023958}
+  - component: {fileID: 34056405356672968}
   m_Layer: 5
   m_Name: Achivement
   m_TagString: Untagged
@@ -388,6 +389,19 @@ MonoBehaviour:
     required: 0
     typeID: 0
     process: 0
+--- !u!114 &34056405356672968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146729017288212921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156572e1dd37f784d88a56068dd500ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 3929612773718933951}
 --- !u!1 &4279637064416249267
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +547,7 @@ GameObject:
   - component: {fileID: 3990098456559240629}
   - component: {fileID: 3929612773718933951}
   m_Layer: 5
-  m_Name: Image
+  m_Name: missionIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

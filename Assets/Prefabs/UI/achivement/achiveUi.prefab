@@ -342,6 +342,14 @@ MonoBehaviour:
   general: {fileID: 3753864454155490135}
   achivements: []
   btnBack: {fileID: 8402354045076882790}
+  iconLevelFinished: {fileID: 21300000, guid: 3a725cf21063c3649b9b21dad2b9cb04, type: 3}
+  iconEnemyKilled: {fileID: 21300000, guid: 2f21d1cfc7dc92f44a02a59d912709ee, type: 3}
+  iconCoinCollected: {fileID: 21300000, guid: ce7989996e312da42bc863ebf5cd0504, type: 3}
+  iconLostTime: {fileID: 21300000, guid: b035104348294c94793bfd9ac5e40c6a, type: 3}
+  iconPinPulled: {fileID: 21300000, guid: abe3dbf64f6c03a42801ca0c9969ccea, type: 3}
+  iconMeltedIce: {fileID: 21300000, guid: 1f01014fc906cd143bca828dd11a2cf5, type: 3}
+  iconLoginDay: {fileID: 21300000, guid: 5eefd1c0513a0754881d59e80ce686ff, type: 3}
+  iconUnlockItem: {fileID: 21300000, guid: b4779bce048242b479a80d4cadd6cc7e, type: 3}
 --- !u!1 &3753864455734498002
 GameObject:
   m_ObjectHideFlags: 0

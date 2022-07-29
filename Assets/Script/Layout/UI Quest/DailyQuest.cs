@@ -17,7 +17,12 @@ namespace DailyQuestSystem
     {
         levelFinished,
         enemiesKilled,
-        coinCollected
+        coinCollected,
+        lostTime,
+        pinPulled,
+        meltedIce,
+        loginDay,
+        unlockItem
     }
 
     [Serializable] public struct Quest
