@@ -81,6 +81,7 @@
     <Compile Include="Assets\Script\ShopScript\FishShopDatabase.cs" />
     <Compile Include="Assets\Script\GameMechanic\PoisonScript.cs" />
     <Compile Include="Assets\Script\Manager\DailyCheckin\checkin.cs" />
+    <Compile Include="Assets\Script\Firebase\FirebaseInit.cs" />
     <Compile Include="Assets\Script\Manager\DailyCheckin\dailyCheckin.cs" />
     <Compile Include="Assets\Script\Layout\UiEnd.cs" />
     <Compile Include="Assets\Script\Manager\achivement\achivementManager.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\IronSource\Scripts\IronSourceInterstitialAndroid.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceInitializationAndroid.cs" />
     <Compile Include="Assets\Script\tool\timeAPI\WorldTimeAPI.cs" />
+    <Compile Include="Assets\Script\Manager\achivement\achiveNotif.cs" />
     <Compile Include="Assets\BinarySerializer\BinarySerializer.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityInitialization.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceJSON.cs" />
@@ -136,6 +138,7 @@
     <Compile Include="Assets\Script\ShopScript\GameSharedUI.cs" />
     <Compile Include="Assets\Script\ShopScript\Theme\ThemeShopDatabase.cs" />
     <Compile Include="Assets\IronSource\Scripts\IUnityLevelPlayRewardedVideo.cs" />
+    <Compile Include="Assets\Script\Singleton.cs" />
     <Compile Include="Assets\Script\GameMechanic\Bomb.cs" />
     <Compile Include="Assets\Script\GameMechanic\WInCondition.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceSegmentAndroid.cs" />
@@ -164,8 +167,6 @@
     <Compile Include="Assets\IronSource\Scripts\IronSourceConstants.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourceImpressionDataAndroid.cs" />
     <Compile Include="Assets\IronSource\Scripts\IronSourcePlacement.cs" />
-    <Compile Include="Assets\Script\Firebase\FirebaseInit.cs" />
-    <Compile Include="Assets\Script\Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Parse\Plugins\Unity.Compat.dll" />
