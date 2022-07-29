@@ -339,10 +339,10 @@ namespace DailyQuestSystem
             for (int i = 0; i < indexList.Count; i++)
             {                
                 GameObject quest = Instantiate(questPrefab, questField);
-                if (PlayerPrefs.GetInt(data.GetQuest(indexList[i]).title) == INSTANCE.claimed)
+                /*if (PlayerPrefs.GetInt(data.GetQuest(indexList[i]).title) == INSTANCE.claimed)
                 {
                     quest.SetActive(false);
-                }
+                }*/
                 quest.GetComponent<QuestScript>().QuestIndex = indexList[i];
                 listQuest.Add(quest);
                 switch (data.GetQuest(indexList[i]).Type)
