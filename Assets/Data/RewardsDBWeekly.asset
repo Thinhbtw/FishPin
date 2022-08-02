@@ -17,13 +17,13 @@ MonoBehaviour:
     Amount: 1000
     title: Failed once
     required: 1
-    typeID: 1
+    typeID: 3
     process: 0
   - Type: 0
     Amount: 5000
     title: Pull 2 pin
     required: 2
-    typeID: 2
+    typeID: 4
     process: 0
   - Type: 1
     Amount: 100
