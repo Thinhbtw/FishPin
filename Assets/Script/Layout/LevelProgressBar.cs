@@ -59,7 +59,7 @@ public class LevelProgressBar : MonoBehaviour
             if (!PlayerPrefs.GetString("LevelComplete").Contains((uiGameplay.levelAt / 5).ToString()) && !hasAddCoin)
             {
                 plus50.SetActive(true);
-                GameData.AddCoin(50);
+                GameData.AddCoin(200);
                 hasAddCoin = true;
             }
         }
