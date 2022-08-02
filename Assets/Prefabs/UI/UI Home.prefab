@@ -2516,6 +2516,22 @@ PrefabInstance:
       propertyPath: nextQuestDelay_Monthly
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 7129921935181180846, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
+      propertyPath: progressBarImg.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129921935181180846, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
+      propertyPath: progressBarImg.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0c0a52426e4e20a41a46d0890c31428b, type: 3}
+    - target: {fileID: 7129921935181180846, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
+      propertyPath: progressBarImg.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 82248005f50417c46b752ca46218d731, type: 3}
+    - target: {fileID: 7129921935181180846, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
+      propertyPath: progressBarImg.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: d137e8e4ca385154b971d994b66fed17, type: 3}
     - target: {fileID: 7619814033140064727, guid: cdaa7395442be2243a1b3b262ce11640, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -3039,6 +3055,10 @@ PrefabInstance:
       propertyPath: notification
       value: 
       objectReference: {fileID: 2833022305649477301}
+    - target: {fileID: 5978870104873227863, guid: 8563fa512a9b26c409d454a94b42a9df, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 46.800003
+      objectReference: {fileID: 0}
     - target: {fileID: 6042986609085220985, guid: 8563fa512a9b26c409d454a94b42a9df, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

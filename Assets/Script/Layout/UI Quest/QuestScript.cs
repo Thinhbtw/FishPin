@@ -12,7 +12,7 @@ public class QuestScript : MonoBehaviour
     [SerializeField] Text title;
     [SerializeField] int questIndex;
     [SerializeField] Text numberProgress;
-    [SerializeField] GameObject progressBar;
+    [SerializeField] public GameObject progressBar;
     [SerializeField] GameObject claimPanel;
 
     //private bool claimAble;
@@ -41,19 +41,26 @@ public class QuestScript : MonoBehaviour
         }               
     }
         
+    public void addProgressBar(Sprite img)
+    {
+        progressBar.GetComponentInChildren<Image>().sprite = img;
+    }
+
 
     private void Update()
-    {                        
-        if(quest.process<= quest.required)
+    {
+        if (isAchievement)
         {
-            numberProgress.text = quest.process + "/" + quest.required.ToString();
-        }
+            if (quest.process <= quest.required)
+            {
+                numberProgress.text = quest.process + "/" + quest.required.ToString();
+            }
+            else
+            {
+                numberProgress.text = quest.required.ToString() + "/" + quest.required.ToString();
+            }
+        }                
         else
-        {
-            numberProgress.text = quest.required.ToString() + "/" + quest.required.ToString();
-        }
-        Debug.Log(numberProgress.text);
-        if (!isAchievement)
         {
             progressBar.GetComponent<Slider>().value = quest.process;
         }

@@ -6,6 +6,26 @@ using Firebase.Messaging;
 
 public class firebaseNotification : MonoBehaviour
 {
+    #region Singleton class: firebaseNotification
+
+    public static firebaseNotification Instance;
+
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    #endregion    
+    
     void Start()
     {
         Firebase.Messaging.FirebaseMessaging.TokenReceived += OnTokenReceived;

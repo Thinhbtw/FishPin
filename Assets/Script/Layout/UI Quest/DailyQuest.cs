@@ -94,6 +94,10 @@ namespace DailyQuestSystem
         
 
         [SerializeField] Text clocker;
+
+        [Space]
+        [Header("List sprite Progress")]
+        [SerializeField] List<Sprite> progressBarImg;
         
 
 
@@ -358,6 +362,7 @@ namespace DailyQuestSystem
                     quest.SetActive(false);
                 }*/
                 quest.GetComponent<QuestScript>().QuestIndex = indexList[i];
+                quest.GetComponent<QuestScript>().addProgressBar(progressBarImg[i]);
                 listQuest.Add(quest);
                 switch (data.GetQuest(indexList[i]).Type)
                 {
