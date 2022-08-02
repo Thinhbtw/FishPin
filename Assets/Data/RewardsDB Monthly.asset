@@ -17,29 +17,29 @@ MonoBehaviour:
     Amount: 1
     title: Just die twice
     required: 2
-    typeID: 1
+    typeID: 3
     process: 0
   - Type: 1
     Amount: 1
     title: die 3
     required: 3
-    typeID: 1
+    typeID: 3
     process: 0
   - Type: 0
     Amount: 2
-    title: dont do anyhing
+    title: Finish 10 level
     required: 2
     typeID: 0
     process: 0
   - Type: 0
     Amount: 1
-    title: 'dunno '
-    required: 2
-    typeID: 0
+    title: Collect 200 coin
+    required: 200
+    typeID: 2
     process: 0
   - Type: 0
     Amount: 1
-    title: shiet
+    title: collect 2 coin
     required: 2
     typeID: 2
     process: 0
