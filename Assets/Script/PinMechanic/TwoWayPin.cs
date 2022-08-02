@@ -6,19 +6,16 @@ public class TwoWayPin : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] GameObject pos1, pos2;
-    [SerializeField] float speed;
+    [SerializeField] float speed, x, y;
     Collider2D col;
     LevelComplete myScript;
     UIBackground myBackground;
     bool allowMoved;
     public Rigidbody2D rb;
-    Vector2 defaultpos;
     [Header("TwoWayPin_Direction")]
     [Tooltip("1 - Horizontal, 2 - Vertical, 3 - Diagonal")]
     [SerializeField] int direction;
     Vector2 previousTouchPos;
-    public Vector3 directionToCaculate { get; private set; }
-    public Vector3 newPosition {  get; private set; }
 
     private void Awake()
     {
@@ -26,7 +23,6 @@ public class TwoWayPin : MonoBehaviour
         col = GetComponent<Collider2D>();
         myScript = FindObjectOfType<LevelComplete>();
         myBackground = FindObjectOfType<UIBackground>();
-        defaultpos = transform.position;
         switch (direction)
         {
             case 1:
@@ -44,6 +40,37 @@ public class TwoWayPin : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        switch (direction)
+        {
+            case 1:
+
+                if (transform.position.x - pos2.transform.position.x < 0)
+                {
+                    transform.position = new Vector2(pos2.transform.position.x, transform.position.y);
+                }
+
+                if (transform.position.x - pos1.transform.position.x > 0)
+                {
+                    transform.position = new Vector2(pos1.transform.position.x - 0.001f, transform.position.y);
+                }
+                break;
+            case 2:
+                if (transform.position.y - pos2.transform.position.y > 0)
+                {
+
+                    transform.position = new Vector2(transform.position.x, pos2.transform.position.y);
+                }
+
+                if (transform.position.y - pos1.transform.position.y < 0)
+                {
+                    transform.position = new Vector2(transform.position.x, pos1.transform.position.y);
+                }
+                break;
+
+        }
+    }
 
     // Update is called once per frame
     private void FixedUpdate()
@@ -52,7 +79,8 @@ public class TwoWayPin : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
             Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
-            
+            x = touchPos.x - previousTouchPos.x;
+            y = touchPos.y - previousTouchPos.y;
             if (touch.phase == TouchPhase.Began)
             {
                 Collider2D touchColl = Physics2D.OverlapPoint(touchPos);
@@ -62,35 +90,30 @@ public class TwoWayPin : MonoBehaviour
                     allowMoved = true;
                 }
             }
-
-            
-
             if (touch.phase == TouchPhase.Moved)
             {
                 if (allowMoved)
                 {
-                    
                     switch (direction)
                     {
                         case 1:
-                            if (Mathf.Abs(Vector2.Distance(touchPos, previousTouchPos)) > 0.5f)
-                                rb.velocity = new Vector2((touchPos.x - previousTouchPos.x)*2, pos1.transform.position.y);
+                            /*rb.velocity = new Vector2(x * Time.deltaTime * 80, pos1.transform.position.y);*/
+                            rb.velocity = new Vector2(x * 80f * Time.smoothDeltaTime, pos1.transform.position.y);
                             break;
-                        case 2:
-                            if (Mathf.Abs(Vector2.Distance(touchPos, previousTouchPos)) > 0.5f)
-                                rb.velocity = new Vector2(pos1.transform.position.x, (touchPos.y - previousTouchPos.y) * 2);                        
+                        case 2:                          
+                            rb.velocity = new Vector2(pos1.transform.position.x, y * 80f * Time.smoothDeltaTime);                   
                             break;
                         case 3:
-                            if (Mathf.Abs(Vector2.Distance(touchPos, previousTouchPos)) > 0.5f)
+                            if (Mathf.Abs(Vector2.Distance(touchPos, transform.position)) > 0.5f)
                             {
                                 if (touchPos.x - previousTouchPos.x > 0)
                                 {
-                                    rb.velocity = new Vector2((pos1.transform.position.x - pos2.transform.position.x) * speed, (pos1.transform.position.y - pos2.transform.position.y) * speed);
+                                    rb.velocity = new Vector2((pos1.transform.position.x - pos2.transform.position.x) * Time.deltaTime, (pos1.transform.position.y - pos2.transform.position.y) * Time.deltaTime);
                                     return;
                                 }
                                 if (touchPos.x - previousTouchPos.x < 0)
                                 {
-                                    rb.velocity = new Vector2((pos2.transform.position.x - pos1.transform.position.x), (pos2.transform.position.y - pos1.transform.position.y));
+                                    rb.velocity = new Vector2((pos2.transform.position.x - pos1.transform.position.x) * Time.deltaTime, (pos2.transform.position.y - pos1.transform.position.y) * Time.deltaTime);
                                     return;
                                 }
                             }
@@ -102,12 +125,12 @@ public class TwoWayPin : MonoBehaviour
             if(touch.phase == TouchPhase.Stationary)
             {
                 rb.velocity = Vector2.zero;
+                previousTouchPos = touchPos;
             }
 
             if (touch.phase == TouchPhase.Ended)
             {
                 allowMoved = false;
-                previousTouchPos = touchPos;
                 rb.velocity = Vector2.zero;
                 
             }
@@ -131,26 +154,18 @@ public class TwoWayPin : MonoBehaviour
                     transform.position = new Vector2(pos1.transform.position.x - 0.001f, pos1.transform.position.y + 0.001f);
                 }
                 break;
-        }
-    }
-
-    private void Update()
-    {
-
-        switch (direction)
-        {
             case 1:
 
                 if (transform.position.x - pos2.transform.position.x < 0)
                 {
                     rb.velocity = Vector2.zero;
-                    transform.position = new Vector2(pos2.transform.position.x, transform.position.y);
+                    rb.MovePosition(new Vector2(pos2.transform.position.x, transform.position.y));
                 }
 
                 if (transform.position.x - pos1.transform.position.x > 0)
                 {
                     rb.velocity = Vector2.zero;
-                    transform.position = new Vector2(pos1.transform.position.x - 0.001f, transform.position.y);
+                    rb.MovePosition(new Vector2(pos1.transform.position.x - 0.001f, transform.position.y));
                 }
                 break;
             case 2:
@@ -158,18 +173,20 @@ public class TwoWayPin : MonoBehaviour
                 {
 
                     rb.velocity = Vector2.zero;
-                    transform.position = new Vector2(transform.position.x, pos2.transform.position.y);
+                    rb.MovePosition(new Vector2(transform.position.x, pos2.transform.position.y));
                 }
 
                 if (transform.position.y - pos1.transform.position.y < 0)
                 {
                     rb.velocity = Vector2.zero;
-                    transform.position = new Vector2(transform.position.x, pos1.transform.position.y);
+                    rb.MovePosition(new Vector2(transform.position.x, pos1.transform.position.y));
                 }
                 break;
 
-
-
         }
+
     }
+
+    
+
 }
