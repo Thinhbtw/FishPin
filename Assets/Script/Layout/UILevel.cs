@@ -103,9 +103,9 @@ public class UILevel : MonoBehaviour
             int num = i;
             if (PlayerPrefs.GetInt("Progress") / 5 < num)
             {
-                gridButton.transform.GetChild(i).GetComponent<Button>().interactable = false;
+                /*gridButton.transform.GetChild(i).GetComponent<Button>().interactable = false;
                 gridButton.transform.GetChild(i).GetChild(0).GetComponent<Text>().color = new Color32(255, 255, 255, 150);
-                gridButton.transform.GetChild(i).GetChild(0).GetComponent<Shadow>().enabled = false;
+                gridButton.transform.GetChild(i).GetChild(0).GetComponent<Shadow>().enabled = false;*/
             }
             else
             {

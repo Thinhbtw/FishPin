@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PullPin : MonoBehaviour
+public class PullPin : MonoBehaviour 
 {
     // Start is called before the first frame update
     [SerializeField] Animator anima;
     Collider2D col;
     LevelComplete myScript;
     UIBackground myBackground;
+    /*Vector2 touchPos;*/
 
     void Start()
     {
@@ -48,5 +49,4 @@ public class PullPin : MonoBehaviour
         }
     }
 
-    
 }

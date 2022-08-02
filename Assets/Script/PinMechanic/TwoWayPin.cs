@@ -46,7 +46,7 @@ public class TwoWayPin : MonoBehaviour
 
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
         if (Input.touchCount > 0 && !myScript.check || Input.touchCount > 0 && !myScript.check && !myBackground.isPause)
         {
@@ -113,6 +113,30 @@ public class TwoWayPin : MonoBehaviour
             }
 
         }
+
+        switch (direction)
+        {
+            case 3:
+                if (transform.position.x - pos2.transform.position.x < 0 && transform.position.y - pos2.transform.position.y > 0)
+                {
+
+                    rb.velocity = Vector2.zero;
+                    transform.position = pos2.transform.position;
+                }
+
+                if (transform.position.x - pos1.transform.position.x > 0 && transform.position.y - pos1.transform.position.y < 0)
+                {
+
+                    rb.velocity = Vector2.zero;
+                    transform.position = new Vector2(pos1.transform.position.x - 0.001f, pos1.transform.position.y + 0.001f);
+                }
+                break;
+        }
+    }
+
+    private void Update()
+    {
+
         switch (direction)
         {
             case 1:
@@ -132,7 +156,7 @@ public class TwoWayPin : MonoBehaviour
             case 2:
                 if (transform.position.y - pos2.transform.position.y > 0)
                 {
-                    
+
                     rb.velocity = Vector2.zero;
                     transform.position = new Vector2(transform.position.x, pos2.transform.position.y);
                 }
@@ -144,30 +168,8 @@ public class TwoWayPin : MonoBehaviour
                 }
                 break;
 
-            
 
-        }
-    }
 
-    private void FixedUpdate()
-    {
-        switch (direction)
-        {
-            case 3:
-                if (transform.position.x - pos2.transform.position.x < 0 && transform.position.y - pos2.transform.position.y > 0)
-                {
-
-                    rb.velocity = Vector2.zero;
-                    transform.position = pos2.transform.position;
-                }
-
-                if (transform.position.x - pos1.transform.position.x > 0 && transform.position.y - pos1.transform.position.y < 0)
-                {
-
-                    rb.velocity = Vector2.zero;
-                    transform.position = new Vector2(pos1.transform.position.x - 0.001f, pos1.transform.position.y + 0.001f);
-                }
-                break;
         }
     }
 }
