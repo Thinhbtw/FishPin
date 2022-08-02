@@ -89,7 +89,6 @@ public class Blade : MonoBehaviour
     {
         circleCollider.enabled = true;
         rb.position = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-        
         transform.position = rb.position;
 
     }
